@@ -1,0 +1,26 @@
+{
+	"apache": {
+		"log_dir": "/dev/null"
+	},
+	"authorization": {
+      "sudo": {
+        "groups": ["adm", "wheel"],
+        "users": ["ubuntu"],
+        "passwordless": true
+      }
+    },
+	"run_list": ["role[bare-bones]", "role[web]"],
+    "rvm": {
+		"default_ruby": "ruby-1.9.3-p194",
+		"installer_url": "http://get.rvm.io",
+		"rvmrc": { 
+        "rvm_project_rvmrc":  1,
+        "rvm_gemset_create_on_use_flag": 1,
+        "rvm_trust_rvmrcs_flag": 1
+      }
+    },
+    "user": { 
+      "name": "ubuntu",
+      "ls_color": true
+  }
+}

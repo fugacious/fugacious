@@ -1,0 +1,29 @@
+{
+  "name": "firewall",
+  "description": "Provides a set of primitives for managing firewalls and associated rules.",
+  "long_description": "Description\n===========\n\nProvides a set of primitives for managing firewalls and associated rules.\n\nPLEASE NOTE - The resource/providers in this cookbook are under heavy development.\nAn attempt is being made to keep the resource simple/stupid by starting with less \nsophisticated firewall implementations first and refactor/vet the resource definition \nwith each successive provider.\n\nRequirements\n============\n\nPlatform\n--------\n\n* Ubuntu\n\nTested on:\n\n* Ubuntu 10.04\n* Ubuntu 11.04\n\nResources/Providers\n===================\n\n`firewall`\n----------\n\n### Actions\n\n- :enable: enable the firewall.  this will make any rules that have been defined 'active'.\n- :disable: disable the firewall. drop any rules and put the node in an unprotected state.\n\n### Attribute Parameters\n\n- name: name attribute. arbitrary name to uniquely identify this resource\n- log_level: level of verbosity the firewall should log at. valid values are: :low, :medium, :high, :full. default is :low.\n\n### Providers\n\n- `Chef::Provider::FirewallUfw`\n    - platform default: Ubuntu\n\n### Examples\n    \n    # enable platform default firewall\n    firewall \"ufw\" do\n      action :enable\n    end\n\n    # increase logging past default of 'low'\n    firewall \"debug firewalls\" do\n      log_level :high\n      action :enable\n    end\n\n`firewall_rule`\n---------------\n\n### Actions\n\n- :allow: the rule should allow incoming traffic.\n- :deny: the rule should deny incoming traffic.\n- :reject: the rule should reject incoming traffic.\n\n### Attribute Parameters\n\n- name: name attribute. arbitrary name to uniquely identify this firewall rule\n- protocol: valid values are: :udp, :tcp. default is all protocols\n- port: incoming port number (ie. 22 to allow inbound SSH)\n- source: ip address or subnet to filter on incoming traffic. default is `0.0.0.0/0` (ie Anywhere)\n- destination: ip address or subnet to filter on outgoing traffic. \n- dest_port: outgoing port number.\n- position: position to insert rule at. if not provided rule is inserted at the end of the rule list.\n- direction: direction of the rule. valid values are: :in, :out, default is :in\n- interface: interface to apply rule (ie. 'eth0').\n- logging: may be added to enable logging for a particular rule. valid values are: :connections, :packets. In the ufw provider, :connections logs new connections while :packets logs all packets.\n\n### Providers\n\n- `Chef::Provider::FirewallRuleUfw`\n    - platform default: Ubuntu\n\n### Examples\n\n    # open standard ssh port, enable firewall\n    firewall_rule \"ssh\" do\n      port 22\n      action :allow\n      notifies :enable, \"firewall[ufw]\"\n    end\n    \n    # open standard http port to tcp traffic only; insert as first rule\n    firewall_rule \"http\" do\n      port 80\n      protocol 'tcp'\n      position 1\n      action :allow\n    end\n    \n    # restrict port 13579 to 10.0.111.0/24 on eth0\n    firewall_rule \"myapplication\" do\n      port 13579\n      source '10.0.111.0/24'\n      direction 'in'\n      interface 'eth0'\n      action :allow\n    end\n\n    firewall \"ufw\" do\n      action :nothing\n    end\n\nChanges/Roadmap\n===============\n\n## Future\n\n* [COOK-688] create iptables providers for all resources\n* [COOK-689] create windows firewall providers for all resources\n* [COOK-690] create firewall_chain resource\n* [COOK-693] create pf firewall providers for all resources\n\n## 0.8.0\n\n* refactor all resources and providers into LWRPs\n* removed :reset action from firewall resource (couldn't find a good way to make it idempotent)\n* removed :logging action from firewall resource...just set desired level via the log_level attribute\n\n## 0.6.0\n\n* [COOK-725] Firewall cookbook firewall_rule LWRP needs to support logging attribute.\n* Firewall cookbook firewall LWRP needs to support :logging\n\n## 0.5.7\n\n* [COOK-696] Firewall cookbook firewall_rule LWRP needs to support interface\n* [COOK-697] Firewall cookbook firewall_rule LWRP needs to support the direction for the rules\n\n## 0.5.6\n\n* [COOK-695] Firewall cookbook firewall_rule LWRP needs to support destination port\n\n## 0.5.5\n\n* [COOK-709] fixed :nothing action for the 'firewall_rule' resource.\n\n## 0.5.4\n\n* [COOK-694] added :reject action to the 'firewall_rule' resource.\n\n## 0.5.3\n\n* [COOK-698] added :reset action to the 'firewall' resource.\n\n## 0.5.2\n\n* add missing 'requires' statements. fixes 'NameError: uninitialized constant' error.  \nthanks to Ernad Husremović for the fix.\n\n## 0.5.0\n\n* [COOK-686] create firewall and firewall_rule resources\n* [COOK-687] create UFW providers for all resources\n\nLicense and Author\n==================\n\nAuthor:: Seth Chisamore (<schisamo@opscode.com>)\n\nCopyright:: Copyright (c) 2011 Opscode, Inc.\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "maintainer": "Opscode, Inc.",
+  "maintainer_email": "cookbooks@opscode.com",
+  "license": "Apache 2.0",
+  "platforms": {
+  },
+  "dependencies": {
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.8.0"
+}

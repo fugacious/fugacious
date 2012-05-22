@@ -1,0 +1,12 @@
+<% title "This Secret Message" %>
+
+<%= render 'form' %>
+
+<%= content_tag :p, link_to("Back to List", messages_path) if current_user %>
+
+<br />
+
+<div class='info'>
+	<p>This is a tool designed to assist in sending sensitive information through email or other insecure messaging protocols.</p>
+	<p>One can send a username through email, save the password with us, and feel comfortable sharing user credentials without sacrificing security or usability.</p>
+</div>

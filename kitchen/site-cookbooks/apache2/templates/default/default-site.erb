@@ -1,0 +1,15 @@
+<VirtualHost *:80>
+        ServerAdmin <%= node[:apache][:contact] %>
+        DocumentRoot /var/www/
+
+        <Directory /var/www/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride None
+                Order allow,deny
+                allow from all
+                # This directive allows us to have apache2's default start page
+                # in /apache2-default/, but still have / go to the right place
+                #RedirectMatch ^/$ /apache2-default/
+        </Directory>
+
+</VirtualHost>

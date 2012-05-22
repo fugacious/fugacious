@@ -1,0 +1,7 @@
+<%= form_for @message do |f| %>
+  <%= f.error_messages %>
+  
+    <%= f.text_area :body, :class => 'message' %>
+
+    will self-destruct when viewed more than <%= f.text_field :max_views %> time(s) and after <%= f.text_field :hours %> hours <%= f.submit %>
+<% end %>
