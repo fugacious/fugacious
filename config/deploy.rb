@@ -1,12 +1,12 @@
 require "bundler/capistrano"
 default_run_options[:pty] = true
-set :rvm_ruby_string, '1.9.2@tmp'        # Or whatever env you want it to run in.
+set :rvm_ruby_string, '1.9.3@fugacio.us'        # Or whatever env you want it to run in.
 set :application, "fugacio.us"
 set :deploy_to, "/var/rails/#{application}" # I like this location
-set :domain, application
+set :domain, 'test.fugacio.us'
 set :keep_releases, 2
-set :repository,  "https://grevi.ch/svn/tmp/trunk"
-set :scm, :subversion
+set :repository,  "https://github.com/jgrevich/fugacious.git"
+set :scm, :git
 set :user, 'ubuntu'
 
 role :web, domain                          # Your HTTP server, Apache/etc
