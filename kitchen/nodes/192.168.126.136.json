@@ -9,9 +9,10 @@
         "passwordless": true
       }
     },
-	"run_list": ["role[bare-bones]", "role[web]"],
+	"run_list": ["role[bare-bones]", "role[web]", "role[web-rails]"],
     "rvm": {
 		"default_ruby": "ruby-1.9.3-p194",
+		"group_users": ["ubuntu"],
 		"installer_url": "http://get.rvm.io",
 		"rvmrc": { 
         "rvm_project_rvmrc":  1,
@@ -19,6 +20,10 @@
         "rvm_trust_rvmrcs_flag": 1
       }
     },
+	"rvm_passenger": {
+		"rvm_ruby": "ruby-1.9.3-p194",
+		"version": "3.0.12"
+	},
     "user": { 
       "name": "ubuntu",
       "ls_color": true
