@@ -9,7 +9,6 @@
         "passwordless": true
       }
     },
-	"passenger": { "version": "3.0.12" },
 	"run_list": ["role[bare-bones]", "role[web]", "role[web-rails]"],
     "rvm": {
 		"default_ruby": "ruby-1.9.3-p194",
@@ -21,6 +20,10 @@
         "rvm_trust_rvmrcs_flag": 1
       }
     },
+	"rvm_passenger": {
+		"rvm_ruby": "ruby-1.9.3-p194",
+		"version": "3.0.12"
+	},
     "user": { 
       "name": "ubuntu",
       "ls_color": true

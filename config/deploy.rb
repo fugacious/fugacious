@@ -1,6 +1,12 @@
+# Load RVM's capistrano plugin.    
+require "rvm/capistrano"
 require "bundler/capistrano"
+
+set :rvm_ruby_string, '1.9.2'
+set :rvm_type, :system  # Don't use system-wide RVM
+
 default_run_options[:pty] = true
-set :rvm_ruby_string, '1.9.3@fugacio.us'        # Or whatever env you want it to run in.
+set :rvm_ruby_string, '1.9.3'        # Or whatever env you want it to run in.
 set :application, "fugacio.us"
 set :deploy_to, "/var/rails/#{application}" # I like this location
 set :domain, '192.168.126.136'
@@ -27,5 +33,6 @@ namespace :deploy do
   end
 end
 
+before 'deploy:setup', 'rvm:install_rvm'
 after :deploy, 'deploy:chown'
 
