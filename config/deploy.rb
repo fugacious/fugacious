@@ -3,7 +3,7 @@ default_run_options[:pty] = true
 set :rvm_ruby_string, '1.9.3@fugacio.us'        # Or whatever env you want it to run in.
 set :application, "fugacio.us"
 set :deploy_to, "/var/rails/#{application}" # I like this location
-set :domain, 'test.fugacio.us'
+set :domain, '192.168.126.136'
 set :keep_releases, 2
 set :repository,  "https://github.com/jgrevich/fugacious.git"
 set :scm, :git
@@ -22,7 +22,7 @@ namespace :deploy do
 
   desc "chown & chmod to www-data"
   task :chown do
-    sudo "chown -R www-data:www-data #{deploy_to}"
+    sudo "chown -R ubuntu:www-data #{deploy_to}"
     sudo "chmod -R 775 #{deploy_to}"
   end
 end

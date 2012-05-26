@@ -199,6 +199,14 @@ template "#{node[:apache][:dir]}/sites-available/default" do
   notifies :restart, resources(:service => "apache2")
 end
 
+template "#{node[:apache][:dir]}/sites-available/default-ssl" do
+  source "default-site-ssl.erb"
+  owner node[:apache][:user]
+  group node[:apache][:group]
+  mode 0644
+  notifies :restart, resources(:service => "apache2")
+end
+
 include_recipe "apache2::mod_status"
 include_recipe "apache2::mod_alias"
 include_recipe "apache2::mod_auth_basic"
@@ -213,6 +221,7 @@ include_recipe "apache2::mod_env"
 include_recipe "apache2::mod_mime"
 include_recipe "apache2::mod_negotiation"
 include_recipe "apache2::mod_setenvif"
+include_recipe "apache2::mod_ssl"
 include_recipe "apache2::mod_log_config" if platform?("redhat", "centos", "scientific", "fedora", "suse", "arch")
 
 apache_site "default" if platform?("redhat", "centos", "scientific", "fedora")
