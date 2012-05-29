@@ -16,11 +16,11 @@ ActiveRecord::Schema.define(:version => 20120529041824) do
   create_table "messages", :force => true do |t|
     t.text     "body"
     t.integer  "views",                   :default => -1
-    t.integer  "max_views",               :default => 2
-    t.float    "hours",                   :default => 4.0
+    t.integer  "max_views",               :default => 4
+    t.float    "hours",                   :default => 20.0
     t.string   "token"
-    t.datetime "created_at",                               :null => false
-    t.datetime "updated_at",                               :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.string   "attachment_file_name"
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
