@@ -1,8 +1,8 @@
+require "bundler/capistrano"
 # Load RVM's capistrano plugin.    
 require "rvm/capistrano"
-require "bundler/capistrano"
 
-set :rvm_ruby_string, '1.9.2'
+set :rvm_ruby_string, '1.9.3'
 set :rvm_type, :system  # Use system-wide RVM
 
 default_run_options[:pty] = true
