@@ -57,6 +57,7 @@ group :assets do
   gem 'compass-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'therubyracer'
+  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'uglifier', '>= 1.0.3'
 end
 
