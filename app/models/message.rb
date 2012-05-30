@@ -9,7 +9,7 @@ class Message < ActiveRecord::Base
   end
   
   def make_token
-    self.token = ActiveSupport::SecureRandom.base64(23).tr('+/=', 'xyz')
+    self.token = SecureRandom.base64(23).tr('+/=', 'xyz')
   end
   
    HUMANIZED_ATTRIBUTES = {:body => "Secret message"}
