@@ -28,3 +28,80 @@ body { 	background-color:#36364D; color:#fff; }
 //
 // Example:
 // @linkColor: #ff0000;
+
+
+body { background-color:#36364D; font-family:"Merriweather", Verdana, Helvetica, Arial; font-size:14px; padding:34px 0; 
+
+	a, a:hover { cursor:hand; text-decoration:none; }
+	a img { border: none; }
+	.clear { clear: both; height: 0; overflow: hidden; }
+	h1,h2,h3,h4,h5,h6 { font-family:Merriweather; }
+	h2 { color:#8396AF; font-size:1.5em; font-weight:normal; 
+		a, a:hover { color:#8396AF; }}
+
+	ul { list-style-type:none;
+		li {}}
+		
+		p { font-family:"Merriweather", Verdana, Helvetica, Arial; line-height:1.4; }
+
+	#container { margin:0 auto; min-width:460px;}
+	
+	header#header { min-width:480px; text-align:center;
+		#fugus { margin-bottom:-56px;
+			#fugur {padding-right:80px;}
+			#fugu { margin-top:-40px; padding-left:118px;}	
+		}
+		#logo { min-width:480px; }
+		h2 { margin:-30px -34px 0 0; min-width:480px;}
+	}
+	
+	h3 { font-weight:normal; margin:0 0 13px; }
+
+	form { 
+		input[type="submit"] { float:right; }
+		input[type='text'] {margin:0 2px; padding:0; text-align:center; width:34px; }
+		textarea { height:1em; padding:2% 4%; width:92%; }
+		p { float:left; line-height:1.5; margin:0 0 10px; padding:0; }}
+
+	#info_panel { background-color:#5E5E71; margin:34px auto; padding:20px;
+		nav { margin:0 auto; padding:0 0 34px; text-align:center; width:500px;
+			ul.nav-tabs, ul.nav { border:0; margin:0;
+				li { float:left; font-size:1.7em; font-weight:400; margin:0 13px; 
+					a { border:0; color:#36364D; }
+					a:hover { color:#fff;} }}}
+		p { clear:both; font-size:1.3em; line-height:1.4; }	
+	
+	.nav > li > a:hover {background-color:#36364D; border:0; border-radius:2px;}
+	.nav-tabs > .active > a, .nav-tabs > .active > a:hover {background-color:inherit; color:#fff;}
+	}
+
+	footer { padding:20px 0; text-align:center; }
+
+	#flash_notice, #flash_error, #flash_alert { padding: 5px 8px; margin: 10px 0; }
+	#flash_notice { background-color: #CFC; border: solid 1px #6C6; }
+	#flash_error, #flash_alert { background-color: #FCC; border: solid 1px #C66; }
+	.fieldWithErrors { display:inline; }
+	.error_messages { width: 400px; border: 2px solid #CF0000; padding: 0px; padding-bottom: 12px; margin-bottom: 20px; font-size: 12px; }
+	.error_messages h2 { text-align: left; font-weight: bold; padding: 5px 10px; font-size: 12px; margin: 0; background-color: #c00; color: #fff; }
+	.error_messages p { margin: 8px 10px; }
+	.error_messages ul { margin: 0; }
+	.error, .alert, .notice, .success, .info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
+	.error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
+	.notice {background:#fff6bf;color:#514721;border-color:#ffd324;}
+	.success {background:#e6efc2;color:#264409;border-color:#c6d880;}
+	.info {background:#d5edf8;color:#205791;border-color:#92cae4;}
+	.error a, .alert a {color:#8a1f11;}
+	.notice a {color:#514721;}
+	.success a {color:#264409;}
+	.info a {color:#205791;}
+	.message { border:1px solid #ccc; font-size:1.4em; display:inline-block;}
+
+
+}
+
+@media all and (max-width: 767px) {
+
+	#container { min-width:460px; }
+
+}
+
