@@ -9,13 +9,11 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 	h1,h2,h3,h4,h5,h6 { font-family:Merriweather; }
 	h2 { color:#8396AF; font-size:1.5em; font-weight:normal; 
 		a, a:hover { color:#8396AF; }}
-
 	ul { list-style-type:none;
 		li {}}
-		
-		p { font-family:"Merriweather", Verdana, Helvetica, Arial; line-height:1.4; }
-
+	p { font-family:"Merriweather", Verdana, Helvetica, Arial; line-height:1.4; }
 	#container { background-color:#000; margin:0 auto; min-width:460px;}
+	#fugus, #large_kelp, #small_kelp {}
 	
 	header#header { min-width:480px; text-align:center;
 		#fugus { margin-bottom:-56px;
@@ -44,9 +42,8 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 				li.active {
 					a { color:#fff;}}}}
 		p { clear:both; font-size:1.3em; line-height:1.4; margin:0 0 1.4em; }}
-
-	footer { padding:34px 0; margin:0 0 auto; text-align:center; 
-		p { color:#8396AF; }
+	footer { padding:34px 0; margin:0 0 auto;
+		p { color:#8396AF; text-align:center; }
 	}
 
 	#flash_notice, #flash_error, #flash_alert { padding: 5px 8px; margin: 10px 0; }
