@@ -18,3 +18,16 @@
 #
 
 include_recipe "users::sysadmins"
+
+package "tar" do
+  action :install
+end
+
+directory "/var/rails/fugacio.us" do
+  owner "ubuntu"
+  group "www-data"
+  mode "0755"
+  action :create
+  recursive true
+end
+
