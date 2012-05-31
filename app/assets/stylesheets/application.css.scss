@@ -2,10 +2,7 @@
 *= require_self
 *= require_tree .
 */
-
-
-body { background-color:#36364D; font-family:"Merriweather", Verdana, Helvetica, Arial; font-size:14px; padding:34px 0; 
-
+body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, Arial; font-size:14px; padding:120px 0 180px; 
 	a, a:hover { color:#8396AF; cursor:hand; text-decoration:none; }
 	a img { border: none; }
 	.clear { clear: both; height: 0; overflow: hidden; }
@@ -18,7 +15,7 @@ body { background-color:#36364D; font-family:"Merriweather", Verdana, Helvetica,
 		
 		p { font-family:"Merriweather", Verdana, Helvetica, Arial; line-height:1.4; }
 
-	#container { margin:0 auto; min-width:460px;}
+	#container { background-color:#000; margin:0 auto; min-width:460px;}
 	
 	header#header { min-width:480px; text-align:center;
 		#fugus { margin-bottom:-56px;
@@ -32,9 +29,10 @@ body { background-color:#36364D; font-family:"Merriweather", Verdana, Helvetica,
 	h3 { font-weight:normal; margin:0 0 13px; }
 
 	form { 
-		input[type="submit"] { background-color:#8396AF; border:0; color:#fff; float:right; padding:4px 20px; }
-		input[type='text'] {margin:0 2px; padding:0; text-align:center; width:34px; }
-		textarea { height:1em; margin:0 0 20px; padding:2% 4%; width:92%; }
+		input,textarea { font-size:1.4em; }
+		input[type="submit"] { background-color:#8396AF; border:0; color:#fff; float:right; padding:2% 4%; }
+		input[type='text'] { margin:0 2px; padding:2% 4%; text-align:center; width:34px; }
+		textarea { height:1em; padding:2% 4%; width:92%; }
 		p { float:left; line-height:1.5; margin:0 0 10px; padding:0; }}
 
 	#info_panel { background-color:#29293A; margin:34px auto 0; padding:20px;
@@ -47,7 +45,7 @@ body { background-color:#36364D; font-family:"Merriweather", Verdana, Helvetica,
 					a { color:#fff;}}}}
 		p { clear:both; font-size:1.3em; line-height:1.4; margin:0 0 1.4em; }}
 
-	footer { padding:20px 0; text-align:center; 
+	footer { padding:34px 0; margin:0 0 auto; text-align:center; 
 		p { color:#8396AF; }
 	}
 
@@ -71,10 +69,10 @@ body { background-color:#36364D; font-family:"Merriweather", Verdana, Helvetica,
 	.success a {color:#264409;}
 	.info a {color:#205791;}
 
-	.message { border:1px solid #ccc; font-size:1.4em; display:inline-block;}
+	.message { border:1px solid #ccc; border-radius:3px; margin:0; padding:1em 2em 0.8em;
+		 p { line-height:1; margin:0; }}
 
 
 }
-
 
 /* rest of file omitted */
