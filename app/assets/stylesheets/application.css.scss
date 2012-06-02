@@ -2,7 +2,7 @@
 *= require_self
 *= require_tree .
 */
-body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, Arial; font-size:14px; padding:120px 0 180px; 
+body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, Arial; font-size:14px; 
 	a, a:hover { color:#8396AF; cursor:hand; text-decoration:none; }
 	a img { border: none; }
 	.clear { clear: both; height: 0; overflow: hidden; }
@@ -12,7 +12,50 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 	ul { list-style-type:none;
 		li {}}
 	p { font-family:"Merriweather", Verdana, Helvetica, Arial; line-height:1.4; }
-	#container { background-color:#000; margin:0 auto; min-width:460px;}
+	#ocean { min-width:460px; position:relative; z-index:1;
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(lighten(#36364D, 15%)), to(darken(#36364D, 5%)));
+		background: -webkit-linear-gradient(top, lighten(#36364D, 5%), darken(#36364D, 6%));
+	    background: -moz-linear-gradient(top, lighten(#36364D, 5%), darken(#36364D, 6%));
+	    background: -ms-linear-gradient(top, lighten(#36364D, 5%), darken(#36364D, 6%));
+		background: -o-linear-gradient(top, lighten(#36364D, 5%), darken(#36364D, 6%));
+	
+	
+	
+		-webkit-transition: background 420ms ease-in 2s; 
+		-moz-transition: background 420ms ease-in 2s;
+		-o-transition: background 420ms ease-in 2s;
+		transition: background 420ms ease-in 2s;
+
+		-webkit-transition-property: background;
+		-webkit-transition-duration: 420ms;
+		-webkit-transition-timing-function: ease-in;
+		-webkit-transition-delay: 100ms;
+
+		-moz-transition-property: background;
+		-moz-transition-duration: 420ms;
+		-moz-transition-timing-function: ease-in;
+		-moz-transition-delay: 100ms;
+
+		-o-transition-property: background;
+		-o-transition-duration: 420ms;
+		-o-transition-timing-function: ease-in;
+		-o-transition-delay: 100ms;
+
+		transition-property: background;
+		transition-duration: 420ms;
+		transition-timing-function: ease-in;
+		transition-delay: 100ms;
+		
+		.kelp { position:absolute; z-index:2; }
+		#kelp1 { bottom:-22px; right:0; }
+		#kelp2a { bottom:-8px; left:0; }
+		#kelp2b { bottom:-42px; left:20%; }
+		#kelp2c { bottom:-42px; right:33%; }
+		#kelp2d { bottom:-32px; right:28%; width:48px; }
+		#kelp2e { bottom:-22px; right:0; }
+		#kelp3 { bottom:-22px; right:0; }
+		.container { padding:120px 0 34px; position:relative; }
+	}
 	#fugus, #large_kelp, #small_kelp {}
 	
 	header#header { min-width:480px; text-align:center;
@@ -26,14 +69,14 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 	
 	h3 { font-weight:normal; margin:0 0 13px; }
 
-	form { 
+	form { position:relative; z-index:10;
 		input,textarea { font-size:1.4em; }
 		input[type="submit"] { background-color:#8396AF; border:0; color:#fff; float:right; padding:2% 4%; }
 		input[type='text'] { margin:0 2px; padding:2% 4%; text-align:center; width:34px; }
 		textarea { height:1em; padding:2% 4%; width:92%; }
 		p { float:left; line-height:1.5; margin:0 0 10px; padding:0; }}
 
-	#info_panel { background-color:#29293A; margin:34px auto 0; padding:20px;
+	#info_panel { background-color:#29293A; margin:0 auto; padding:20px;  position:relative; z-index:10;
 		nav { margin:0 auto; padding:0 0 34px; text-align:center; width:500px;
 			ul.nav-tabs, ul.nav { border:0; margin:0;
 				li { float:left; font-size:1.7em; font-weight:400; margin:0 13px; 
@@ -72,4 +115,46 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 
 }
 
+
+body:hover {
+	#ocean { 
+		
+		
+		
+		
+		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(lighten(#36364D, 15%)), to(#36364D));
+		background: -webkit-linear-gradient(top, lighten(#36364D, 15%), #36364D);
+	    background: -moz-linear-gradient(top, lighten(#36364D, 15%), #36364D);
+	    background: -ms-linear-gradient(top, lighten(#36364D, 15%), #36364D);
+		background: -o-linear-gradient(top, lighten(#36364D, 15%), #36364D);
+
+		
+		
+		-webkit-transition: background 420ms ease-in 2s; 
+		-moz-transition: background 420ms ease-in 2s;
+		-o-transition: background 420ms ease-in 2s;
+		transition: background 420ms ease-in 2s;
+
+		-webkit-transition-property: background;
+		-webkit-transition-duration: 420ms;
+		-webkit-transition-timing-function: ease-in;
+		-webkit-transition-delay: 100ms;
+
+		-moz-transition-property: background;
+		-moz-transition-duration: 420ms;
+		-moz-transition-timing-function: ease-in;
+		-moz-transition-delay: 100ms;
+
+		-o-transition-property: background;
+		-o-transition-duration: 420ms;
+		-o-transition-timing-function: ease-in;
+		-o-transition-delay: 100ms;
+
+		transition-property: background;
+		transition-duration: 420ms;
+		transition-timing-function: ease-in;
+		transition-delay: 100ms;
+		
+		
+		}}
 /* rest of file omitted */

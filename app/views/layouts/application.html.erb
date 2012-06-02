@@ -20,25 +20,34 @@
 		<link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
 	</head>
 	<body>
-		
-		<div class="container">
+		<div id="ocean">
+			<div class="container">
+				<%= image_tag('kelp1.svg', :id => :kelp1, :class => :kelp ) %>
+				<%= image_tag('kelp2.svg', :id => :kelp2a, :class => :kelp ) %>
+				<%= image_tag('kelp2.svg', :id => :kelp2b, :class => :kelp ) %>
+				<%= image_tag('kelp2.svg', :id => :kelp2c, :class => :kelp ) %>
+				<%= image_tag('kelp2.svg', :id => :kelp2d, :class => :kelp ) %>
+				<%= image_tag('kelp2.svg', :id => :kelp2e, :class => :kelp ) %>
+				
+				
 			
-			<%= link_to image_tag('fork_me.png'), 'https://github.com/jgrevich/fugacious', :style => 'position: absolute; top: 0; right: 0; border: 0;', :title => "Fork me on GitHub"  %>
+				<%= link_to image_tag('fork_me.png'), 'https://github.com/jgrevich/fugacious', :style => 'position: absolute; top: 0; right: 0; border: 0;', :title => "Fork me on GitHub"  %>
 			
-			<header id='header'>
-				<div id="fugus">
-					<%= link_to image_tag('fugur.svg', :id => :fugur ), root_url %>
-					<%= link_to image_tag('fugu.svg', :id => :fugu ), root_url %>					
-				</div>
-				<%= link_to image_tag('logo.svg'), root_url %>
-				<h2><%= link_to raw('open source short &nbsp;&nbsp;&nbsp;&nbsp; term secure messaging'), root_url %></h2>
-			</header>
+				<header id='header'>
+					<div id="fugus">
+						<%= link_to image_tag('fugur.svg', :id => :fugur ), root_url %>
+						<%= link_to image_tag('fugu.svg', :id => :fugu ), root_url %>					
+					</div>
+					<%= link_to image_tag('logo.svg'), root_url %>
+					<h2><%= link_to raw('open source short &nbsp;&nbsp;&nbsp;&nbsp; term secure messaging'), root_url %></h2>
+				</header>
 
-			<div class="content">
-				<%= yield %>
-			</div><!--/content-->
+				<div class="content">
+					<%= yield %>
+				</div><!--/content-->
 
-		</div> <!-- /container -->
+			</div> <!-- /container -->
+		</div>
 
 		<section id='info_panel'>
 			<div class='container'>
