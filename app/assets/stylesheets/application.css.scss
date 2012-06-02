@@ -99,7 +99,7 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 		input,textarea { font-size:1.4em; }
 		input[type="submit"] { background-color:#8396AF; border:0; color:#fff; float:right; padding:2% 4%; }
 		input[type='text'] { margin:0 2px; padding:2% 4%; text-align:center; width:34px; }
-		textarea { height:1em; padding:2% 4%; width:92%; }
+		textarea { height:1em; line-height:1.5; padding:2% 4%; width:92%; }
 		.formp { float:left; line-height:1.5; margin:0 0 10px; padding:0; }}
 
 	#info_panel { background-color:#29293A; margin:0 auto; padding:20px;  position:relative; z-index:10;
