@@ -2,7 +2,7 @@
 *= require_self
 *= require_tree .
 */
-body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, Arial; font-size:14px; 
+body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, Arial; font-size:14px; min-width:320px; 
 	a, a:hover { color:#8396AF; cursor:hand; text-decoration:none; }
 	a img { border: none; }
 	.clear { clear: both; height: 0; overflow: hidden; }
