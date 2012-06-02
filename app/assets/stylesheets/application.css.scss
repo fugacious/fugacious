@@ -13,13 +13,8 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 		li {}}
 	p { font-family:"Merriweather", Verdana, Helvetica, Arial; line-height:1.4; }
 	#ocean { min-width:460px; position:relative; z-index:1;
-		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(lighten(#36364D, 15%)), to(darken(#36364D, 5%)));
-		background: -webkit-linear-gradient(top, lighten(#36364D, 5%), darken(#36364D, 6%));
-	    background: -moz-linear-gradient(top, lighten(#36364D, 5%), darken(#36364D, 6%));
-	    background: -ms-linear-gradient(top, lighten(#36364D, 5%), darken(#36364D, 6%));
-		background: -o-linear-gradient(top, lighten(#36364D, 5%), darken(#36364D, 6%));
-	
-	
+		background:inherit;
+
 	
 		-webkit-transition: background 420ms ease-in 2s; 
 		-moz-transition: background 420ms ease-in 2s;
@@ -47,24 +42,52 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 		transition-delay: 100ms;
 		
 		.kelp { position:absolute; z-index:2; }
-		#kelp1 { bottom:-22px; right:0; }
-		#kelp2a { bottom:-8px; left:0; }
-		#kelp2b { bottom:-42px; left:20%; }
-		#kelp2c { bottom:-42px; right:33%; }
-		#kelp2d { bottom:-32px; right:28%; width:48px; }
-		#kelp2e { bottom:-22px; right:0; }
-		#kelp3 { bottom:-22px; right:0; }
-		.container { padding:120px 0 34px; position:relative; }
+		#kelp1 { bottom:-22px; right:-7%; z-index:9; }
+		#kelp2a { bottom:-8px; left:-11%; z-index:9; }
+		#kelp2b { bottom:-42px; left:20%; z-index:9; }
+		#kelp2c { bottom:-42px; right:33%; z-index:9; }
+		#kelp2d { bottom:-32px; right:28%; width:48px; z-index:9; }
+		#kelp2e { bottom:-22px; opacity:0.7; right:19%; width:60px; z-index:9; }
+		#kelp3 { bottom:-22px; left:3%; opacity:0.5; z-index:2; }
+		#kelp4 { bottom:-40px; left:-11%; z-index:2; }
+		#kelp5 { bottom:-22px; left:40%; opacity:0.2; z-index:2; }
+		#kelp6 { bottom:-88px; right:9%; opacity:0.2; z-index:1; }
+
+		#fugu1 { left:-9%; top:18%; width:30px; z-index:2;
+	        -moz-transform: scaleX(-1);
+	        -o-transform: scaleX(-1);
+	        -webkit-transform: scaleX(-1);
+	        transform: scaleX(-1);
+	        filter: FlipH;
+	        -ms-filter: "FlipH";
+		}
+		#fugu2 { left:13%; opacity:0.8; top:48%; z-index:5; 
+			transform: rotate(23deg);
+			-ms-transform: rotate(23deg); 
+			-webkit-transform: rotate(23deg); 
+			-o-transform: rotate(23deg); 
+			-moz-transform: rotate(23deg);
+		
+		}
+		#fugu3 { left:24%; opacity:0.6; top:93%; z-index:3; }
+		#fugu4 { right:16%; top:49%; width:28px; z-index:5; }
+		#fugu5 { right:-8%;  top:70%; z-index:3; 
+	        -moz-transform: scaleX(-1);
+	        -o-transform: scaleX(-1);
+	        -webkit-transform: scaleX(-1);
+	        transform: scaleX(-1);
+	        filter: FlipH;
+	        -ms-filter: "FlipH";
+		}
+
+
+		.container { padding:156px 0 34px; position:relative; }
 	}
 	#fugus, #large_kelp, #small_kelp {}
 	
-	header#header { min-width:480px; text-align:center;
-		#fugus { margin-bottom:-56px;
-			#fugur {padding-right:80px;}
-			#fugu { margin-top:-40px; padding-left:118px;}	
-		}
+	header#header { min-width:480px; position:relative; text-align:center; z-index:10;
 		#logo { min-width:480px; }
-		h2 { margin:-30px -34px 0 0; min-width:480px;}
+		h2 { margin:-30px -28px 0 0; min-width:480px;}
 	}
 	
 	h3 { font-weight:normal; margin:0 0 13px; }
