@@ -81,18 +81,21 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 		}
 
 
-		.container { padding:156px 0 34px; position:relative; }
+		.container { padding:96px 0 34px; position:relative; }
 	}
 	#fugus, #large_kelp, #small_kelp {}
 	
-	header#header { min-width:480px; position:relative; text-align:center; z-index:10;
-		#logo { min-width:480px; }
-		h2 { margin:-30px -28px 0 0; min-width:480px;}
+	header#header { margin:0 0 0 48px; min-width:480px; position:relative; text-align:center; z-index:10;
+		#logo { display:block; min-width:480px; }
+		h1 { color:#fff; font-family:'Parisienne', cursive; font-size:7em; font-weight:normal; margin:-36px 0 0 0;
+			a { color:#fff; }
+		}
+		h2 { margin:-30px 0 0 -72px; min-width:480px;}
 	}
 	
 	h3 { font-weight:normal; margin:0 0 13px; }
 
-	form { position:relative; z-index:10;
+	form { margin:48px 0 0px; position:relative; z-index:10;
 		input,textarea { font-size:1.4em; }
 		input[type="submit"] { background-color:#8396AF; border:0; color:#fff; float:right; padding:2% 4%; }
 		input[type='text'] { margin:0 2px; padding:2% 4%; text-align:center; width:34px; }
