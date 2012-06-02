@@ -100,7 +100,7 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 		input[type="submit"] { background-color:#8396AF; border:0; color:#fff; float:right; padding:2% 4%; }
 		input[type='text'] { margin:0 2px; padding:2% 4%; text-align:center; width:34px; }
 		textarea { height:1em; padding:2% 4%; width:92%; }
-		p { float:left; line-height:1.5; margin:0 0 10px; padding:0; }}
+		.formp { float:left; line-height:1.5; margin:0 0 10px; padding:0; }}
 
 	#info_panel { background-color:#29293A; margin:0 auto; padding:20px;  position:relative; z-index:10;
 		nav { margin:0 auto; padding:0 0 34px; text-align:center; width:500px;
@@ -120,10 +120,10 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 	#flash_error, #flash_alert { background-color: #FCC; border: solid 1px #C66; }
 	.fieldWithErrors { display:inline; }
 
-	.error_messages { width: 400px; border: 2px solid #CF0000; padding: 0px; padding-bottom: 12px; margin-bottom: 20px; font-size: 12px; }
-	.error_messages h2 { text-align: left; font-weight: bold; padding: 5px 10px; font-size: 12px; margin: 0; background-color: #c00; color: #fff; }
-	.error_messages p { margin: 8px 10px; }
-	.error_messages ul { margin: 0; }
+	.error_messages { background-color:#fbe3e4; border-radius: 3px; margin:0 0 33px; padding: 0px; }
+	.error_messages h2 { color:#aa0000; font-size: 1.8em; font-weight:bold; margin: 0; padding: 5px 10px 0;  }
+	.error_messages p { color:#29293A; margin:0; padding: 0 10px 8px; }
+	.error_messages ul { color:#29293A; list-style-type:disc; margin:0; padding: 8px 10px 8px 30px; }
 
 	.error, .alert, .notice, .success, .info {padding:0.8em;margin-bottom:1em;border:2px solid #ddd;}
 	.error, .alert {background:#fbe3e4;color:#8a1f11;border-color:#fbc2c4;}
@@ -135,8 +135,10 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 	.success a {color:#264409;}
 	.info a {color:#205791;}
 
-	.message { border:1px solid #ccc; border-radius:3px; margin:0; padding:1em 2em 0.8em;
-		 p { line-height:1; margin:0; }}
+	#message { margin:48px 0 0; position:relative; z-index:10;
+		.message { background-color:#fff; border:1px solid #ccc; border-radius:3px; color:#000; font-size:1.4em; margin:0 0 12px; padding:2% 4%; text-align:center; width:92%;
+			 p { background-color:#CFC; float:none; sline-height:1; margin:0; }
+			 ul { background-color:#CFC; }}}
 
 
 }

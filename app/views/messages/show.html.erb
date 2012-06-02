@@ -1,17 +1,19 @@
 <% title "The Secret Message" %>
 
-<%= content_tag :p, "This message has beed deleted from our records.  You must copy the message elsewhere if you wish to keep it any longer.", :class => 'error' if @remaining_views == 0 %>
+<article id='message'>
+	<%= content_tag :p, "This message has beed deleted from our records.  You must copy the message elsewhere if you wish to keep it any longer.", :class => 'error' if @remaining_views == 0 %>
 
-<%= content_tag :p, @message.body , :class => 'message notice' %>
+	<%= content_tag :p, @message.body , :class => 'message' %>
 
-<%= content_tag :p, raw("This message will be destroyed in <strong>#{@time_left.round(3)}</strong> hour#{'s' if @time_left != 1.0} or after <strong>#{@remaining_views}</strong> more view#{'s' unless @remaining_views == 1}. For your own security, please #{link_to "destroy", @message.token, :confirm => 'Are you sure?', :method => :delete unless @remaining_views == 0 } this message once it is no longer needed.") %>
+	<%= content_tag :p, raw("This message will be destroyed in <strong>#{@time_left.round(3)}</strong> hour#{'s' if @time_left != 1.0} or after <strong>#{@remaining_views}</strong> more view#{'s' unless @remaining_views == 1}. For your own security, please #{link_to "destroy", @message.token, :confirm => 'Are you sure?', :method => :delete unless @remaining_views == 0 } this message once it is no longer needed.") %>
 
-<%= content_tag :p, raw("You can share this message with the following link: #{link_to @link}") unless @remaining_views == 0 %>
+	<%= content_tag :p, raw("You can share this message with the following link: #{link_to @link}") unless @remaining_views == 0 %>
 
-<p>
-	<% unless @remaining_views == 0 %>
-		<%= mail_to "", 'Email', :body => "You can view it using the following link: #{@link}. The message is set to be automatically destroyed at #{@message.created_at + @message.hours.hours}", :subject => "Someone is sending you a secret.  You have around #{@time_left} hours to view it." %> | 
-		<%= link_to "Destroy", @message.token, :confirm => 'Are you sure?', :method => :delete unless @remaining_views == 0 %> | 
-	<% end -%>
-	<%= link_to "New Message", new_message_path %>
-</p>
+	<p>
+		<% unless @remaining_views == 0 %>
+			<%= mail_to "", 'Email', :body => "You can view it using the following link: #{@link}. The message is set to be automatically destroyed at #{@message.created_at + @message.hours.hours}", :subject => "Someone is sending you a secret.  You have around #{@time_left} hours to view it." %> | 
+			<%= link_to "Destroy", @message.token, :confirm => 'Are you sure?', :method => :delete unless @remaining_views == 0 %> | 
+		<% end -%>
+		<%= link_to "New Message", new_message_path %>
+	</p>
+</article>

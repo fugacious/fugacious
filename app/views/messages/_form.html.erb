@@ -1,11 +1,10 @@
 <%= form_for @message, :class => :clearfix do |f| %>
-  <%= f.error_messages %>
-
+  	
+	<%= f.error_messages %>
 	<%- model_class = @message.class -%>
-	
 	<h3><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human, :default => "Your secret message") %></h3>
-  
     <%= f.text_area :body %>
 
-    <p>will self-destruct when viewed more than <%= f.text_field :max_views %> time(s) and&nbsp;after&nbsp;<%= f.text_field :hours, :value => 20 %>&nbsp;hours</p> <%= f.submit %>
+    <p class='formp'>will self-destruct when viewed more than <%= f.text_field :max_views %> time(s) and&nbsp;after&nbsp;<%= f.text_field :hours, :value => 20 %>&nbsp;hours</p>
+	<%= f.submit %>
 <% end %>
