@@ -83,6 +83,63 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 
 		.container { padding:96px 0 34px; position:relative; }
 	}
+	
+	.formp {display:none;
+		
+		-webkit-transition: display 420ms ease-in 2s; 
+		-moz-transition: display 420ms ease-in 2s;
+		-o-transition: display 420ms ease-in 2s;
+		transition: display 420ms ease-in 2s;
+
+		-webkit-transition-property: display;
+		-webkit-transition-duration: 420ms;
+		-webkit-transition-timing-function: ease-in;
+		-webkit-transition-delay: 100ms;
+
+		-moz-transition-property: display;
+		-moz-transition-duration: 420ms;
+		-moz-transition-timing-function: ease-in;
+		-moz-transition-delay: 100ms;
+
+		-o-transition-property: display;
+		-o-transition-duration: 420ms;
+		-o-transition-timing-function: ease-in;
+		-o-transition-delay: 100ms;
+
+		transition-property: display;
+		transition-duration: 420ms;
+		transition-timing-function: ease-in;
+		transition-delay: 100ms;
+		
+		
+	}
+	input[type="submit"] {display:none;
+		-webkit-transition: display 420ms ease-in 2s; 
+		-moz-transition: display 420ms ease-in 2s;
+		-o-transition: display 420ms ease-in 2s;
+		transition: display 420ms ease-in 2s;
+
+		-webkit-transition-property: display;
+		-webkit-transition-duration: 420ms;
+		-webkit-transition-timing-function: ease-in;
+		-webkit-transition-delay: 100ms;
+
+		-moz-transition-property: display;
+		-moz-transition-duration: 420ms;
+		-moz-transition-timing-function: ease-in;
+		-moz-transition-delay: 100ms;
+
+		-o-transition-property: display;
+		-o-transition-duration: 420ms;
+		-o-transition-timing-function: ease-in;
+		-o-transition-delay: 100ms;
+
+		transition-property: display;
+		transition-duration: 420ms;
+		transition-timing-function: ease-in;
+		transition-delay: 100ms;
+	}
+	
 	#fugus, #large_kelp, #small_kelp {}
 	
 	header#header { margin:0 0 0 48px; min-width:480px; position:relative; text-align:center; z-index:10;
@@ -98,9 +155,9 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 	form { margin:48px 0 0px; position:relative; z-index:10;
 		input,textarea { font-size:1.4em; }
 		input[type="submit"] { background-color:#8396AF; border:0; color:#fff; float:right; padding:2% 4%; }
-		input[type='text'] { margin:0 2px; padding:2% 4%; text-align:center; width:34px; }
+		input[type='text'] { margin:0; padding:2% 4%; text-align:center; width:34px; }
 		textarea { height:1em; line-height:1.5; padding:2% 4%; width:92%; }
-		.formp { float:left; line-height:1.5; margin:0 0 10px; padding:0; }}
+		.formp { line-height:1.5; margin:0 0 10px; padding:0; }}
 
 	#info_panel { background-color:#29293A; margin:0 auto; padding:20px;  position:relative; z-index:10;
 		nav { margin:0 auto; padding:0 0 34px; text-align:center; width:500px;
@@ -146,10 +203,6 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 
 body:hover {
 	#ocean { 
-		
-		
-		
-		
 		background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(lighten(#36364D, 15%)), to(#36364D));
 		background: -webkit-linear-gradient(top, lighten(#36364D, 15%), #36364D);
 	    background: -moz-linear-gradient(top, lighten(#36364D, 15%), #36364D);
@@ -182,7 +235,62 @@ body:hover {
 		transition-duration: 420ms;
 		transition-timing-function: ease-in;
 		transition-delay: 100ms;
+		}
 		
+		.formp {display:block;
 		
-		}}
+			-webkit-transition: display 420ms ease-in 2s; 
+			-moz-transition: display 420ms ease-in 2s;
+			-o-transition: display 420ms ease-in 2s;
+			transition: display 420ms ease-in 2s;
+
+			-webkit-transition-property: display;
+			-webkit-transition-duration: 420ms;
+			-webkit-transition-timing-function: ease-in;
+			-webkit-transition-delay: 100ms;
+
+			-moz-transition-property: display;
+			-moz-transition-duration: 420ms;
+			-moz-transition-timing-function: ease-in;
+			-moz-transition-delay: 100ms;
+
+			-o-transition-property: display;
+			-o-transition-duration: 420ms;
+			-o-transition-timing-function: ease-in;
+			-o-transition-delay: 100ms;
+
+			transition-property: display;
+			transition-duration: 420ms;
+			transition-timing-function: ease-in;
+			transition-delay: 100ms;
+		
+		}
+		input[type="submit"] {display:inline;
+			-webkit-transition: display 420ms ease-in 2s; 
+			-moz-transition: display 420ms ease-in 2s;
+			-o-transition: display 420ms ease-in 2s;
+			transition: display 420ms ease-in 2s;
+
+			-webkit-transition-property: display;
+			-webkit-transition-duration: 420ms;
+			-webkit-transition-timing-function: ease-in;
+			-webkit-transition-delay: 100ms;
+
+			-moz-transition-property: display;
+			-moz-transition-duration: 420ms;
+			-moz-transition-timing-function: ease-in;
+			-moz-transition-delay: 100ms;
+
+			-o-transition-property: display;
+			-o-transition-duration: 420ms;
+			-o-transition-timing-function: ease-in;
+			-o-transition-delay: 100ms;
+
+			transition-property: display;
+			transition-duration: 420ms;
+			transition-timing-function: ease-in;
+			transition-delay: 100ms;
+		}
+		
+	}
 /* rest of file omitted */
