@@ -2,18 +2,50 @@
 *= require_self
 *= require_tree .
 */
-body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, Arial; font-size:14px; min-width:320px; 
+
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+
+body { 	background-color:darken(#36364D, 5%); color:#fff; line-height:1.5; padding-bottom:7em; font-family:"Merriweather", Verdana, Helvetica, Arial; 
+
+	-webkit-transition: background-color 200ms ease-in 2s; 
+	-moz-transition: background-color 200ms ease-in 2s;
+	-o-transition: background-color 200ms ease-in 2s;
+	transition: background-color 200ms ease-in 2s;
+
+	-webkit-transition-property: background-color;
+	-webkit-transition-duration: 200ms;
+	-webkit-transition-timing-function: ease-in;
+	-webkit-transition-delay: 0;
+
+	-moz-transition-property: background-color;
+	-moz-transition-duration: 200ms;
+	-moz-transition-timing-function: ease-in;
+	-moz-transition-delay: 0;
+
+	-o-transition-property: background-color;
+	-o-transition-duration: 200ms;
+	-o-transition-timing-function: ease-in;
+	-o-transition-delay: 0;
+
+	transition-property: background-color;
+	transition-duration: 200ms;
+	transition-timing-function: ease-in;
+	transition-delay: 0;
+
 	a, a:hover { color:#8396AF; cursor:hand; text-decoration:none; }
 	a img { border: none; }
 	.clear { clear: both; height: 0; overflow: hidden; }
-	h1,h2,h3,h4,h5,h6 { font-family:Merriweather; }
+	h1,h2,h3,h4,h5,h6 { font-family:Merriweather; line-height: 1.5; }
+	
 	h2 { color:#8396AF; font-size:1.5em; font-weight:normal; 
 		a, a:hover { color:#8396AF; }}
 	ul { list-style-type:none;
 		li {}}
 	p { font-family:"Merriweather", Verdana, Helvetica, Arial; line-height:1.4; }
-	#ocean { min-width:460px; position:relative; z-index:1;
-		background:inherit;
+	
+	#ocean { position:relative; z-index:1; overflow:hidden; background:inherit; padding-top:6.66em; padding-bottom:2em;
 
 	
 		-webkit-transition: background 420ms ease-in 2s; 
@@ -41,6 +73,7 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 		transition-timing-function: ease-in;
 		transition-delay: 100ms;
 		
+		#github { position: absolute; top: 0; right: 0; border: 0; z-index:100; }
 		.kelp { position:absolute; z-index:2; }
 		#kelp1 { bottom:-22px; right:-7%; z-index:9; }
 		#kelp2a { bottom:-8px; left:-11%; z-index:9; }
@@ -80,94 +113,52 @@ body { 	background-color:#000; font-family:"Merriweather", Verdana, Helvetica, A
 	        -ms-filter: "FlipH";
 		}
 
-
-		.container { padding:96px 0 34px; position:relative; }
 	}
 	
-	.formp {display:none;
-		
-		-webkit-transition: display 420ms ease-in 2s; 
-		-moz-transition: display 420ms ease-in 2s;
-		-o-transition: display 420ms ease-in 2s;
-		transition: display 420ms ease-in 2s;
-
-		-webkit-transition-property: display;
-		-webkit-transition-duration: 420ms;
-		-webkit-transition-timing-function: ease-in;
-		-webkit-transition-delay: 100ms;
-
-		-moz-transition-property: display;
-		-moz-transition-duration: 420ms;
-		-moz-transition-timing-function: ease-in;
-		-moz-transition-delay: 100ms;
-
-		-o-transition-property: display;
-		-o-transition-duration: 420ms;
-		-o-transition-timing-function: ease-in;
-		-o-transition-delay: 100ms;
-
-		transition-property: display;
-		transition-duration: 420ms;
-		transition-timing-function: ease-in;
-		transition-delay: 100ms;
-		
-		
-	}
-	input[type="submit"] {display:none;
-		-webkit-transition: display 420ms ease-in 2s; 
-		-moz-transition: display 420ms ease-in 2s;
-		-o-transition: display 420ms ease-in 2s;
-		transition: display 420ms ease-in 2s;
-
-		-webkit-transition-property: display;
-		-webkit-transition-duration: 420ms;
-		-webkit-transition-timing-function: ease-in;
-		-webkit-transition-delay: 100ms;
-
-		-moz-transition-property: display;
-		-moz-transition-duration: 420ms;
-		-moz-transition-timing-function: ease-in;
-		-moz-transition-delay: 100ms;
-
-		-o-transition-property: display;
-		-o-transition-duration: 420ms;
-		-o-transition-timing-function: ease-in;
-		-o-transition-delay: 100ms;
-
-		transition-property: display;
-		transition-duration: 420ms;
-		transition-timing-function: ease-in;
-		transition-delay: 100ms;
-	}
+	
 	
 	#fugus, #large_kelp, #small_kelp {}
 	
-	header#header { margin:0 0 0 48px; min-width:480px; position:relative; text-align:center; z-index:10;
-		#logo { display:block; min-width:480px; }
-		h1 { color:#fff; font-family:'Parisienne', cursive; font-size:7em; font-weight:normal; margin:-36px 0 0 0;
+	header#header { margin:-6.66em 0 0; padding:0 0.4em; position:relative; text-align:center; z-index:10;
+		#logo {  }
+		h1 { color:#fff; font-family:'Parisienne', cursive; font-size:6.66em; font-weight:normal; margin:-42px auto 0; width:330px;
 			a { color:#fff; }
 		}
-		h2 { margin:-30px 0 0 -72px; min-width:480px;}
+		h2 { margin:-30px auto 0; padding-left:10px; width:320px; }
 	}
 	
 	h3 { font-weight:normal; margin:0 0 13px; }
 
 	form { margin:48px 0 0px; position:relative; z-index:10;
 		input,textarea { font-size:1.4em; }
-		input[type="submit"] { background-color:#8396AF; border:0; color:#fff; float:right; padding:2% 4%; }
-		input[type='text'] { margin:0; padding:2% 4%; text-align:center; width:34px; }
-		textarea { height:1em; line-height:1.5; padding:2% 4%; width:92%; }
-		.formp { line-height:1.5; margin:0 0 10px; padding:0; }}
+		input[type="submit"] { background-color:#8396AF; border:0; color:#fff; float:right; padding:0.4em 1em; }
+		input[type='text'] { margin:0; padding:0.4em 1%; text-align:center; width:34px; }
+		textarea { height:1.6em; line-height:1.5; padding:0.4em 1%; width:98%; }
+		
+		}
 
 	#info_panel { background-color:#29293A; margin:0 auto; padding:20px;  position:relative; z-index:10;
-		nav { margin:0 auto; padding:0 0 34px; text-align:center; width:500px;
-			ul.nav-tabs, ul.nav { border:0; margin:0;
-				li { float:left; font-size:1.7em; font-weight:400; margin:0 13px; 
-					a { border:0; color:#8396AF; }
-					a:hover { color:#fff;} }
-				li.active {
-					a { color:#fff;}}}}
-		p { clear:both; font-size:1.3em; line-height:1.4; margin:0 0 1.4em; }}
+	  .nav-pills > .active > a, .nav-pills > .active > a:hover {
+      color: white;
+      background-color:inherit;
+    }
+		nav { margin:0 auto; padding:0 0 34px; 
+			ul.nav-pills, ul.nav { border:0; margin:0;
+				li { margin-right:0.3em;
+					a { color:#8396AF; line-height:1; }
+					a:hover { color:#fff; } }
+				li.active { 
+					a { background-color:#36364D; color:#fff;}
+					a:hover { background-color:#36364D;}}}}
+		p { clear:both; font-size:1.1em; line-height:1.4; margin:0 0 1.4em; }
+		
+		.nav > li > a:hover {background-color:#36364D; border:0; border-radius:2px; }
+    .nav-tabs > .active > a, .nav-tabs > .active > a:hover {background-color:#36364D; border-radius:2px; color:#fff;}
+
+    .nav-tabs > li > a, .nav-pills > li > a { padding:12px 18px; margin-right:2px; }
+		
+		}
+	
 	footer { padding:34px 0; margin:0 0 auto;
 		p { color:#8396AF; text-align:center; }
 	}
@@ -293,4 +284,99 @@ body:hover {
 		}
 		
 	}
+	
+	
+
+  // Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+  // Note: If you use asset_path() here, your compiled boostrap_and_overrides.css will not 
+  //       have the proper paths. So for now we use the absolute path.
+  // @fontAwesomeEotPath: '/assets/fontawesome-webfont.eot';
+  // @fontAwesomeWoffPath: '/assets/fontawesome-webfont.woff';
+  // @fontAwesomeTtfPath: '/assets/fontawesome-webfont.ttf';
+  // @fontAwesomeSvgzPath: '/assets/fontawesome-webfont.svgz';
+  // @fontAwesomeSvgPath: '/assets/fontawesome-webfont.svg';
+
+  // Font Awesome
+  // @import "fontawesome";
+
+  // Your custom LESS stylesheets goes here
+  //
+  // Since bootstrap was imported above you have access to its mixins which
+  // you may use and inherit here
+  //
+  // If you'd like to override bootstrap's own variables, you can do so here as well
+  // See http://twitter.github.com/bootstrap/less.html for their names and documentation
+  //
+  // Example:
+  // @linkColor: #ff0000;
+
+
+
+
+
+
+  body:hover { background-color:#36364D;
+
+  	-webkit-transition: background-color 200ms ease-in 2s; 
+  	-moz-transition: background-color 200ms ease-in 2s;
+  	-o-transition: background-color 200ms ease-in 2s;
+  	transition: background-color 200ms ease-in 2s;
+
+  	-webkit-transition-property: background-color;
+  	-webkit-transition-duration: 200ms;
+  	-webkit-transition-timing-function: ease-in;
+  	-webkit-transition-delay: 0;
+
+  	-moz-transition-property: background-color;
+  	-moz-transition-duration: 200ms;
+  	-moz-transition-timing-function: ease-in;
+  	-moz-transition-delay: 0;
+
+  	-o-transition-property: background-color;
+  	-o-transition-duration: 200ms;
+  	-o-transition-timing-function: ease-in;
+  	-o-transition-delay: 0;
+
+  	transition-property: background-color;
+  	transition-duration: 200ms;
+  	transition-timing-function: ease-in;
+  	transition-delay: 0;
+  }
+
+
+
+  /* Phones and down */
+  @media only screen and (max-width:480px) and (max-height:480px) { 
+    body {
+    	
+      #info_panel {
+  		  nav { width:auto; 
+  		    ul {
+  		      li { clear:both; }
+  		    }}
+  		}
+    }
+  }
+
+  /* phones and down (landscape) */
+  @media only screen and (max-width:480px) and (max-height:480px) and (orientation:landscape) { 
+      body {
+
+      }
+  }
+
+
+  @media all and (max-width: 767px) {
+
+  	body { padding-left:0; padding-right:0; 
+  		form input[type="submit"] { margin-top:20px; }
+  		#info_panel {
+  		  nav { width:100%; }
+  		}
+  	}
+
+  }
+
+
+	
 /* rest of file omitted */

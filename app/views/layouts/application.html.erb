@@ -2,7 +2,8 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        
 		<title><%= content_for?(:title) ? yield(:title) : "Fugacious: open source short term secure messaging" %></title>
 		<%= csrf_meta_tags %>
 
@@ -22,6 +23,12 @@
 		<link href="images/apple-touch-icon.png" rel="apple-touch-icon">
 		<link href="images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
 		<link href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+		
+
+		<!-- Javascripts
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<%= javascript_include_tag "application" %>
 	</head>
 	<body>
 	    <script type="text/javascript">
@@ -48,8 +55,8 @@
         </script>
         
 		<div id="ocean">
-		<%= link_to image_tag('fork_me.png'), 'https://github.com/jgrevich/fugacious', :style => 'position: absolute; top: 0; right: 0; border: 0;', :title => "Fork me on GitHub"  %>
-			<div class="container">
+		<%= link_to image_tag('fork_me.png'), 'https://github.com/jgrevich/fugacious', :title => "Fork me on GitHub", :id => :github  %>
+			<div class="container-fluid">
 				<%= image_tag('kelp1.png', :id => :kelp1, :class => :kelp ) %>
 				<%= image_tag('kelp2.png', :id => :kelp2a, :class => :kelp ) %>
 				<%= image_tag('kelp2.png', :id => :kelp2b, :class => :kelp ) %>
@@ -66,11 +73,12 @@
 				<%= image_tag('fugu.svg', :id => :fugu3, :class => :kelp ) %>
 				<%= image_tag('fugu.svg', :id => :fugu4, :class => :kelp ) %>
 				<%= image_tag('fugu.svg', :id => :fugu5, :class => :kelp ) %>
+
 			
 				<header id='header'>
-					<%= link_to image_tag('logo.svg'), root_url, :id => :logo %>
-					<h1><%= link_to "Fugacious", root_url %></h1>
-					<h2><%= link_to raw('open source short &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; term secure messaging'), root_url %></h2>
+					<%= link_to image_tag('logo.svg'), '#new_message', :id => :logo %>
+					<h1><%= link_to "Fugacious", '#new_message' %></h1>
+					<h2><%= link_to raw('open &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; source short term secure messaging'), '#new_message' %></h2>
 				</header>
 
 				<div class="content">
@@ -81,12 +89,12 @@
 		</div>
 
 		<section id='info_panel'>
-			<div class='container'>
+			<div class='container-fluid'>
 				<nav>
-					<ul class='nav nav-tabs'>
-						<%= content_tag :li, link_to( "About", "#about", "data-toggle" => "tab" ), :class => :active %>
-						<%= content_tag :li, link_to( "Privacy Policy", "#privacy", "data-toggle" => "tab"  ) %>
-						<%= content_tag :li, link_to( "Github", "#github", "data-toggle" => "tab"  ) %>
+					<ul class='nav nav-pills'>
+						<%= content_tag :li, link_to( "About", "#about", "data-toggle" => "pill" ), :class => :active %>
+						<%= content_tag :li, link_to( "Privacy Policy", "#privacy", "data-toggle" => "pill"  ) %>
+						<%= content_tag :li, link_to( "Github", "#fork", "data-toggle" => "pill"  ) %>
 					</ul>
 				</nav>
 				
@@ -97,13 +105,12 @@
 					</div>
 
 					<div class='tab-pane' id='privacy'>
-						<p>We do not store personal identifiable information (PII) or set cookies containing such info. Your secret is expired when delete;we keep no archives.</p>
-						<p>We do not use any analytics and we do not retain your IP address or any other information that can be tracked back to you.</p>
+						<p>We do not store personal identifiable information (PII) or set cookies containing such info. Your secret is expired when delete; we keep no archives.</p>
 						<p>We do not guarantee the security of your information, and, when it comes to transmitting secure information, you should never put all of your eggs in one basket. We recommend that you send part of your secure information through another form, such as email, SMS, telephone, smoke signals, or carrier pigeon.</p>
 						<p>You can always <%= link_to 'install', 'https://github.com/jgrevich/fugacious' %> your own fugacious server if you're not comfortable with ours.</p>
 					</div>
 
-					<div class='tab-pane' id='github'>
+					<div class='tab-pane' id='fork'>
 						<p>Please feel free to check out the source code at <%= link_to 'github', 'https://github.com/jgrevich/fugacious' %>.  We welcome any imporvements or bug fixes that you can offer.</p>
 						<p>The application is bundled with all the required <%= link_to "Chef", 'http://www.opscode.com/chef/' %> cookbooks to provision to the host of your choice.</p>
 					</div>
@@ -114,11 +121,6 @@
 		<footer>
 			<p>fu ga cious: &nbsp;&nbsp;&nbsp; adj&nbsp;&nbsp;&nbsp;\fyü-ˈgā-shəs\&nbsp;&nbsp;&nbsp; :fleeting &nbsp;&nbsp;&nbsp; :ephemeral</p>
 		</footer>
-			
 
-		<!-- Javascripts
-		================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
-		<%= javascript_include_tag "application" %>
 	</body>
 </html>
