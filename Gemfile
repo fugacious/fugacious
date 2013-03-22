@@ -14,6 +14,7 @@ gem 'knife-ec2'
 gem 'nifty-generators'
 gem 'passenger'
 gem 'rvm-capistrano'
+gem 'whenever'
 
 # gem 'paperclip'
 # gem 'redbox'

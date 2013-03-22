@@ -12,6 +12,7 @@ set :deploy_to, "/var/rails/#{application}" # I like this location
 set :domain, 'fugacio.us'
 set :keep_releases, 2
 set :repository,  "https://github.com/jgrevich/fugacious.git"
+set :branch, :dev
 set :scm, :git
 set :user, 'ubuntu'
 set :use_sudo, false
