@@ -30,6 +30,10 @@ class Message < ActiveRecord::Base
     views >= max_views ? true : false 
   end
   
+  def expired_at
+    self.created_at + self.hours.hours
+  end
+  
   protected
   
   # expire messages that were not manually deleted by the user
