@@ -15,6 +15,7 @@ class MessagesController < ApplicationController
       @remaining_views = @message.max_views - @message.views
       @time_elapsed = ((Time.now - @message.created_at)/3600)
       @time_left = (@message.hours - @time_elapsed)
+      
       @link = 'https://' + APP_CONFIG[:domain] + message_path(@message.token)
       
       @message.destroy if (@remaining_views == 0 || @time_left < 0)

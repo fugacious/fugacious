@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -14,6 +14,7 @@ gem 'knife-ec2'
 gem 'nifty-generators'
 gem 'passenger'
 gem 'rvm-capistrano'
+gem 'whenever'
 
 # gem 'paperclip'
 # gem 'redbox'

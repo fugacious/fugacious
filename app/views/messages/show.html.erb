@@ -5,7 +5,7 @@
 
 	<%= content_tag :p, @message.body , :class => 'message' %>
 
-	<%= content_tag :p, raw("This message will be destroyed in <strong>#{@time_left.round(3)}</strong> hour#{'s' if @time_left != 1.0} or after <strong>#{@remaining_views}</strong> more view#{'s' unless @remaining_views == 1}. For your own security, please #{link_to "destroy", @message.token, :confirm => 'Are you sure?', :method => :delete unless @remaining_views == 0 } this message once it is no longer needed.") %>
+	<%= content_tag :p, raw("This message will be destroyed in <strong>#{distance_of_time_in_words_to_now(@message.expired_at, true)}</strong> or after <strong>#{@remaining_views}</strong> more view#{'s' unless @remaining_views == 1}. For your own security, please #{link_to "destroy", @message.token, :confirm => 'Are you sure?', :method => :delete unless @remaining_views == 0 } this message once it is no longer needed.") %>
 
 	<%= content_tag :p, raw("You can share this message with the following link: #{link_to @link}") unless @remaining_views == 0 %>
 

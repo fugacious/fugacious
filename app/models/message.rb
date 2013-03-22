@@ -17,5 +17,30 @@ class Message < ActiveRecord::Base
   def self.human_attribute_name(attr, options = {})
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
   end
-    
+  
+  def expired?
+    expired_by_time? || expired_by_views?
+  end
+  
+  def expired_by_time?
+    created_at + hours.hours + 1.second < Time.now ? true : false
+  end
+  
+  def expired_by_views?
+    views >= max_views ? true : false 
+  end
+  
+  def expired_at
+    self.created_at + self.hours.hours
+  end
+  
+  protected
+  
+  # expire messages that were not manually deleted by the user
+  # this will need to be refactored once the db size scales.
+  def self.expire_messages!
+    messages = self.all
+    messages.map { |m| m.destroy if m.expired_by_views? || m.expired_by_time? }
+  end
+
 end

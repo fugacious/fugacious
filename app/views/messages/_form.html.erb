@@ -5,8 +5,9 @@
 	<h3><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human, :default => "Your secret message") %></h3>
     <%= f.text_area :body %>
 
-    <p class='formp'>
-		will self-destruct after&nbsp;<%= f.text_field :max_views -%>&nbsp;view(s)&nbsp;and&nbsp;<%= f.text_field :hours, :value => 20 -%>&nbsp;hours
-	</p>
-	<%= f.submit %>
+    <div>
+        will self-destruct after&nbsp;<%= f.text_field :max_views -%>&nbsp;view(s)&nbsp;and&nbsp;<span><%= f.text_field :hours, :value => 20 -%>&nbsp;hours</span>
+    	<%= f.submit %>
+    </div>
+    
 <% end %>
