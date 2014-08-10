@@ -1,0 +1,78 @@
+doctype html
+html lang='en'
+	head
+		title
+			= content_for?(:title) ? yield(:title) : 'Fugacious: open source short term secure messaging'
+		
+		meta charset='utf-8'
+		meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'
+		= csrf_meta_tags
+		= stylesheet_link_tag	'application', media: 'all', 'data-turbolinks-track' => true  
+		= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900'
+		= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Parisienne'
+		= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Rouge+Script'
+		= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Mr+De+Haviland'
+		= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Princess+Sofia'
+		= favicon_link_tag 'fugu.ico'
+		= javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+	body
+		#ocean
+			.fork-me-wrapper
+				.fork-me
+					= link_to content_tag(:span, 'Fork me on Github', class: 'fork-me-text'), 'https://github.com/jgrevich/fugacious', title: 'Fork me on GitHub', class: 'fork-me-link'
+
+			.container-fluid
+				= image_tag('kelp1.png', id: 'kelp1', class: 'kelp')
+				= image_tag('kelp2.png', id: 'kelp2a', class: 'kelp')
+				= image_tag('kelp2.png', id: 'kelp2b', class: 'kelp')
+				= image_tag('kelp2.png', id: 'kelp2c', class: 'kelp')
+				= image_tag('kelp2.png', id: 'kelp2d', class: 'kelp')
+				= image_tag('kelp2.png', id: 'kelp2e', class: 'kelp')
+				= image_tag('kelp3.png', id: 'kelp3', class: 'kelp')
+				= image_tag('kelp4.png', id: 'kelp4', class: 'kelp')
+				= image_tag('kelp5.png', id: 'kelp5', class: 'kelp')
+				= image_tag('kelp6.png', id: 'kelp6', class: 'kelp')
+				= image_tag('fugu.svg', id: 'fugu1', class: 'kelp')
+				= image_tag('fugu.svg', id: 'fugu2', class: 'kelp')
+				= image_tag('fugu.svg', id: 'fugu3', class: 'kelp')
+				= image_tag('fugu.svg', id: 'fugu4', class: 'kelp')
+				= image_tag('fugu.svg', id: 'fugu5', class: 'kelp')
+		
+				header#header
+					= link_to image_tag('logo.svg'), root_url, id: 'logo'
+					h1
+						= link_to "Fugacious", root_url
+					h2 
+						= link_to raw('open &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; source short term secure messaging'), root_url
+
+				.content
+					== yield
+
+		section#info_panel
+			.container-fluid
+				nav
+					ul.nav.nav-pills
+						= content_tag :li, link_to( "About", "#about", "data-toggle" => "pill" ), class: 'active'
+						= content_tag :li, link_to( "Privacy Policy", "#privacy", "data-toggle" => "pill"  )
+						= content_tag :li, link_to( "Github", "#fork", "data-toggle" => "pill"  )
+						
+				.tab-content
+					#about.tab-pane.active
+						p Fugacio.us is a tool designed to assist in sending sensitive information through email or other insecure messaging protocols.
+						p One can send a username through email, save the password with us, and feel comfortable sharing user credentials without sacrificing security or usability.
+
+					#privacy.tab-pane
+						p We do not store personal identifiable information (PII) or set cookies containing such info. Your secret is expired when deleted; we keep no archives and no logs that identy the user or message content.
+						p We do not guarantee the security of your information, and, when it comes to transmitting secure information, you should never put all of your eggs in one basket. We recommend that you send part of your secure information through another form, such as email, SMS, telephone, smoke signals, or carrier pigeon.
+						p You can always #{link_to 'install', 'https://github.com/jgrevich/fugacious'} your own fugacious server if you're not comfortable with ours.
+
+					#fork.tab-pane
+						p Please feel free to check out the source code at #{link_to 'github', 'https://github.com/jgrevich/fugacious'}.  We welcome any imporvements or bug fixes that you can offer.
+						p The application is bundled with all the required #{link_to "Chef", 'http://www.opscode.com/chef/'} cookbooks to provision to the host of your choice. View the #{link_to 'readme', 'https://github.com/jgrevich/fugacious'} for more info.
+		
+		footer
+			.container-fluid
+				dl
+					dt fu ga cious
+					dd adj &nbsp;&nbsp;&nbsp; \fyü-ˈgā-shəs\ &nbsp;&nbsp;&nbsp; :fleeting &nbsp;&nbsp;&nbsp; :ephemeral

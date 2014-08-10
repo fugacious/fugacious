@@ -1,0 +1,16 @@
+= form_for @message, html: {role: 'form'} do |f|
+  = flash_messages
+  = f.error_messages
+
+  .form-group
+    label Your secret message
+    = f.text_area(:body, class: 'form-control')
+
+  .options
+    .form-group
+      = f.label(:max_views)
+      = f.text_field(:max_views, class: 'form-control')
+      | &nbsp;view(s)&nbsp;or&nbsp;
+      = f.text_field(:hours, class: 'form-control', value: 20)
+      = f.label(:hours)
+      = f.submit
