@@ -1,59 +1,60 @@
 class MessagesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :new, :create, :destroy]
+  before_action :set_message, only: [:show, :destroy]
 
-
-  def index
-    @messages = Message.all
-  end
-
+  # GET /messages/1
+  # GET /messages/1.json
   def show
-    @message = Message.find_by_token(params[:id])
-    
     if @message
-      @message.add_view unless current_user
-    
-      @remaining_views = @message.max_views - @message.views
-      @time_elapsed = ((Time.now - @message.created_at)/3600)
-      @time_left = (@message.hours - @time_elapsed)
-      
-      @link = 'https://' + APP_CONFIG[:domain] + message_path(@message.token)
-      
-      @message.destroy if (@remaining_views == 0 || @time_left < 0)
-      redirect_to new_message_path, :notice => "Sorry, that message has expired. Care to create a new one?" if @time_left < 0
+      @message.add_view
+      notice
+      flash[:notice] = "This message has beed deleted from our records.  You must copy the message elsewhere if you wish to keep it any longer." if @message.remaining_views == 0
+      redirect_to @message, notice: 'Sorry, that message has expired. Care to create a new one?' if @message.time_left < 0
     else
-      redirect_to new_message_path, :notice => "Sorry, that message has expired. Care to create a new one?" 
+      redirect_to root_url, notice: 'Sorry, that message has expired or never existed at all. Care to create a new one?'
     end
   end
 
+  # GET /messages/new
   def new
     @message = Message.new
   end
 
+  # POST /messages
+  # POST /messages.json
   def create
-    @message = Message.new(params[:message])
-    if @message.save
-      redirect_to message_path(@message.token), :notice => "Successfully created message."
-    else
-      render :action => 'new'
+    @message = Message.new(message_params)
+
+    respond_to do |format|
+      if @message.save
+        format.html { redirect_to message_url(@message.token) }
+        format.json { render :show, status: :created, location: @message }
+      else
+        format.html { render :new }
+        format.json { render json: @message.errors, status: :unprocessable_entity }
+      end
     end
   end
 
-  def edit
-    @message = Message.find_by_token(params[:id])
-  end
 
-  def update
-    @message = Message.find_by_token(params[:id])
-    if @message.update_attributes(params[:message])
-      redirect_to @message.token, :notice  => "Successfully updated message."
-    else
-      render :action => 'edit'
-    end
-  end
-
+  # DELETE /messages/1
+  # DELETE /messages/1.json
   def destroy
-    @message = Message.find_by_token(params[:id])
     @message.destroy
-    redirect_to new_message_path, :notice => "Successfully destroyed message."
+    respond_to do |format|
+      format.html { redirect_to root_url, notice: 'Message was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_message
+      @message = Message.find_by_token(params[:token])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def message_params
+      params.require(:message).permit(:body, :max_views, :hours)
+    end
+    
 end

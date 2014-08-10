@@ -1,0 +1,21 @@
+default: &default
+  adapter: sqlite3
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: db/fugacious_development.sqlite3
+
+test:
+  <<: *default
+  database: db/fugacious_test.sqlite3
+
+production:
+  <<: *default
+  adapter: postgresql
+  database: fugacious_production
+  username: fugacious
+  password: <%= ENV['FUGACIOUS_DATABASE_PASSWORD'] %>
