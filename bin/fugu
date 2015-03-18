@@ -1,0 +1,49 @@
+#!/usr/bin/env ruby
+require 'json'
+require 'net/http'
+require 'optparse'
+require 'uri'
+
+# create options hash
+options = {}
+
+# use OptionParser to set/parse options. set body param
+OptionParser.new do |opts|
+  opts.banner = "Usage: fug.rb [options] 'Your secret message'"
+
+  # assure that time is set to a Float type
+  help_msg = 'Number of hours until message is destroyed. NOTE: You can enter decimals (e.g. 0.5)'
+  opts.on('-t', '--time TIME_IN_HOURS', Float, help_msg) { |t| options[:hours] = t }
+
+  # assure that views is set to an Integer type
+  help_msg = 'Number of views until message is destroyed'
+  opts.on('-v', '--views NUMBER_OF_VIEWS', Integer, help_msg) { |v| options[:max_views] = v}
+
+  opts.on('-h', '--help', 'Prints this help') { puts opts; exit }
+
+  # set body param
+  options[:body] = ARGV.last
+end.parse!
+
+# stringify option keys
+options = Hash[options.map{ |k,v| [k.to_s, v] }]
+
+# fugacious expects the params to be with in :message key
+params = { message: options }
+
+# set JSON headers
+json_headers = {'Content-Type' => 'application/json',
+                'Accept' => 'application/json'}
+# set URI
+uri = URI('https://fugacio.us/m')
+
+# create new HTTP connection
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+
+# post JSON request
+response = http.post(uri.path, params.to_json, json_headers)
+
+# until Fugacious supports a JSON API we need to parse the HTML in the
+# response body
+puts response.body.match(/"(http.*)"/)[1]
