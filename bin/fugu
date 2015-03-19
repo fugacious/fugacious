@@ -23,6 +23,10 @@ OptionParser.new do |opts|
 
   # set body param
   options[:body] = ARGV.last
+  if options[:body].nil?
+    puts opts
+    exit
+  end
 end.parse!
 
 # stringify option keys
