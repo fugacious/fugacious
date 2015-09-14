@@ -25,6 +25,10 @@ class Message < ActiveRecord::Base
     self.hours - time_elapsed
   end
 
+  def to_param
+    token
+  end
+
   private
 
   def expired_by_time?
