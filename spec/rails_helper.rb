@@ -52,7 +52,7 @@ RSpec.configure do |config|
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
   config.treat_symbols_as_metadata_keys_with_true_values = true
-  config.order = 'random'
+  config.order = :random
   config.infer_spec_type_from_file_location!
 
   config.include FactoryGirl::Syntax::Methods
