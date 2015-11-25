@@ -322,7 +322,7 @@ GEM
       net-ssh (>= 2.6.5)
       net-ssh-gateway (>= 1.2.0)
     netrc (0.10.2)
-    nio4r (1.0.1)
+    nio4r (1.1.1)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     nori (1.1.5)
@@ -583,6 +583,7 @@ DEPENDENCIES
   knife-solo!
   knife-solo_data_bag
   launchy
+  nio4r (>= 1.1)
   pg
   pry-nav
   quiet_assets
@@ -607,3 +608,6 @@ DEPENDENCIES
   unf
   webmock
   whenever
+
+BUNDLED WITH
+   1.10.6
