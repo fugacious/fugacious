@@ -16,6 +16,7 @@ Bundler.require(*Rails.groups)
 module Fugacious
   class Application < Rails::Application
 
+    # Overridden due to extraneous div being added to elements with errors
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
         html_tag
     }
