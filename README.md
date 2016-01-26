@@ -1,5 +1,5 @@
 [![security](https://hakiri.io/github/jgrevich/fugacious/dev.svg)](https://hakiri.io/github/jgrevich/fugacious/dev)
-[![Build Status](https://travis-ci.org/jgrevich/fugacious.svg?branch=dev)](https://travis-ci.org/jgrevich/fugacious)
+[![Build Status](https://travis-ci.org/fugacious/fugacious.svg?branch=dev)](https://travis-ci.org/fugacious/fugacious)
 [![Coverage Status](https://coveralls.io/repos/jgrevich/fugacious/badge.png?branch=dev)](https://coveralls.io/r/jgrevich/fugacious?branch=dev)
 
 
