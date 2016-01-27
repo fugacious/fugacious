@@ -1,13 +1,12 @@
 language: ruby
 cache: bundler
-rvm:
-  - 2.2.3
-  - 2.3.0
-sudo: false
+
 matrix:
   fast_finish: true
+  include:
+    - rvm: 2.2.3
+    - rvm: 2.3.0
+
 notifications:
   email: false
-before_script:
-  - RAILS_ENV=test bin/rake db:migrate
-bundler_args: --jobs=3 --retry=3 --without development devops
+bundler_args: --jobs=3 --retry=3 --without development devops 
