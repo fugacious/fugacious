@@ -9,7 +9,5 @@ matrix:
 notifications:
   email: false
 before_script:
-  - bin/rake db:setup --trace
+  - RAILS_ENV=test bin/rake db:migrate
 bundler_args: --jobs=3 --retry=3 --without development devops
-script:
-- bundle exec rake
