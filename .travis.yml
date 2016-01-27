@@ -5,3 +5,4 @@ rvm:
   - 2.3.0
 matrix:
   fast_finish: true
+bundler_args: --without development devops
