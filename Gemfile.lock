@@ -282,7 +282,7 @@ GEM
       winrm-s (~> 0.2)
     launchy (2.4.3)
       addressable (~> 2.3)
-    libv8 (3.16.14.7)
+    libv8 (3.16.14.13)
     libyajl2 (1.2.0)
     listen (2.8.4)
       celluloid (>= 0.15.2)
@@ -322,7 +322,7 @@ GEM
       net-ssh (>= 2.6.5)
       net-ssh-gateway (>= 1.2.0)
     netrc (0.10.2)
-    nio4r (1.0.1)
+    nio4r (1.2.0)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     nori (1.1.5)
@@ -607,3 +607,6 @@ DEPENDENCIES
   unf
   webmock
   whenever
+
+BUNDLED WITH
+   1.11.2
