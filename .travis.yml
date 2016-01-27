@@ -3,6 +3,13 @@ cache: bundler
 rvm:
   - 2.2.3
   - 2.3.0
+sudo: false
 matrix:
   fast_finish: true
-bundler_args: --without development devops
+notifications:
+  email: false
+before_script:
+  - bin/rake db:setup --trace
+bundler_args: --jobs=3 --retry=3 --without development devops
+script:
+- bundle exec rake
