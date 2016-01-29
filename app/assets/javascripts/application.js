@@ -14,4 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require autosize.min
 //= require_tree .
+
+
+var ready;
+ready = function() {
+  autosize($('#message_body'));
+};
+  
+
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
