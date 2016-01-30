@@ -2,14 +2,14 @@
 [![Build Status](https://travis-ci.org/fugacious/fugacious.svg?branch=dev)](https://travis-ci.org/fugacious/fugacious)
 [![Coverage Status](https://coveralls.io/repos/github/fugacious/fugacious/badge.svg?branch=dev)](https://coveralls.io/github/fugacious/fugacious?branch=dev)
 
-
-# fugacious v0.1.0
-[https://fugacio.us](https://fugacio.us) open source short-term secure messaging solution
-
+![Fugacious](https://raw.githubusercontent.com/fugacious/fugacious/dev/app/assets/images/logo-small.png)
+##### open source short-term secure messaging solution
+&nbsp;
+* * *
 
 ### How it works
 
-Need to send a secret to someone? Use Fugacio.us to ensure that no permanent record of your secret will remain. 
+Need to send a secret to someone? Use Fugacious to ensure that no permanent record of your secret will remain. 
 
 1. Visit [fugacio.us](https://fugacio.us)
 2. Enter your secret
