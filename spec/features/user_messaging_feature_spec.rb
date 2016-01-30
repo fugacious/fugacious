@@ -24,7 +24,7 @@ describe 'Message Display' do
 
   context 'when no remaining views' do
     before(:each) do
-      fill_in 'message_max_views', with: 0
+      fill_in 'message_max_views', with: 1
       find('input[name="commit"]').click
     end
 
@@ -33,10 +33,12 @@ describe 'Message Display' do
     end
 
     it "doesn't display destruction warning" do
+      visit message_url(Message.last)
       expect(page).to have_no_content 'This message will be destroyed'
     end
 
     it 'displays flash message' do
+      visit message_url(Message.last)
       expect(page).to have_content('This message has been deleted')
     end
   end
