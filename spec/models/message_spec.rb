@@ -11,6 +11,15 @@ RSpec.describe Message, type: 'model' do
 		expect(Message.new).to have(1).errors_on(:body)
 	end
 
+	it 'is valid with 1 or more max views' do
+		expect(Message.new(body: 'may the force be with you', max_views: 1)).to be_valid
+	end
+
+	it 'is invalid with less than 1 max view' do
+		expect(Message.new(body: 'may the force be with you', max_views: 0)).to_not be_valid
+		expect(Message.new(body: 'may the force be with you', max_views: 0)).to have(1).errors_on(:max_views)
+	end
+
 	it 'humanizes the body attribute with "Message"' do
 		expect(Message.human_attribute_name(:body)).to eq('Message')
 	end

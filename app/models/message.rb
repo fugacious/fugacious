@@ -1,6 +1,7 @@
 class Message < ActiveRecord::Base
   before_create :make_token
 	validates_presence_of :body, message: "can't be blank"
+  validates :max_views, numericality: {greater_than: 0, message: "Views must be greater than 0"} 
   
   HUMANIZED_ATTRIBUTES = {body: 'Message'}
 
