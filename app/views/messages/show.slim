@@ -6,7 +6,7 @@ article#message
   = content_tag(:p, @message.body , :class => 'message')
 
   .stuff
-    = content_tag(:p, raw("This message will be destroyed in <strong>#{time_left}</strong> or after <strong>#{@message.remaining_views.to_i}</strong> more view#{'s' unless @message.remaining_views == 1}. For your own security, please #{link_to("destroy", @message.token, method: 'delete')} this message once it is no longer needed.")) unless @message.remaining_views == 0  
+    = content_tag(:p, raw("This message will be destroyed in <strong>#{time_left_in_words}</strong> or after <strong>#{@message.remaining_views.to_i}</strong> more view#{'s' unless @message.remaining_views == 1}. For your own security, please #{link_to("destroy", @message.token, method: 'delete')} this message once it is no longer needed.")) unless @message.remaining_views == 0  
 
     = content_tag :p, raw("You can share this message with the following link: #{link_to("https://#{request.env['HTTP_HOST']}/m/#{@message.token}", @message.token)}") unless @message.remaining_views == 0
 
