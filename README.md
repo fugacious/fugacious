@@ -1,3 +1,4 @@
+![SemVer](https://img.shields.io/badge/version-v0.1.0-green.svg)
 [![security](https://hakiri.io/github/jgrevich/fugacious/dev.svg)](https://hakiri.io/github/jgrevich/fugacious/dev)
 [![Build Status](https://travis-ci.org/fugacious/fugacious.svg?branch=dev)](https://travis-ci.org/fugacious/fugacious)
 [![Coverage Status](https://coveralls.io/repos/github/fugacious/fugacious/badge.svg?branch=dev)](https://coveralls.io/github/fugacious/fugacious?branch=dev)
