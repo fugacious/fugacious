@@ -17,6 +17,7 @@ gem 'slim-rails', require: ['slim-rails', 'slim/translator']
 gem 'therubyracer'
 gem 'thin'
 gem 'whenever'
+gem 'sidekiq'
 
 group :development do
   gem 'better_errors'
