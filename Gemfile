@@ -18,6 +18,7 @@ gem 'therubyracer'
 gem 'thin'
 gem 'whenever'
 gem 'sidekiq'
+gem 'sinatra'
 
 group :development do
   gem 'better_errors'
