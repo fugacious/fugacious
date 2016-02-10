@@ -20,6 +20,6 @@
 # Learn more: http://github.com/javan/whenever
 
 
-every :hour do
+every :day do
   rake "message_task:check_expiry"
 end
