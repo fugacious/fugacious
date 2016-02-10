@@ -1,8 +1,11 @@
 class MessageExpiryWorker
   include Sidekiq::Worker
   
-  def perform(message_id)
+  def perform_async(message_id)
     message = Message.find(message_id)
-    message.destroy if message.expired?
+    if message.expired?
+      puts "destroying message \##{message_id}"
+      message.destroy
+    end
   end
 end

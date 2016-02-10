@@ -30,6 +30,7 @@ rerun.txt
 Vagrantfile
 *tags
 tags
+*.rdb
 
 # folders
 /config/*.yml
