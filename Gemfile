@@ -49,6 +49,7 @@ group :development, :test do
   gem 'pry-nav'
   gem 'rspec-rails', '~> 3.1.0'
   gem 'sqlite3'
+  gem 'timecop'
 end
 
 group :test do
