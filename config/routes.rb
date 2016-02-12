@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 	get    'm/:token', to: 'messages#show', as: 'message'
 	delete 'm/:token', to: 'messages#destroy', as: 'destroy_message'
   root to: 'messages#new'
-  mount Sidekiq::Web, at:'/sidekiq'
+  if ENV['RAILS_ENV'] == 'development'
+    mount Sidekiq::Web, at:'/sidekiq'
+  end
 
 end
