@@ -49,7 +49,6 @@ group :development, :test do
   gem 'pry-nav'
   gem 'rspec-rails', '~> 3.1.0'
   gem 'sqlite3'
-  gem 'timecop'
 end
 
 group :test do
@@ -63,6 +62,9 @@ group :test do
   gem 'rspec-html-matchers'
   gem 'shoulda'
   gem 'webmock'
+  gem 'timecop'
+  gem "shoulda-whenever", "~> 0.0.1"
+
 end
 
 # bundle exec rake doc:rails generates the API under doc/api.

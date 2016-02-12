@@ -534,6 +534,7 @@ GEM
     shoulda-context (1.2.1)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
+    shoulda-whenever (0.0.1)
     sidekiq (4.1.0)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
@@ -669,6 +670,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   secure_headers
   shoulda
+  shoulda-whenever (~> 0.0.1)
   sidekiq
   sinatra
   slim-rails
