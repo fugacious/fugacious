@@ -46,7 +46,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'inch', require: false
   gem 'pry-nav'
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails', '~> 3.1.0'
   gem 'sqlite3'
 end
 
