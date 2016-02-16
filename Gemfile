@@ -14,7 +14,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'secure_headers'
-gem 'slim-rails'
+gem 'slim-rails', require: ['slim-rails', 'slim/translator']
 gem 'therubyracer'
 gem 'thin'
 gem 'whenever'
