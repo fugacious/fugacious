@@ -2,7 +2,7 @@ doctype html
 html lang='en'
 	head
 		title
-			= content_for?(:title) ? yield(:title) : 'Fugacious: open source short term secure messaging'
+			= content_for?(:title) ? yield(:title) : t('description')
 		
 		meta charset='utf-8'
 		meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'
@@ -20,7 +20,7 @@ html lang='en'
 		#ocean
 			.fork-me-wrapper
 				.fork-me
-					= link_to content_tag(:span, 'Fork me on Github', class: 'fork-me-text'), 'https://github.com/jgrevich/fugacious', title: 'Fork me on GitHub', class: 'fork-me-link'
+					= link_to content_tag(:span, t('fork_me'), class: 'fork-me-text'), 'https://github.com/jgrevich/fugacious', title: 'Fork me on GitHub', class: 'fork-me-link'
 
 			.container-fluid
 				= image_tag('kelp1.png', id: 'kelp1', class: 'kelp')
@@ -42,9 +42,9 @@ html lang='en'
 				header#header
 					= link_to image_tag('logo.svg'), root_url, id: 'logo'
 					h1
-						= link_to "Fugacious", root_url
+						= link_to t("site_title"), root_url
 					h2 
-						= link_to raw('open &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; source short term secure messaging'), root_url
+						= link_to raw(t('logo_text')), root_url 
 
 				.content
 					== yield
@@ -53,23 +53,24 @@ html lang='en'
 			.container-fluid
 				nav
 					ul.nav.nav-pills
-						= content_tag :li, link_to( "About", "#about", "data-toggle" => "pill" ), class: 'active'
-						= content_tag :li, link_to( "Privacy Policy", "#privacy", "data-toggle" => "pill"  )
-						= content_tag :li, link_to( "Github", "#fork", "data-toggle" => "pill"  )
+						= content_tag :li, link_to( t('layout.info.nav.about'), "#about", "data-toggle" => "pill" ), class: 'active'
+						= content_tag :li, link_to( t('layout.info.nav.privacy'), "#privacy", "data-toggle" => "pill"  )
+						= content_tag :li, link_to( t('layout.info.nav.github'), "#fork", "data-toggle" => "pill"  )
 						
 				.tab-content
 					#about.tab-pane.active
-						p Fugacio.us is a tool designed to assist in sending sensitive information through email or other insecure messaging protocols.
-						p One can send a username through email, save the password with us, and feel comfortable sharing user credentials without sacrificing security or usability.
+						p =t('layout.info.about.p1')
+						p =t('layout.info.about.p2')
 
 					#privacy.tab-pane
-						p We do not store personal identifiable information (PII) or set cookies containing such info. Your secret is expired when deleted; we keep no archives and no logs that identy the user or message content.
-						p We do not guarantee the security of your information, and, when it comes to transmitting secure information, you should never put all of your eggs in one basket. We recommend that you send part of your secure information through another form, such as email, SMS, telephone, smoke signals, or carrier pigeon.
-						p You can always #{link_to 'install', 'https://github.com/jgrevich/fugacious'} your own fugacious server if you're not comfortable with ours.
-
+						p =t('layout.info.privacy.p1')
+						p =t('layout.info.privacy.p2')
+						= content_tag(:p, raw(t('layout.info.privacy.p3', install_link: link_to('install', 'https://github.com/jgrevich/fugacious'))))
+						/ TODO _________ follow this ^ syntax when dealing with inline
 					#fork.tab-pane
-						p Please feel free to check out the source code at #{link_to 'github', 'https://github.com/jgrevich/fugacious'}.  We welcome any imporvements or bug fixes that you can offer.
-						p The application is bundled with all the required #{link_to "Chef", 'http://www.opscode.com/chef/'} cookbooks to provision to the host of your choice. View the #{link_to 'readme', 'https://github.com/jgrevich/fugacious'} for more info.
+						= content_tag(:p, raw(t('layout.info.fork_me.p1', github_link: link_to('github', 'https://github.com/jgrevich/fugacious'))))
+						= content_tag(:p, raw(t('layout.info.fork_me.p2', chef_link: link_to('Chef', 'http://www.opscode.com/chef/'),
+																					 readme_link: link_to('readme', 'https://github.com/jgrevich/fugacious'))))
 		
 		footer
 			.container-fluid
