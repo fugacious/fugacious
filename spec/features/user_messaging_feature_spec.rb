@@ -18,7 +18,10 @@ describe 'Message Display' do
       fill_in 'message_max_views', with: 2
       find('input[name="commit"]').click
 
-      expect(page).to have_content 'This message will be destroyed'
+      expect(page).to have_content I18n.t('show.destroy_warning', time_left: "about 20 hours",
+                                                    views_left: 2,
+                                                    pluralize_views: 's',
+                                                    destroy_link: "destroy")
     end
   end
 
@@ -39,7 +42,7 @@ describe 'Message Display' do
 
     it 'displays flash message' do
       visit message_url(Message.last)
-      expect(page).to have_content('This message has been deleted')
+      expect(page).to have_content(I18n.t('flash.deleted'))
     end
   end
 end
