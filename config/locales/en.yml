@@ -29,6 +29,11 @@ en:
   description: 'Fugacious: open source short term secure messaging'
   logo_text: 'open &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; source short term secure messaging'
   fork_me: 'Fork me on Github'
+  flash:
+    deleted: "This message has been deleted from our records.  You must copy the message elsewhere if you wish to keep it any longer."
+    expired: 'Sorry, that message has expired. Care to create a new one?'
+    expired_or: 'Sorry, that message has expired or never existed at all. Care to create a new one?'
+    destroy_success: 'Message was successfully destroyed.'
   layout:
     info:
       nav: 
