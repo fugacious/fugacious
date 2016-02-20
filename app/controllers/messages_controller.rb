@@ -8,10 +8,10 @@ class MessagesController < ApplicationController
     if @message
       @message.add_view
       notice
-      flash[:notice] = "This message has been deleted from our records.  You must copy the message elsewhere if you wish to keep it any longer." if @message.remaining_views == 0
-      redirect_to @message, notice: 'Sorry, that message has expired. Care to create a new one?' if @message.time_left < 0
+      flash[:notice] = I18n.t('flash.deleted') if @message.remaining_views == 0
+      redirect_to @message, notice: I18n.t('flash.expired') if @message.time_left < 0
     else
-      redirect_to root_url, notice: 'Sorry, that message has expired or never existed at all. Care to create a new one?'
+      redirect_to root_url, notice: I18n.t('flash.expired_or')
     end
   end
 
@@ -40,7 +40,7 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
     respond_to do |format|
-      format.html { redirect_to root_url, notice: 'Message was successfully destroyed.' }
+      format.html { redirect_to root_url, notice: I18n.t('flash.destroy_success') }
       format.json { head :no_content }
     end
   end
