@@ -6,6 +6,7 @@ Coveralls.wear!('rails')
 SimpleCov.start('rails')
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
+require 'missing_translations_helper'
 
 require 'factory_girl'
 
