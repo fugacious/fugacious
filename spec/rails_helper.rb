@@ -14,7 +14,7 @@ require 'factory_girl'
 if ENV['CI']
   SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 else
-  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[ SimpleCov::Formatter::HTMLFormatter ]
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new( formatter = SimpleCov::Formatter::HTMLFormatter )
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -53,7 +53,7 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
 
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-  config.treat_symbols_as_metadata_keys_with_true_values = true
+  # config.treat_symbols_as_metadata_keys_with_true_values = true
   config.order = :random
   config.infer_spec_type_from_file_location!
 
