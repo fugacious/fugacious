@@ -18,7 +18,6 @@ gem 'therubyracer'
 gem 'thin'
 gem 'whenever'
 gem 'sidekiq'
-gem 'sinatra'
 
 group :development do
   gem 'better_errors'
@@ -30,6 +29,7 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'unf'
+  gem 'sinatra'
 end
 
 group :devops do
