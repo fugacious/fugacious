@@ -17,6 +17,7 @@ gem 'slim-rails', require: ['slim-rails', 'slim/translator']
 gem 'therubyracer'
 gem 'thin'
 gem 'whenever'
+gem 'sidekiq'
 
 group :development do
   gem 'better_errors'
@@ -28,6 +29,7 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'unf'
+  gem 'sinatra'
 end
 
 group :devops do
@@ -60,6 +62,9 @@ group :test do
   gem 'rspec-html-matchers'
   gem 'shoulda'
   gem 'webmock'
+  gem 'timecop'
+  gem "shoulda-whenever", "~> 0.0.1"
+
 end
 
 # bundle exec rake doc:rails generates the API under doc/api.
