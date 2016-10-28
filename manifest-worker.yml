@@ -1,0 +1,13 @@
+applications:
+- name: fugacious-worker
+  buildpack: ruby_buildpack
+  command: bundle exec sidekiq
+  health-check-type: none
+  no-route: true
+  services:
+  - postgres
+  - redis
+env:
+  BUNDLE_WITHOUT: development:devops:test
+  RAILS_ENV: production
+  RACK_ENV: production
