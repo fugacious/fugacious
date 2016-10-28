@@ -1,7 +1,7 @@
 class Message < ActiveRecord::Base
   before_create :make_token
   validates_presence_of :body, message: "can't be blank"
-  validates :max_views, numericality: {greater_than: 0, message: "Views must be greater than 0"} 
+  validates :max_views, numericality: {greater_than: 0, message: "Views must be greater than 0"}
   validates :hours, numericality: {
     greater_than_or_equal_to: 1,
     less_than_or_equal_to: Rails.application.secrets.max_retention_hours }
@@ -16,15 +16,15 @@ class Message < ActiveRecord::Base
     self.update_attribute :views, (self.views.to_i + 1)
     self.destroy if self.expired?
   end
-  
+
   def expired?
     expired_by_time? || expired_by_views?
   end
-  
+
   def remaining_views
     self.max_views - self.views
   end
-  
+
   def time_left
     self.hours - time_elapsed
   end
@@ -38,18 +38,17 @@ class Message < ActiveRecord::Base
   def expired_by_time?
     created_at + hours.hours + 1.second < Time.now ? true : false
   end
-  
+
   def expired_by_views?
-    views >= max_views ? true : false 
+    views >= max_views ? true : false
   end
-  
+
   def make_token
     self.token = SecureRandom.base64(32).tr('+/=', '')[0..32]
   end
-    
+
   def time_elapsed
     (Time.now - self.created_at)/3600
   end
-
 
 end
