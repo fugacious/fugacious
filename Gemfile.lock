@@ -346,7 +346,7 @@ GEM
       winrm (~> 1.7)
     launchy (2.4.3)
       addressable (~> 2.3)
-    libv8 (3.16.14.13)
+    libv8 (3.16.14.15)
     libyajl2 (1.2.0)
     listen (3.0.5)
       rb-fsevent (>= 0.9.3)
@@ -443,6 +443,11 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (4.2.7.1)
       actionpack (= 4.2.7.1)
       activesupport (= 4.2.7.1)
@@ -663,6 +668,7 @@ DEPENDENCIES
   pry-nav
   quiet_assets
   rails (~> 4.2.7.1)
+  rails_12factor
   rb-fsevent
   rspec-collection_matchers
   rspec-html-matchers
