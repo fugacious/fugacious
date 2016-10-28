@@ -63,7 +63,7 @@ group :test do
   gem 'shoulda'
   gem 'webmock'
   gem 'timecop'
-  gem "shoulda-whenever", "~> 0.0.1"
+  gem 'shoulda-whenever', '~> 0.0.1'
 
 end
 
@@ -73,4 +73,5 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 group :production do
   # Use postgresql as the database for Active Record
   gem 'pg'
+  gem 'rails_12factor'
 end
