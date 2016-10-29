@@ -50,6 +50,13 @@ $ foreman start
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for more information
 
+### Deploying to Heroku
+
+Ensure you have the [Heroku Toolbelt](https://devcenter.heroku.com/articles/heroku-command-line) installed.
+
+1. Execute Heroku setup with `bin/heroku`. Your shell output should look something [like this](https://gist.github.com/amoose/a955ec21a085ab087641044240314abb) and once successfully launched, will open your new Fugacious instance!
+
+[Getting started with Rails 4 on Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4) for more information.
 
 ### License
 

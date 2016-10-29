@@ -1,0 +1,54 @@
+#!/usr/bin/env ruby
+require 'pathname'
+
+# path to your application root.
+APP_ROOT = Pathname.new File.expand_path("../../",  __FILE__)
+
+def run(command)
+  abort "command failed (#{$?}): #{command}" unless system command
+end
+
+Dir.chdir APP_ROOT do
+  # This script is a starting point to setup your application.
+  # Add necessary setup steps to this file:
+
+  puts %q[
+                                                                                                                                
+                                                                                                    
+                                                                                                    
+                                                                                                    
+          .----------------.                                                                        
+         :s----------------s/                                                                       
+         ++   +s-    :s/   ++    /s:                                   /s/                          
+         ++   sd:   -dy`   ++    sd/                                   +d+                          
+         ++   sd:   `      ++    sdo/+oo/` `:++oo+-   `-/+o.  -+oo+:`  +d+   -o/  oo`   :o-         
+         ++   sdhhddddy.   ++    sdy+::ods /dy:::od/ +dh+/:``hd+-./hd- +d+  /ds`  dd.   od+         
+         ++   oo:-`  /dy   ++    sd/   :dy ody++++dy +d+    od+    :dy +dy+sd/    dd.   od+         
+         ++   .      :dy   ++    sd/   :dy ods------ +d+    od+    :dy +ds-+ds`   dd.   od+         
+         ++   sh.    :dy   ++    sd/   :dy -dh:--:+- +d+    .dd:..:hd- +d+  -hh-  hd/-:/hd/         
+         ++   :.     -s+   ++    /s-   .s+  .+oso+:` :s:     `/osso/`  :s:   `so` .+sso/:`          
+         :y----------------s/                                                                       
+          `----------------.                                                                        
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                  
+  ]
+
+  puts "Creating a new Heroku instance..."
+  run "heroku create"
+
+  puts "Generating a new secret..."
+  secret = `bundle exec rake secret`
+  puts "Configuring Heroku"
+  run "heroku config:set SECRET_KEY_BASE=\"#{secret}\" MAX_RETENTION_HOURS=\"480\""
+
+  puts "Pushing code to Heroku and triggering build..."
+  run "git push heroku master"
+
+  puts "Setting up the application database..."
+  run "heroku run rake db:migrate"
+  
+  puts "Launching your new site!"
+  run "heroku open"
+end
