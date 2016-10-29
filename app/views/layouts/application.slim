@@ -3,11 +3,11 @@ html lang='en'
 	head
 		title
 			= content_for?(:title) ? yield(:title) : t('description')
-		
+
 		meta charset='utf-8'
 		meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'
 		= csrf_meta_tags
-		= stylesheet_link_tag	'application', media: 'all', 'data-turbolinks-track' => true  
+		= stylesheet_link_tag	'application', media: 'all', 'data-turbolinks-track' => true
 		= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900'
 		= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Parisienne'
 		= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Rouge+Script'
@@ -20,7 +20,7 @@ html lang='en'
 		#ocean
 			.fork-me-wrapper
 				.fork-me
-					= link_to content_tag(:span, t('fork_me'), class: 'fork-me-text'), 'https://github.com/jgrevich/fugacious', title: 'Fork me on GitHub', class: 'fork-me-link'
+					= link_to content_tag(:span, t('fork_me'), class: 'fork-me-text'), 'https://github.com/fugacious/fugacious', title: 'Fork me on GitHub', class: 'fork-me-link'
 
 			.container-fluid
 				= image_tag('kelp1.png', id: 'kelp1', class: 'kelp')
@@ -38,13 +38,13 @@ html lang='en'
 				= image_tag('fugu.svg', id: 'fugu3', class: 'kelp')
 				= image_tag('fugu.svg', id: 'fugu4', class: 'kelp')
 				= image_tag('fugu.svg', id: 'fugu5', class: 'kelp')
-		
+
 				header#header
 					= link_to image_tag('logo.svg'), root_url, id: 'logo'
 					h1
 						= link_to t("site_title"), root_url
-					h2 
-						= link_to raw(t('logo_text')), root_url 
+					h2
+						= link_to raw(t('logo_text')), root_url
 
 				.content
 					== yield
@@ -56,7 +56,7 @@ html lang='en'
 						= content_tag :li, link_to( t('layout.info.nav.about'), "#about", "data-toggle" => "pill" ), class: 'active'
 						= content_tag :li, link_to( t('layout.info.nav.privacy'), "#privacy", "data-toggle" => "pill"  )
 						= content_tag :li, link_to( t('layout.info.nav.github'), "#fork", "data-toggle" => "pill"  )
-						
+
 				.tab-content
 					#about.tab-pane.active
 						p =t('layout.info.about.p1')
@@ -65,13 +65,13 @@ html lang='en'
 					#privacy.tab-pane
 						p =t('layout.info.privacy.p1')
 						p =t('layout.info.privacy.p2')
-						= content_tag(:p, raw(t('layout.info.privacy.p3', install_link: link_to('install', 'https://github.com/jgrevich/fugacious'))))
+						= content_tag(:p, raw(t('layout.info.privacy.p3', install_link: link_to('install', 'https://github.com/fugacious/fugacious'))))
 						/ TODO _________ follow this ^ syntax when dealing with inline
 					#fork.tab-pane
-						= content_tag(:p, raw(t('layout.info.fork_me.p1', github_link: link_to('github', 'https://github.com/jgrevich/fugacious'))))
+						= content_tag(:p, raw(t('layout.info.fork_me.p1', github_link: link_to('github', 'https://github.com/fugacious/fugacious'))))
 						= content_tag(:p, raw(t('layout.info.fork_me.p2', chef_link: link_to('Chef', 'http://www.opscode.com/chef/'),
-																					 readme_link: link_to('readme', 'https://github.com/jgrevich/fugacious'))))
-		
+																					 readme_link: link_to('readme', 'https://github.com/fugacious/fugacious'))))
+
 		footer
 			.container-fluid
 				dl
