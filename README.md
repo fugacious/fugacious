@@ -22,12 +22,31 @@ The link to your secret will only remain alive for the preset amount of time or 
 
 ### Getting Started
 
-> coming soon
+#### Dependencies
+- [Ruby 2](https://www.ruby-lang.org)
+- [Redis](https://redis.io)
+- [QT](https://www.qt.io)
+
+1. Setup application dependencies
+  ```
+  $ bin/setup
+  ```
+2. Start the app
+  ```
+  $ foreman start
+  ```
+3. Open your browser to http://localhost:3000
 
 
 ### Contributing
 
-> coming soon
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -m 'Adds some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more information
 
 
 ### License
