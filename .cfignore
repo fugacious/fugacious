@@ -33,11 +33,6 @@ tags
 *.rdb
 
 # folders
-/config/*.yml
-/config/deploy.rb
-/config/deploy
-/config/environments/production.rb
-/config/initializers/searchify.rb
 /coverage
 /db/*.sqlite3
 /doc/search_stats.csv
