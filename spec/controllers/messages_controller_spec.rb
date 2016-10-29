@@ -24,11 +24,12 @@ RSpec.describe MessagesController, :type => :controller do
   # Message. As you add validations to Message, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    # skip("Add a hash of attributes valid for your model")
+    { "body"=>"message body", "max_views"=>(1..10).to_a.sample.to_s, "hours"=>(1..100).to_a.sample.to_s}
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { "message"=> { "body"=>"message body", "max_views"=>"", "hours"=>(1..100).to_a.sample.to_s}}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -36,19 +37,23 @@ RSpec.describe MessagesController, :type => :controller do
   # MessagesController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET index" do
-    it "assigns all messages as @messages" do
-      message = Message.create! valid_attributes
-      get :index, {}, valid_session
-      expect(assigns(:messages)).to eq([message])
-    end
-  end
-
   describe "GET show" do
     it "assigns the requested message as @message" do
       message = Message.create! valid_attributes
-      get :show, {:id => message.to_param}, valid_session
+      get :show, {:token => message.to_param}, valid_session
       expect(assigns(:message)).to eq(message)
+    end
+
+    it "does not permit bots" do
+      bots = ['Googlebot', 'Yahoo!', 'bingbot', 'AhrefsBot', 'Baiduspider', 'Ezooms',
+        'MJ12bot', 'YandexBot', 'Slackbot']
+      # request.env['HTTP_USER_AGENT'] = 'Slackbot-LinkExpanding 1.0 ' \
+      #                                  '(+https://api.slack.com/robots)'
+      request.env['HTTP_USER_AGENT'] = bots.sample
+      message = Message.create! valid_attributes
+      get :show, {:token => message.to_param}, valid_session
+      expect(message.views).to eq(-1)
+      expect(response.code.to_i).to eq(404)
     end
   end
 
@@ -56,14 +61,6 @@ RSpec.describe MessagesController, :type => :controller do
     it "assigns a new message as @message" do
       get :new, {}, valid_session
       expect(assigns(:message)).to be_a_new(Message)
-    end
-  end
-
-  describe "GET edit" do
-    it "assigns the requested message as @message" do
-      message = Message.create! valid_attributes
-      get :edit, {:id => message.to_param}, valid_session
-      expect(assigns(:message)).to eq(message)
     end
   end
 
@@ -100,59 +97,18 @@ RSpec.describe MessagesController, :type => :controller do
     end
   end
 
-  describe "PUT update" do
-    describe "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
-      it "updates the requested message" do
-        message = Message.create! valid_attributes
-        put :update, {:id => message.to_param, :message => new_attributes}, valid_session
-        message.reload
-        skip("Add assertions for updated state")
-      end
-
-      it "assigns the requested message as @message" do
-        message = Message.create! valid_attributes
-        put :update, {:id => message.to_param, :message => valid_attributes}, valid_session
-        expect(assigns(:message)).to eq(message)
-      end
-
-      it "redirects to the message" do
-        message = Message.create! valid_attributes
-        put :update, {:id => message.to_param, :message => valid_attributes}, valid_session
-        expect(response).to redirect_to(message)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the message as @message" do
-        message = Message.create! valid_attributes
-        put :update, {:id => message.to_param, :message => invalid_attributes}, valid_session
-        expect(assigns(:message)).to eq(message)
-      end
-
-      it "re-renders the 'edit' template" do
-        message = Message.create! valid_attributes
-        put :update, {:id => message.to_param, :message => invalid_attributes}, valid_session
-        expect(response).to render_template("edit")
-      end
-    end
-  end
-
   describe "DELETE destroy" do
     it "destroys the requested message" do
       message = Message.create! valid_attributes
       expect {
-        delete :destroy, {:id => message.to_param}, valid_session
+        delete :destroy, {:token => message.to_param}, valid_session
       }.to change(Message, :count).by(-1)
     end
 
     it "redirects to the messages list" do
       message = Message.create! valid_attributes
-      delete :destroy, {:id => message.to_param}, valid_session
-      expect(response).to redirect_to(messages_url)
+      delete :destroy, {:token => message.to_param}, valid_session
+      expect(response).to redirect_to(root_url)
     end
   end
 

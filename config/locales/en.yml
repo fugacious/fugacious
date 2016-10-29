@@ -25,4 +25,40 @@ en:
       message: 
         hours: hours
         max_views: will self-destruct after
-  site_title: 'fugacious'
+  site_title: 'Fugacious'
+  description: 'Fugacious: open source short term secure messaging'
+  logo_text: 'open &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; source short term secure messaging'
+  fork_me: 'Fork me on Github'
+  flash:
+    deleted: "This message has been deleted from our records.  You must copy the message elsewhere if you wish to keep it any longer."
+    expired: 'Sorry, that message has expired. Care to create a new one?'
+    expired_or: 'Sorry, that message has expired or never existed at all. Care to create a new one?'
+    destroy_success: 'Message was successfully destroyed.'
+  layout:
+    info:
+      nav: 
+        about: "About"
+        privacy: "Privacy Policy"
+        github: "Github"
+      about:
+        p1: "Fugacio.us is a tool designed to assist in sending sensitive information through email or other insecure messaging protocols."
+        p2: "One can send a username through email, save the password with us, and feel comfortable sharing user credentials without sacrificing security or usability."
+      privacy: 
+        p1: "We do not store personal identifiable information (PII) or set cookies containing such info. Your secret is expired when deleted; we keep no archives and no logs that identy the user or message content."
+        p2: "We do not guarantee the security of your information, and, when it comes to transmitting secure information, you should never put all of your eggs in one basket. We recommend that you send part of your secure information through another form, such as email, SMS, telephone, smoke signals, or carrier pigeon."
+        p3: "You can always %{install_link} your own fugacious server if you're not comfortable with ours."
+      fork_me:
+        p1: "Please feel free to check out the source code at %{github_link}.  We welcome any improvements or bug fixes that you can offer."
+        p2: "The application is bundled with all the required %{chef_link} cookbooks to provision to the host of your choice. View the %{readme_link} for more info."
+  show:
+    title: 'The Secret Message'
+    destroy_warning: "This message will be destroyed in %{time_left} or after %{views_left} more view%{pluralize_views}. For your own security, please %{destroy_link} this message once it is no longer needed."
+    share_link: "You can share this message with the following link: %{link}"
+    destroy_link: Destroy
+    new_message_link: New Message
+    email: 
+      body: "You can view it using the following link: %{message_link}. The message is set to be automatically destroyed at %{time_left}"
+      subject: "Someone is sending you a secret.  You have %{hours_left} to view it."
+  gone:
+    message: 'That message is gone.'
+    new_message: "New Message"
