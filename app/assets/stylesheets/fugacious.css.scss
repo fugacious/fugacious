@@ -182,7 +182,7 @@ body { 	background-color:darken(#36364D, 5%); color:#fff; line-height:1.5; font-
 	.info a {color:#205791;}
 
 	#message { margin:48px 0 0; position:relative; z-index:10;
-		.message { background-color:#fff; border:1px solid #ccc; border-radius:3px; color:#000; font-size:1.4em; margin:0 0 12px; padding:1%;
+		.message { background-color:#fff; border:1px solid #ccc; border-radius:3px; color:#000; font-size:1.4em; margin:0 0 12px; padding:1%; white-space: pre-wrap;
 			 p { background-color:#CFC; float:none; line-height:1; margin:0; }
 			 ul { background-color:#CFC; }}}
 
