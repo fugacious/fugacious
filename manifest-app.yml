@@ -1,7 +1,7 @@
 applications:
 - name: fugacious
   buildpack: ruby_buildpack
-  command: bundle exec rake cf:on_first_instance db:migrate && bundle exec rails s -p $PORT -e $RAILS_ENV
+  command: bin/cf-start
   services:
   - postgres
   - redis
