@@ -53,8 +53,6 @@ end
 
 group :test do
   gem 'capybara', '~> 2.3.0'
-  gem 'capybara-screenshot'
-  gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'faker'
   gem 'launchy'
@@ -64,7 +62,6 @@ group :test do
   gem 'webmock'
   gem 'timecop'
   gem 'shoulda-whenever', '~> 0.0.1'
-
 end
 
 # bundle exec rake doc:rails generates the API under doc/api.
