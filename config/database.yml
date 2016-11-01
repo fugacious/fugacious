@@ -14,12 +14,8 @@ test:
   database: db/fugacious_test.sqlite3
 
 <%
-  begin
-    services = JSON.parse(ENV['VCAP_SERVICES'])
-    credentials = services['aws-rds'].first['credentials']
-  rescue
-    credentials = {}
-  end
+  require 'cf-app-utils'
+  credentials = CF::App::Credentials.find_by_service_name('postgres') || {} rescue {}
 %>
 
 <% if !credentials.empty? %>
