@@ -417,6 +417,7 @@ GEM
       slop (~> 3.4)
     pry-nav (0.2.4)
       pry (>= 0.9.10, < 0.11.0)
+    puma (3.6.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -666,6 +667,7 @@ DEPENDENCIES
   launchy
   pg
   pry-nav
+  puma
   quiet_assets
   rails (~> 4.2.7.1)
   rails_12factor
@@ -695,4 +697,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.13.0
+   1.13.6
