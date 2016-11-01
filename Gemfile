@@ -16,8 +16,8 @@ gem 'secure_headers'
 gem 'slim-rails', require: ['slim-rails', 'slim/translator']
 gem 'therubyracer'
 gem 'thin'
-gem 'whenever'
 gem 'sidekiq'
+gem 'sidekiq-cron'
 
 group :development do
   gem 'better_errors'
@@ -63,7 +63,6 @@ group :test do
   gem 'shoulda'
   gem 'webmock'
   gem 'timecop'
-  gem 'shoulda-whenever', '~> 0.0.1'
 
 end
 
