@@ -6,7 +6,6 @@ require 'pry'
 Rails.application.load_tasks
 
 describe 'Message Expiration Worker' do
-
   before do
     # Redis.connect(ENV['REDIS_URL']) 
     # redis.flushdb
@@ -19,13 +18,13 @@ describe 'Message Expiration Worker' do
 
   it 'erases expired messages' do
     Timecop.freeze(Time.now + 1.hour + 10.minutes)
-    Rake::Task['message_task:check_expiry'].execute
+    MessageExpiryWorker.new.perform
     expect(Message.all.length).to eq(3)
   end
 
   it 'does not erase messages that are not expired' do
     Timecop.freeze(Time.now + 1.hour + 10.minutes)
-    Rake::Task['message_task:check_expiry'].execute
+    MessageExpiryWorker.new.perform
     Message.all.each do |m|
       expect(m.expired?).to eq(false)
     end
