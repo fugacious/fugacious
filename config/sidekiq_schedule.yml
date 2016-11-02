@@ -1,0 +1,4 @@
+expire_messages:
+  cron: "0 * * * *"
+  class: "MessageExpiryWorker"
+  queue: "default"
