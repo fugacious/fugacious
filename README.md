@@ -20,7 +20,7 @@ Need to send a secret to someone? Use Fugacious to ensure that no permanent reco
 The link to your secret will only remain alive for the preset amount of time or number of views.
 
 
-### Getting Started
+### Getting started
 
 #### Dependencies
 - [Ruby 2](https://www.ruby-lang.org)
@@ -52,6 +52,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for more information
 
 ### Deploying to Heroku
 
+##### Use this friendly button:
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/heroku/node-js-sample)
+
+##### Or, use our friendly bootstrap script:
 Ensure you have the [Heroku Toolbelt](https://devcenter.heroku.com/articles/heroku-command-line) installed.
 
 1. Execute Heroku setup with `bin/heroku`. Your shell output should look something [like this](https://gist.github.com/amoose/a955ec21a085ab087641044240314abb) and once successfully launched, will open your new Fugacious instance!
