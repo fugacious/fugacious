@@ -112,4 +112,28 @@ RSpec.describe MessagesController, :type => :controller do
     end
   end
 
+  describe "with csrf protection enabled" do
+    before do
+      ActionController::Base.allow_forgery_protection = true
+    end
+
+    after do
+      ActionController::Base.allow_forgery_protection = false
+    end
+
+    it "rejects html requests without token" do
+      expect {
+        post :create, {message: valid_attributes}
+      }.to raise_error
+    end
+
+    it "accepts json requests without token" do
+      request.headers['HTTP_CONTENT_TYPE'] = 'application/json'
+      request.headers['HTTP_ACCEPT'] = 'application/json'
+      post :create, {message: valid_attributes}
+      expect(response.code.to_i).to eq(201)
+      expect(response.headers['Location']).to eq(MessagesController.url_for(Message.last))
+    end
+  end
+
 end

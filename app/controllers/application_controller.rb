@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception unless -> { request.format.json? }
+  protect_from_forgery with: :exception, unless: -> { request.format.json? }
 
   rescue_from(ActionController::RoutingError) { render :template => 'layouts/404', :status => 404 }
   rescue_from(ActionController::InvalidAuthenticityToken) { render :template => 'layouts/422', :status => 422}
