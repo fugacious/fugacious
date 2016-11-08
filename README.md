@@ -28,13 +28,15 @@ The link to your secret will only remain alive for the preset amount of time or 
 - [QT](https://www.qt.io)
 
 1. Setup application dependencies
-  ```
-  $ bin/setup
-  ```
+```
+$ bin/setup
+```
+
 2. Start the app
-  ```
-  $ foreman start
-  ```
+```
+$ foreman start
+```
+
 3. Open your browser to http://localhost:3000
 
 
