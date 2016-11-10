@@ -13,29 +13,9 @@ test:
   <<: *default
   database: db/fugacious_test.sqlite3
 
-<%
-  begin
-    services = JSON.parse(ENV['VCAP_SERVICES'])
-    credentials = services['aws-rds'].first['credentials']
-  rescue
-    credentials = {}
-  end
-%>
-
-<% if !credentials.empty? %>
-production:
-  adapter: postgresql
-  encoding: unicode
-  host: <%= credentials['hostname'] || 'localhost' %>
-  port: <%= credentials['port'] || '3306' %>
-  database: <%= credentials['name'] || '' %>
-  username: <%= credentials['username'] || '' %>
-  password: <%= credentials['password'] || '' %>
-<% else %>
 production:
   <<: *default
   adapter: postgresql
   database: fugacious_production
   username: fugacious
   password: <%= ENV['FUGACIOUS_DATABASE_PASSWORD'] %>
-<% end %>
