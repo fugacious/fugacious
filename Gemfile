@@ -70,7 +70,7 @@ end
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :production do
-  # Use postgresql as the database for Active Record
+  gem 'cf-app-utils'
   gem 'pg'
   gem 'puma'
   gem 'rails_12factor'
