@@ -1,6 +1,5 @@
 class MessagesController < ApplicationController
-  protect_from_forgery with: :exception, unless: -> { request.format.json? }
-  
+  skip_before_action :verify_authenticity_token, if: -> { request.format.json? }
   before_action :handle_bot_requests, except: :new
   before_action :set_message, only: [:show, :destroy]
 

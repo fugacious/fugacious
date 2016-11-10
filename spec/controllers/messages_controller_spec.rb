@@ -6,12 +6,15 @@ RSpec.describe MessagesController, :type => :controller do
   # Message. As you add validations to Message, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    # skip("Add a hash of attributes valid for your model")
-    { "body"=>"message body", "max_views"=>(1..10).to_a.sample.to_s, "hours"=>(1..100).to_a.sample.to_s}
+    { "body"=>"message body",
+      "max_views"=>(1..10).to_a.sample.to_s,
+      "hours"=>(1..100).to_a.sample.to_s}
   }
 
   let(:invalid_attributes) {
-    { "message"=> { "body"=>"message body", "max_views"=>"", "hours"=>(1..100).to_a.sample.to_s}}
+    { "message"=> { "body"=>"message body",
+                    "max_views"=>['-1', '', 'seven'].sample,
+                    "hours"=>(1..100).to_a.sample.to_s}}
   }
 
   # This should return the minimal set of values that should be in the session
@@ -82,13 +85,15 @@ RSpec.describe MessagesController, :type => :controller do
     end
 
     describe 'without a valid session' do
+      before do
+        ActionController::Base.allow_forgery_protection = true
+      end
+
       it 'accepts an application/json content request' do
         request.headers['HTTP_CONTENT_TYPE'] = 'application/json'
         request.headers['HTTP_ACCEPT'] = 'application/json'
         
-        post :create, { message: valid_attributes },
-                      { 'HTTP_ACCEPT': 'application/json',
-                        'HTTP_ACCEPT': 'application/json' }
+        post :create, { message: valid_attributes }
 
         message_url = Rails.application.routes.url_helpers.message_url(
           token: Message.last.token,
@@ -96,6 +101,16 @@ RSpec.describe MessagesController, :type => :controller do
         expect(response.code.to_i).to eq(201)
         expect(response.headers['Location']).to eq(message_url)
       end
+
+      it 'rejects a text/html content request' do
+         request.headers['HTTP_CONTENT_TYPE'] = 'text/html'
+         request.headers['HTTP_ACCEPT'] = 'text/html'
+
+         post :create, { message: valid_attributes }
+
+         expect(response.code.to_i).to eq(422)
+         expect(response).to render_template('shared/422')
+       end
     end
   end
 
