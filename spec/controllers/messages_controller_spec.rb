@@ -82,19 +82,37 @@ RSpec.describe MessagesController, :type => :controller do
     end
 
     describe 'without a valid session' do
+      before do
+        ActionController::Base.allow_forgery_protection = true
+      end
+
+      after do
+        ActionController::Base.allow_forgery_protection = false
+      end
+
       it 'accepts an application/json content request' do
         request.headers['HTTP_CONTENT_TYPE'] = 'application/json'
         request.headers['HTTP_ACCEPT'] = 'application/json'
-        
-        post :create, { message: valid_attributes },
-                      { 'HTTP_ACCEPT': 'application/json',
-                        'HTTP_ACCEPT': 'application/json' }
+
+        post :create, { message: valid_attributes }
 
         message_url = Rails.application.routes.url_helpers.message_url(
           token: Message.last.token,
           host: @request.host)
         expect(response.code.to_i).to eq(201)
         expect(response.headers['Location']).to eq(message_url)
+      end
+
+      it 'rejects a text/html content request' do
+        request.headers['HTTP_CONTENT_TYPE'] = 'text/html'
+        request.headers['HTTP_ACCEPT'] = 'text/html'
+
+        post :create, { message: valid_attributes }
+
+        Rails.application.routes.url_helpers.message_url(
+          token: Message.last.token,
+          host: @request.host)
+        expect(response.code.to_i).to eq(422)
       end
     end
   end
