@@ -1,11 +1,11 @@
 language: ruby
 cache: bundler
+sudo: false
 
 matrix:
   fast_finish: true
   include:
-    - rvm: 2.2.3
-    - rvm: 2.3.0
+    - rvm: 2.3.3
 
 notifications:
   email: false
