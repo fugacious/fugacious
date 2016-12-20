@@ -53,7 +53,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for more information
 ### Deploying to Heroku
 
 ##### Use this friendly button:
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/heroku/node-js-sample)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/fugacious/fugacious)
 
 ##### Or, use our friendly bootstrap script:
 Ensure you have the [Heroku Toolbelt](https://devcenter.heroku.com/articles/heroku-command-line) installed.
