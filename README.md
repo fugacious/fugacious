@@ -20,12 +20,30 @@ Need to send a secret to someone? Use Fugacious to ensure that no permanent reco
 The link to your secret will only remain alive for the preset amount of time or number of views.
 
 
-### Getting started
+### Getting started with development
 
 #### Dependencies
 - [Ruby 2](https://www.ruby-lang.org)
 - [Redis](https://redis.io)
-- [QT](https://www.qt.io)
+- [Qt](https://www.qt.io)
+
+### [Docker](https://www.docker.com)
+
+Be sure Docker is running, then
+
+1. Build the environment with:
+```
+$ docker-compose build
+```
+
+2. Start the server
+```
+$ docker-compose up
+```
+
+That's it, the app is running on http://localhost:3000
+
+### Local setup
 
 1. Setup application dependencies
 ```
