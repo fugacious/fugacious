@@ -1,5 +1,5 @@
 .usa-header {
-  background: #112e51;
+  background: $color-primary-darkest;
 
   .usa-logo {
     float: none;
@@ -10,19 +10,19 @@
   }
 
   .usa-logo-text {
-    font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+    font-family: 'Merriweather', 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
     font-size: 3.5rem;
     font-weight: 400;
     margin-bottom: .5rem;
 
     a {
-      color: #fff;
+      color: $color-white;
     }
   }
 
   .usa-logo-text-subtitle {
-    color: #02bfe7;
-    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    color: $color-primary-alt;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', sans-serif;
     font-size: 2.5rem;
     font-weight: 400;
     margin-top: 0;
@@ -30,7 +30,7 @@
 }
 
 .lead {
-  font-family: "Merriweather", "Georgia", "Cambria", "Times New Roman", "Times", serif;
+  font-family: 'Merriweather', 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
   font-size: 2.5rem;
   font-weight: 400;
 }
@@ -38,7 +38,7 @@
 .message,
 .section-instruction,
 footer {
-  background: #e4e2e0;
+  background: $color-gray-warm-light;
 }
 
 .input-small {
@@ -46,8 +46,8 @@ footer {
 }
 
 .usa-section {
-  padding-top: 3rem !important;
-  padding-bottom: 3rem !important;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
 }
 
 .input-margin-top {
@@ -63,8 +63,12 @@ footer {
 }
 
 .section-expire {
-  padding-top: 3rem;
   padding-bottom: 3rem;
+  padding-top: 3rem;
+
+  .usa-width-one-third {
+    width: auto;
+    }
 }
 
 .label-strong {
@@ -73,16 +77,10 @@ footer {
 }
 
 .top-footer {
-  background: #f1f1f1;
+  background: $color-gray-lightest;
 }
 
 .message {
-  padding: 1.5rem;
   font-family: inherit;
-}
-
-.section-expire {
-  .usa-width-one-third {
-    width: auto;
-  }
+  padding: 1.5rem;
 }
