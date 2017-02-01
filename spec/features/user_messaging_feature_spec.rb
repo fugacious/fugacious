@@ -18,7 +18,7 @@ describe 'Message Display' do
       fill_in 'message_max_views', with: 2
       find('input[name="commit"]').click
 
-      expect(page).to have_content I18n.t('show.destroy_warning', time_left: "about 20 hours",
+      expect(page).to have_content I18n.t('show.destroy_warning', time_left: "20 hours",
                                                     views_left: 2,
                                                     pluralize_views: 's',
                                                     destroy_link: "destroy")
