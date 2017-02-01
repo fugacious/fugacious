@@ -1,27 +1,30 @@
 - title(t('show.title'))
 .usa-grid.usa-section
+
   article#message
     = flash_messages
 
-    = content_tag(:pre, @message.body , :class => 'message')
+    = content_tag(:p, @message.body , :class => 'message')
+    
+    = content_tag(:p, raw(t('show.share_link',
+                            link: link_to("https://#{request.env['HTTP_HOST']}/m/#{@message.token}",
+                             @message.token, id: 'message-link')))) unless @message.remaining_views == 0
+    
 
-    .stuff 
-      = content_tag(:p, raw(t('show.destroy_warning', time_left: time_left_in_words,
-                                                      views_left: @message.remaining_views.to_i,
-                                                      pluralize_views:('s' unless @message.remaining_views == 1),
-                                                      destroy_link: link_to("destroy", @message.token, method: 'delete'),
-                                                      ))) unless @message.remaining_views == 0  
+    
+    = content_tag(:p, raw(t('show.destroy_warning', time_left: time_left_in_words,
+                                                    views_left: @message.remaining_views.to_i,
+                                                    pluralize_views:('s' unless @message.remaining_views == 1),
+                                                    destroy_link: link_to("destroy", @message.token, method: 'delete'),
+                                                    ))) unless @message.remaining_views == 0  
 
-      = content_tag(:p, raw(t('show.share_link',
-                               link: link_to("https://#{request.env['HTTP_HOST']}/m/#{@message.token}",
-                               @message.token, id: 'message-link')))) unless @message.remaining_views == 0
+    
 
-      p
-        - unless @message.remaining_views == 0
-          = mail_to("", 'Email', content_type: 'text/html', body: t('show.email.body', message_link: link_to(@message.token),
-                                                            time_left: @message.created_at + @message.hours.hours),
-                                 subject: t('show.email.subject', hours_left: time_left_in_words ))
-          |  | 
+    p
+      - unless @message.remaining_views == 0
+        p 
+          'No longer need this message?
+          br
           = link_to(t('show.destroy_link'), @message.token, method: 'delete') unless @message.remaining_views == 0
-          |  | 
+        P 
           = link_to(t('show.new_message_link'), root_url)

@@ -21,6 +21,8 @@
 
 en:
   helpers:
+    submit:
+      create: "Create temporary link"
     label:
       message:
         days: days
@@ -30,9 +32,9 @@ en:
   logo_text: 'Fugacious: Digital disappearing ink.'
   fork_me: 'Fork me on Github'
   flash:
-    deleted: "This message has been deleted from our records.  You must copy the message elsewhere if you wish to keep it any longer."
+    deleted: "Message deleted!"
     expired: 'Sorry, that message has expired. Care to create a new one?'
-    expired_or: 'Sorry, that message has expired or never existed at all. Care to create a new one?'
+    expired_or: "This message doesn't exist"
     destroy_success: 'Message was successfully destroyed.'
   layout:
     info:
@@ -52,10 +54,10 @@ en:
         p2: "The application is bundled with all the required %{chef_link} cookbooks to provision to the host of your choice. View the %{readme_link} for more info."
   show:
     title: 'The Secret Message'
-    destroy_warning: "This message can be viewed %{views_left} within the next %{time_left} or after  more view%{pluralize_views}. For your own security, please %{destroy_link} this message once it is no longer needed."
-    share_link: "You can share this message with the following link: %{link}"
-    destroy_link: Destroy
-    new_message_link: New Message
+    destroy_warning: "This message can be viewed %{views_left} more time%{pluralize_views} within the next %{time_left} hours. After that the message will expire."
+    share_link: "Share this message by copying this link: %{link}"
+    destroy_link: Delete this message
+    new_message_link: Send a new message
     email:
       body: "You can view it using the following link: %{message_link}. The message is set to be automatically destroyed at %{time_left}"
       subject: "Someone is sending you a secret.  You have %{hours_left} to view it."
