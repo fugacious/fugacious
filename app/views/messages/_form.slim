@@ -11,12 +11,12 @@
     = f.label(:max_views, class: 'label-strong')
     .usa-width-one-third
       = f.label(:Views)
-      = f.text_field(:max_views, class: 'input-small')
+      = f.number_field(:max_views, class: 'input-small')
     .usa-width-one-third
         p OR
     .usa-width-one-third
       = f.label(:hours)
-      = f.text_field(:hours, class: 'input-small')
+      = f.number_field(:hours, class: 'input-small')
           
-  = f.submit
+  = f.submit 
   p You'll receive a URL that you can copy and paste into a message.
