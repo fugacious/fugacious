@@ -9,14 +9,10 @@ module ApplicationHelper
     @show_title
   end
 
-   def bootstrap_class_for flash_type
-    { success: "alert-success", error: "alert-danger", alert: "alert-warning", notice: "alert-info" }[flash_type] || flash_type.to_s
-  end
-
   def flash_messages(opts = {})
     flash.each do |msg_type, message|
-      concat(content_tag(:div, message, class: "usa-alert usa-alert-error") do
-        concat message 
+      concat(content_tag(:div, content_tag(:div, :class=>"usa-alert-body" ), :class =>"usa-alert usa-alert-error")  do
+          concat message
       end)
     end
     nil
