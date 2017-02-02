@@ -1,0 +1,20 @@
+version: '2.1'
+services:
+  web:
+    build: .
+    depends_on:
+      redis:
+        condition: service_started
+    command: foreman start --port 3000
+    volumes:
+      - .:/fugacious
+    ports:
+      - "3000:3000"
+    links:
+      - redis:redis
+    environment:
+      REDIS_URL: redis://redis
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
