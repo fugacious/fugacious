@@ -59,7 +59,7 @@ html lang='en'
 
 	footer
 		.top-footer
-			.usa-grid
+			.usa-grid.usa-grid-no-breakpoints
 				.usa-width-one-half
 					.usa-section
 						= image_tag('18F-logo.svg' , class: 'footer-logo')
@@ -67,7 +67,7 @@ html lang='en'
 			  	.usa-width-one-half
 						.usa-section
 							nav
-								ul
+								ul.footer-link-list
 									= content_tag :li, link_to( t('layout.info.nav.about'), "#about" )
 									= content_tag :li, link_to( t('layout.info.nav.privacy'), "#privacy" )
 									= content_tag :li, link_to( t('layout.info.nav.github'), "#fork" )
