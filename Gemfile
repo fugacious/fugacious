@@ -1,23 +1,22 @@
 source 'https://rubygems.org'
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.7.1'
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
-gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'dotenv-rails'
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'rails', '~> 4.2.7.1'
+gem 'sass-rails', '~> 4.0.3'
+gem 'sidekiq'
+gem 'sidekiq-cron'
 gem 'secure_headers'
 gem 'slim-rails', require: ['slim-rails', 'slim/translator']
 gem 'therubyracer'
 gem 'thin'
-gem 'sidekiq'
-gem 'sidekiq-cron'
+gem 'turbolinks'
+gem 'uglifier', '>= 1.3.0'
 
 group :development do
   gem 'better_errors'
@@ -26,15 +25,15 @@ group :development do
   gem 'guard-rspec'
   gem 'quiet_assets'
   gem 'rb-fsevent'
+  gem 'sinatra'
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'unf'
-  gem 'sinatra'
 end
 
 group :devops do
-  gem 'capistrano-rails'
   gem 'berkshelf'
+  gem 'capistrano-rails'
   gem 'knife-ec2'
   gem 'knife-solo', github: 'matschaffer/knife-solo', submodules: true
   gem 'knife-solo_data_bag'
@@ -61,9 +60,8 @@ group :test do
   gem 'rspec-collection_matchers'
   gem 'rspec-html-matchers'
   gem 'shoulda'
-  gem 'webmock'
   gem 'timecop'
-
+  gem 'webmock'
 end
 
 # bundle exec rake doc:rails generates the API under doc/api.
