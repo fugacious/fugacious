@@ -1,13 +1,28 @@
+
 .usa-grid-no-breakpoints {
   .usa-width-one-half {
     display: block;
     float: left;
     margin-right: 0;
     width: 47.5854205965%;
-  }
-    .usa-width-one-half:nth-of-type(2) {
-    float: right;
+
+    &:nth-of-type(2) {
+      float: right;
     }
+  }
+}
+
+.page-title {margin-top: 0;}
+
+.usa-alert {
+  background-position: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+
+  &.usa-alert-success {
+    border: 1px solid $color-green-light;
+    border-left-width: 16px;
+  }
 }
 
 .usa-header {
@@ -18,12 +33,17 @@
     margin-bottom: 1rem;
     margin-top: 1rem;
   }
-
-  @media screen and (min-width: 951px) {
+  @media screen and (min-width: $medium-screen) {
     .usa-logo {
       float: none;
       margin-bottom: 3rem;
+      margin-left: 3rem;
       margin-top: 3rem;
+    }
+  }
+  @media screen and (min-width: $nav-width) {
+    .usa-logo {
+      margin-left: 0;
     }
   }
 
@@ -32,7 +52,7 @@
   }
 
   .usa-logo-text {
-    font-family: 'Merriweather', 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+    font-family: $font-serif;
     font-size: 3.5rem;
     font-weight: 400;
     margin-bottom: .5rem;
@@ -44,15 +64,15 @@
 
   .usa-logo-text-subtitle {
     color: $color-primary-alt;
-    font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', sans-serif;
-    font-size: 2.5rem;
+    font-family: $font-sans;
+    font-size: 2rem;
     font-weight: 400;
     margin-top: 0;
   }
 }
 
 .lead {
-  font-family: 'Merriweather', 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
+  font-family: $font-serif;
   font-size: 2.5rem;
   font-weight: 400;
   margin-top: 0;
@@ -65,6 +85,8 @@ footer {
 
 .message {
   background: $color-gray-lightest;
+  font-family: inherit;
+  padding: 1.5rem;
 }
 
 .input-small {
@@ -92,17 +114,26 @@ footer {
   padding-bottom: 1.5rem;
 
   .usa-width-one-third {
-    width: auto;
     float: left;
-    margin: 0 ;
+    margin: 0;
+    width: auto;
 
-p {margin-top:5rem;margin-left: 1rem; font-weight: 700; margin-right: 1rem;line-height: inherit;}
-    input {max-width: 8rem;}
-    label {margin-top:1.5rem;}
+    p {
+      font-weight: 700;
+      line-height: inherit;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-top: 5rem;
     }
 
+    input {
+      max-width: 8rem;
+    }
 
-
+    label {
+      margin-top: 1.5rem;
+    }
+  }
 }
 
 .label-strong {
@@ -112,12 +143,11 @@ p {margin-top:5rem;margin-left: 1rem; font-weight: 700; margin-right: 1rem;line-
 
 .top-footer {
   background: $color-gray-lightest;
-    .footer-logo {max-width: 50px;margin-right:1rem;}
-}
 
-.message {
-  font-family: inherit;
-  padding: 1.5rem;
+  .footer-logo {
+    margin-right: 1rem;
+    max-width: 50px;
+  }
 }
 
 .footer-link-list {
