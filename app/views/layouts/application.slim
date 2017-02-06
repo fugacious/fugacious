@@ -45,8 +45,10 @@ html lang='en'
 			.usa-grid.usa-grid-no-breakpoints
 				.usa-width-one-half
 					.usa-section
-						= image_tag('18F-logo.svg' , class: 'footer-logo')
-						= image_tag('gsa-logo.svg' , class: 'footer-logo')
+						= link_to 'https://18f.gsa.gov' do
+							= image_tag('18F-logo.svg' , class: 'footer-logo')
+						= link_to 'https://www.gsa.gov' do	
+							= image_tag('gsa-logo.svg' , class: 'footer-logo')
 			  	.usa-width-one-half
 						.usa-section
 							nav

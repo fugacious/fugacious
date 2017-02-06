@@ -5,20 +5,18 @@
   label.no-top-margin for="message_body"
     strong 
       'Enter your temporary password, key or token.
-  span.usa-form-hint Don't send PII or any #{link_to 'content that would violate federal rules', '#'}.
+  span.usa-form-hint Don't send PII or any #{link_to 'content that would violate federal rules', 'about#dont-use-for'}.
   = f.text_area(:body, class: 'input-margin-top input-margin-bottom')
   
   .usa-grid-full.section-expire
     strong 
       = f.label(:max_views)
-    .usa-width-one-third
+    .usa-width-one-half
         = f.label(:Views)
-        = f.number_field(:max_views, class: 'input-small')
-    .usa-width-one-third
-        p OR
-    .usa-width-one-third
+        = f.number_field(:max_views, class: 'input-small', min: '1')
+    .usa-width-one-half
         = f.label(:hours)
-        = f.number_field(:hours, class: 'input-small')
+        = f.number_field(:hours, class: 'input-small', min: '1')
           
   = f.submit 
   p You'll receive a URL that you can copy and paste into a message.

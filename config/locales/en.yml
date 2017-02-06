@@ -66,15 +66,18 @@ en:
         p2: "The application is bundled with all the required %{chef_link} cookbooks to provision to the host of your choice. View the %{readme_link} for more info."
       steps:
         s1: "Enter your temporary information."
+        s1a: "Don’t send PII or any content that would violate federal rules."
         s2: "A unique link is created."
+        s2a: "This link will only work for a short period of time, based on number of views. If the message doesn’t reach the view limit within a certain period of time, it will go ahead and expire as an added level of security."
         s3: "Copy the link and share it."
+        s3a: "You can send it via email, text, or any messaging app. This keeps the password out of their message history (and yours!)"
   show:
     title: 'The Secret Message'
-    destroy_warning: "This message will expire after %{views_left} more view%{pluralize_views} or in %{time_left}, whichever comes first."
+    destroy_warning: "This message will <strong>expire after %{views_left} more view%{pluralize_views} or in %{time_left}</strong>, whichever comes first."
     share_link: "%{link}"
     share_link_text: "Share this message by copying this text:"
     destroy_link: Delete it now
-    new_message_link: Send a new message
+    new_message_link: Create a new message
     email:
       body: "You can view it using the following link: %{message_link}. The message is set to be automatically destroyed at %{time_left}"
       subject: "Someone is sending you a secret.  You have %{hours_left} to view it."

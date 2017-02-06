@@ -1,11 +1,9 @@
 
 @import 'uswds_rails_overrides/core/defaults';
-@import 'components/uswds_overrides';
 @import 'uswds/all';
+@import 'components/uswds_overrides';
 @import 'uswds_rails_overrides/all';
-
-//@import 'core/fonts';
-
 @import 'components/utilities';
 @import 'components/banner';
-@import 'components/overrides';
+
+@import 'components/fugacious';

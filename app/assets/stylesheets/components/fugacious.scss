@@ -1,0 +1,70 @@
+
+.page-title {margin-top: 0;}
+
+.section-instruction,
+footer {
+  background: $color-gray-warm-light;
+}
+
+.message {
+  background: $color-gray-lightest;
+  font-family: inherit;
+  padding: 1.5rem;
+}
+
+.input-margin-top {
+  margin-top: 1.5rem;
+}
+
+.input-margin-bottom {
+  margin-bottom: 1.5rem;
+}
+
+.no-top-margin {
+  margin-top: 0;
+}
+
+.section-expire {
+  padding-bottom: 1.5rem;
+
+  .input-small {
+    margin-right: 1rem;
+    max-width: 8rem;
+  }
+
+  .usa-width-one-half {
+    float: left;
+    margin: 0 ;
+    width: auto;
+
+    p {
+      font-weight: 700;
+      line-height: inherit;
+      margin-left: 1rem;
+      margin-right: 1rem;
+      margin-top: 5rem;
+    }
+
+    label {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+footer {
+  .top-footer {
+    background: $color-gray-lightest;
+
+    .footer-logo {
+      margin-right: 1rem;
+      max-width: 50px;
+    }
+  }
+
+  .footer-link-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+  }
+}
