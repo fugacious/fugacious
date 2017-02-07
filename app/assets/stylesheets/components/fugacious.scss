@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
+
 
 .page-title {margin-top: 0;}
 
@@ -8,7 +10,7 @@ footer {
 
 .message {
   background: $color-gray-lightest;
-  font-family: inherit;
+  font-family: 'Roboto Mono', monospace;
   padding: 1.5rem;
 }
 
