@@ -73,7 +73,7 @@ en:
         s3a: "You can send it via email, text, or any messaging app. This keeps the password out of their message history (and yours!)"
   show:
     title: 'The Secret Message'
-    destroy_warning: "This message will <strong>expire after %{views_left} more view%{pluralize_views} or in %{time_left}</strong>, whichever comes first."
+    destroy_warning_html: "This message will <strong>expire after %{views_left} more view%{pluralize_views} or in %{time_left}</strong>, whichever comes first."
     share_link: "%{link}"
     share_link_text: "Share this message by copying this text:"
     destroy_link: Delete it now
