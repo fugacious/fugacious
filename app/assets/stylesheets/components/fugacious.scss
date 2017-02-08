@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
 
-
 .page-title {margin-top: 0;}
 
 .section-instruction,
@@ -59,8 +58,9 @@ footer {
     background: $color-gray-lightest;
 
     .footer-logo {
+      display: block;
+      float: left;
       margin-right: 1rem;
-      max-width: 50px;
     }
   }
 

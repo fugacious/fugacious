@@ -17,11 +17,10 @@
   = content_tag(:pre, @message.body , :class => 'message')
 
     
-  = content_tag(:p, raw(t('show.destroy_warning', time_left: time_left_in_words,
-                                                    views_left: @message.remaining_views.to_i,
-                                                    pluralize_views:('s' unless @message.remaining_views == 1),
-                                                    destroy_link: link_to("destroy", @message.token, method: 'delete'),
-                                                    ))) unless @message.remaining_views == 0  
+  p 
+    strong 
+      - accent = "#{t('show.destroy_warning_accent', time_left: time_left_in_words, views_left: @message.remaining_views.to_i, pluralize_views:('s' unless @message.remaining_views == 1))}"
+      = t('show.destroy_warning_html', accent: accent)
   
   = content_tag(:p, raw(t('show.share_link_text'))) unless @message.remaining_views == 0
   

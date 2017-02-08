@@ -34,17 +34,23 @@ $site-max-width: 650px;
   }
 }
 
+.usa-alert-success {
+
+}
 
 
 .usa-alert {
   background-position: 1rem 1.5rem;
+  background-size: inherit;
   border-style: solid;
   border-width: 1px 1px 1px 16px;
   margin-bottom: 1.5rem;
   margin-top: 0;
 
   &.usa-alert-success {
-    border-color: $color-green-light;
+    background-image: url('/assets/check-icon.png');
+    background-image: url('/assets/check-icon.svg');
+    border-color: $color-green;
   }
 
   &.usa-alert-error {
@@ -52,7 +58,9 @@ $site-max-width: 650px;
   }
 
   &.usa-alert-warning {
-    border-color: $color-gold-light;
+    background-image: url('/assets/exclamation-icon.png');
+    background-image: url('/assets/exclamation-icon.svg');
+    border-color: $color-gold;
   }
 }
 
