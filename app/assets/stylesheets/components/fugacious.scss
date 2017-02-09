@@ -2,9 +2,16 @@
 
 .page-title {margin-top: 0;}
 
-.section-instruction,
+.section-instruction {
+  background: $color-gray-lightest;
+}
+
 footer {
-  background: $color-gray-warm-light;
+  background: #D6D7D9;
+
+  a {
+    color: #333;
+  }
 }
 
 .message {
@@ -27,7 +34,7 @@ footer {
 }
 
 .section-expire {
-  padding-bottom: 1.5rem;
+  background: $color-gray-lightest;
 
   .input-small {
     margin-right: 1rem;
@@ -36,20 +43,9 @@ footer {
 
   .usa-width-one-half {
     float: left;
-    margin: 0 ;
+    margin: 0;
+    margin-top: 1.5rem;
     width: auto;
-
-    p {
-      font-weight: 700;
-      line-height: inherit;
-      margin-left: 1rem;
-      margin-right: 1rem;
-      margin-top: 5rem;
-    }
-
-    label {
-      margin-top: 1.5rem;
-    }
   }
 }
 
