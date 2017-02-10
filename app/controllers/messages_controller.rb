@@ -11,6 +11,8 @@ class MessagesController < ApplicationController
       notice
       flash[:notice] = I18n.t('flash.deleted') if @message.remaining_views == 0
       redirect_to @message, notice: I18n.t('flash.expired') if @message.time_left < 0
+      flash[:notice] = I18n.t('flash.temporary')
+
     else
       redirect_to root_url, notice: I18n.t('flash.expired_or')
     end
@@ -29,6 +31,7 @@ class MessagesController < ApplicationController
       if @message.save
         format.html { redirect_to message_url(@message) }
         format.json { render :show, status: :created, location: @message }
+        flash[:notice] = I18n.t('flash.created')
       else
         format.html { render :new }
         format.json { render json: @message.errors, status: :unprocessable_entity }

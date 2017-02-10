@@ -11,8 +11,13 @@ module ApplicationHelper
 
   def flash_messages(opts = {})
     flash.each do |msg_type, message|
-      concat(content_tag(:div, content_tag(:div, :class=>"usa-alert-body" ), :class =>"usa-alert usa-alert-error")  do
-          concat message
+      concat(
+      content_tag(:div, :class=>"usa-alert usa-alert-warning") do
+        content_tag(:div, :class=>"usa-alert-body") do
+          content_tag(:h3, :class=>"usa-alert-heading") do
+            concat message
+          end
+        end
       end)
     end
     nil

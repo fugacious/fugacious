@@ -32,6 +32,8 @@ en:
   logo_text: 'Fugacious: Digital disappearing ink.'
   fork_me: 'Fork me on Github'
   flash:
+    created: "Message created!"
+    temporary: "This message is temporary!"
     deleted: "Message deleted!"
     expired: 'Sorry, that message has expired. Care to create a new one?'
     expired_or: "This message doesn't exist"
@@ -73,9 +75,10 @@ en:
         s3a: "You can send it via email, text, or any messaging app. This keeps the password out of their message history (and yours!)"
   show:
     title: 'The Secret Message'
-    destroy_warning: "This message will <strong>expire after %{views_left} more view%{pluralize_views} or in %{time_left}</strong>, whichever comes first."
-    destroy_warning_accent: expire after %{views_left} more view%{pluralize_views} or in %{time_left}
-    destroy_warning_html: "This message will %{accent}, whichever comes first."
+    # destroy_warning: "This message will <strong>expire after %{views_left} more view%{pluralize_views} or in %{time_left}</strong>, whichever comes first."
+    destroy_warning_html: >
+      This message will <strong>expire after %{views_left} more view%{pluralize_views}
+      or in %{time_left}</strong>, whichever comes first.
     share_link: "%{link}"
     share_link_text: "Share this message by copying this text:"
     destroy_link: Delete it now

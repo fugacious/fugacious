@@ -1,26 +1,25 @@
 - title(t('show.title'))
 .usa-grid.usa-section
 
-  .usa-alert.usa-alert-success 
-    .usa-alert-body
-      h3.usa-alert-heading Message created!
+  //.usa-alert.usa-alert-success 
+  //  .usa-alert-body
+  //    h3.usa-alert-heading Message created!
   
-  .usa-alert.usa-alert-warning 
-    .usa-alert-body
-      h3.usa-alert-heading This message is temporary!
-  
-  p Your message
+  //.usa-alert.usa-alert-warning 
+  //  .usa-alert-body
+  //    h3.usa-alert-heading This message is temporary!
   
   article#message
     = flash_messages
-    
+  p Your message
   = content_tag(:pre, @message.body , :class => 'message')
 
     
-  p 
-    strong 
-      - accent = "#{t('show.destroy_warning_accent', time_left: time_left_in_words, views_left: @message.remaining_views.to_i, pluralize_views:('s' unless @message.remaining_views == 1))}"
-      = t('show.destroy_warning_html', accent: accent)
+  p
+    = t('show.destroy_warning_html',
+        time_left: time_left_in_words,
+        views_left: @message.remaining_views.to_i,
+        pluralize_views:('s' unless @message.remaining_views == 1))
   
   = content_tag(:p, raw(t('show.share_link_text'))) unless @message.remaining_views == 0
   
