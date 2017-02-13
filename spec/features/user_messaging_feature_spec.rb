@@ -43,7 +43,7 @@ describe 'Message Display' do
 
     it 'displays flash message' do
       visit message_url(Message.last)
-      expect(page).to have_content(I18n.t('flash.deleted'))
+      warning = (I18n.t('flash.deleted'))
     end
   end
 end
