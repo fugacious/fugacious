@@ -8,72 +8,69 @@ html lang='en'
 		meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'
 		= csrf_meta_tags
 		= stylesheet_link_tag	'application', media: 'all', 'data-turbolinks-track' => true
-		= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Merriweather:400,300,700,900'
-		= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Parisienne'
-		= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Rouge+Script'
-		= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Mr+De+Haviland'
-		= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Princess+Sofia'
 		= favicon_link_tag 'fugu.ico'
 		= javascript_include_tag 'application', 'data-turbolinks-track' => true
 
 	body
-		#ocean
-			.fork-me-wrapper
-				.fork-me
-					= link_to content_tag(:span, t('fork_me'), class: 'fork-me-text'), 'https://github.com/fugacious/fugacious', title: 'Fork me on GitHub', class: 'fork-me-link'
-
-			.container-fluid
-				= image_tag('kelp1.png', id: 'kelp1', class: 'kelp')
-				= image_tag('kelp2.png', id: 'kelp2a', class: 'kelp')
-				= image_tag('kelp2.png', id: 'kelp2b', class: 'kelp')
-				= image_tag('kelp2.png', id: 'kelp2c', class: 'kelp')
-				= image_tag('kelp2.png', id: 'kelp2d', class: 'kelp')
-				= image_tag('kelp2.png', id: 'kelp2e', class: 'kelp')
-				= image_tag('kelp3.png', id: 'kelp3', class: 'kelp')
-				= image_tag('kelp4.png', id: 'kelp4', class: 'kelp')
-				= image_tag('kelp5.png', id: 'kelp5', class: 'kelp')
-				= image_tag('kelp6.png', id: 'kelp6', class: 'kelp')
-				= image_tag('fugu.svg', id: 'fugu1', class: 'kelp')
-				= image_tag('fugu.svg', id: 'fugu2', class: 'kelp')
-				= image_tag('fugu.svg', id: 'fugu3', class: 'kelp')
-				= image_tag('fugu.svg', id: 'fugu4', class: 'kelp')
-				= image_tag('fugu.svg', id: 'fugu5', class: 'kelp')
-
-				header#header
-					= link_to image_tag('logo.svg'), root_url, id: 'logo'
-					h1
+	header.usa-header.usa-header-extended role="banner"
+		.usa-banner
+			.usa-accordion
+				 header.usa-banner-header
+					 .usa-grid.usa-banner-inner
+				 		= image_tag('favicon-57.png')
+					 	p An official website of the United States government
+					 	button.usa-accordion-button.usa-banner-button aria-expanded="false" aria-controls="gov-banner"
+						 span.usa-banner-button-text Here's how you know 
+				 .usa-banner-content.usa-grid.usa-accordion-content id="gov-banner"
+				  	.usa-banner-guidance-gov.usa-width-one-half
+				    	= image_tag('icon-dot-gov.svg', class: 'usa-banner-icon usa-media_block-img' )
+				      	.usa-media_block-body
+				      		p strong The .gov means it’s official.<br> Federal government websites always use a .gov or .mil domain. Before sharing sensitive information online, make sure you’re on a .gov or .mil site by inspecting your browser’s address (or “location”) bar.				        
+	        		.usa-banner-guidance-ssl.usa-width-one-half
+		      			= image_tag('icon-https.svg', class: 'usa-banner-icon usa-media_block-img' )
+        				.usa-media_block-body
+	        			p This site is also protected by an SSL (Secure Sockets Layer) certificate that’s been signed by the U.S. government. The <strong>https://</strong> means all transmitted data is encrypted  — in other words, any information or browsing history that you provide is transmitted securely.
+		.usa-navbar
+			.usa-logo#logo
+    			h1.usa-logo-text 
 						= link_to t("site_title"), root_url
-					h2
-						= link_to raw(t('logo_text')), root_url
+	    		h2.usa-logo-text-subtitle  
+						= (t('description'))
+	  	          
+	section#main-content
+		== yield
 
-				.content
-					== yield
+		section#info_panel.usa-grid
+		
+		//	.tab-content
+		//		#about.tab-pane.active
+		//			p =t('layout.info.about.p1')
+		//			p =t('layout.info.about.p2')
 
-		section#info_panel
-			.container-fluid
-				nav
-					ul.nav.nav-pills
-						= content_tag :li, link_to( t('layout.info.nav.about'), "#about", "data-toggle" => "pill" ), class: 'active'
-						= content_tag :li, link_to( t('layout.info.nav.privacy'), "#privacy", "data-toggle" => "pill"  )
-						= content_tag :li, link_to( t('layout.info.nav.github'), "#fork", "data-toggle" => "pill"  )
+		//		#privacy.tab-pane
+		//			p =t('layout.info.privacy.p1')
+		//			p =t('layout.info.privacy.p2')
+		//			= content_tag(:p, raw(t('layout.info.privacy.p3', install_link: link_to('install', 'https://github.com/fugacious/fugacious'))))
+					/ TODO _________ follow this ^ syntax when dealing with inline
+		//		#fork.tab-pane
+		//			= content_tag(:p, raw(t('layout.info.fork_me.p1', github_link: link_to('github', 'https://github.com/fugacious/fugacious'))))
+		//			= content_tag(:p, raw(t('layout.info.fork_me.p2', chef_link: link_to('Chef', 'http://www.opscode.com/chef/'),
+		//																		 readme_link: link_to('readme', 'https://github.com/fugacious/fugacious'))))
 
-				.tab-content
-					#about.tab-pane.active
-						p =t('layout.info.about.p1')
-						p =t('layout.info.about.p2')
-
-					#privacy.tab-pane
-						p =t('layout.info.privacy.p1')
-						p =t('layout.info.privacy.p2')
-						= content_tag(:p, raw(t('layout.info.privacy.p3', install_link: link_to('install', 'https://github.com/fugacious/fugacious'))))
-						/ TODO _________ follow this ^ syntax when dealing with inline
-					#fork.tab-pane
-						= content_tag(:p, raw(t('layout.info.fork_me.p1', github_link: link_to('github', 'https://github.com/fugacious/fugacious'))))
-						= content_tag(:p, raw(t('layout.info.fork_me.p2', chef_link: link_to('Chef', 'http://www.opscode.com/chef/'),
-																					 readme_link: link_to('readme', 'https://github.com/fugacious/fugacious'))))
-
-		footer
-			.container-fluid
-				dl
-					dt fu ga cious
-					dd adj &nbsp;&nbsp;&nbsp; \fyü-ˈgā-shəs\ &nbsp;&nbsp;&nbsp; :fleeting &nbsp;&nbsp;&nbsp; :ephemeral
+	footer
+		.top-footer
+			.usa-grid.usa-grid-no-breakpoints
+				.usa-width-one-half
+					.usa-section
+						= image_tag('18F-logo.svg' , class: 'footer-logo')
+						= image_tag('gsa-logo.jpg' , class: 'footer-logo')
+			  	.usa-width-one-half
+						.usa-section
+							nav
+								ul.footer-link-list
+									= content_tag :li, link_to( t('layout.info.nav.about'), "#about" )
+									= content_tag :li, link_to( t('layout.info.nav.privacy'), "#privacy" )
+									= content_tag :li, link_to( t('layout.info.nav.github'), "#fork" )
+		.usa-grid
+			.usa-section
+				p Built with #{link_to 'Fugacious', 'https://fugacious.18f.gov/'}. As a work of the United States government, #{link_to 'this project is in the public domain', 'https://github.com/fugacious/fugacious'}.
