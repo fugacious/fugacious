@@ -16,20 +16,35 @@ describe 'User Messaging' do
       expect(page).to have_content(I18n.t('flash.created'))
     end
 
-    context 'when viewed' do
-      before do
-        visit message_url(Message.last.token)
-      end
+  end
 
-      it 'displays the destruction warning' do
-        visit message_url(Message.last.token)
-        expect(page).to have_content(I18n.t('show.destroy_warning_html'))
-      end
+  context 'when viewed' do
+    before do
+      find('input[name="commit"]').click
+    end
 
-      it 'does not display the successfully created message' do
-        visit message_url(Message.last.token)
-        expect(page).to_not have_content(I18n.t('flash.created'))
-      end
+    it 'displays the destruction warning' do
+      visit message_url(Message.last.token)
+
+      expect(page).to have_content(
+        I18n.t(
+          'show.destroy_warning_html',
+          time_left: time_left_in_words,
+          views_left: Message.last.remaining_views.to_i,
+          pluralize_views:('s' unless Message.last.remaining_views == 1)
+        )
+      )
+
+      #= t('show.destroy_warning_html',
+      #    time_left: time_left_in_words,
+      #    views_left: @message.remaining_views.to_i,
+      #    pluralize_views:('s' unless @message.remaining_views == 1))
+
+    end
+
+    it 'does not display the successfully created message' do
+      visit message_url(Message.last.token)
+      expect(page).to_not have_content(I18n.t('flash.created'))
     end
   end
 
@@ -72,4 +87,9 @@ describe 'User Messaging' do
       warning = (I18n.t('flash.deleted'))
     end
   end
+
+  def time_left_in_words
+    'about 20 hours'
+  end
+
 end

@@ -77,8 +77,8 @@ en:
     title: 'The Secret Message'
     # destroy_warning: "This message will <strong>expire after %{views_left} more view%{pluralize_views} or in %{time_left}</strong>, whichever comes first."
     destroy_warning_html: >
-      This message will <strong>expire after %{views_left} more view%{pluralize_views}
-      or in %{time_left}</strong>, whichever comes first.
+      This message will expire after %{views_left} more view%{pluralize_views}
+      or in %{time_left}, whichever comes first.
     share_link: "%{link}"
     share_link_text: "Share this message by copying this text:"
     destroy_link: Delete it now
