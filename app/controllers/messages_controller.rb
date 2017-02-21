@@ -8,10 +8,10 @@ class MessagesController < ApplicationController
   def show
     if @message
       @message.add_view
-      notice
-      flash[:notice] = I18n.t('flash.deleted') if @message.remaining_views == 0
+      #notice
+      #flash[:notice] = I18n.t('flash.deleted') if @message.remaining_views == 0
       redirect_to @message, notice: I18n.t('flash.expired') if @message.time_left < 0
-      flash[:notice] = I18n.t('flash.temporary')
+      #flash[:notice] = I18n.t('flash.temporary')
 
     else
       redirect_to root_url, notice: I18n.t('flash.expired_or')
@@ -29,9 +29,9 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     respond_to do |format|
       if @message.save
-        format.html { redirect_to message_url(@message) }
-        format.json { render :show, status: :created, location: @message }
         flash[:notice] = I18n.t('flash.created')
+        format.html { redirect_to message_url(@message.token)}
+        format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new }
         format.json { render json: @message.errors, status: :unprocessable_entity }
