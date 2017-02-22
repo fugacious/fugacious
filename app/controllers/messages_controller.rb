@@ -13,9 +13,9 @@ class MessagesController < ApplicationController
       #redirect_to @message, notice: I18n.t('flash.expired') if @message.time_left < 0
 
       if @message.views == 0
-        flash[:success] = I18n.t('flash.created')
+        flash.now[:success] = I18n.t('flash.created')
       else
-        flash[:warning] = I18n.t('flash.temporary')
+        flash.now[:warning] = I18n.t('flash.temporary')
       end
     else
       flash.now[:warning] = I18n.t('flash.expired_or')

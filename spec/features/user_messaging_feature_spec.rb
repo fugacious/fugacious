@@ -34,17 +34,9 @@ describe 'User Messaging' do
           pluralize_views:('s' unless Message.last.remaining_views == 1)
         )
       )
-    end
-
-    it 'does not display the successfully created message' do
-      visit message_url(Message.last.token)
+      expect(page).to have_content(I18n.t('flash.temporary'))
       expect(page).to_not have_content(I18n.t('flash.created'))
     end
-    it 'displays temporary message' do
-      visit message_url(Message.last.token)
-      expect(page).to have_content(I18n.t('flash.temporary'))
-    end
-
   end
 
   context 'when created and viewed with remaining views' do
