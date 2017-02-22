@@ -34,12 +34,6 @@ describe 'User Messaging' do
           pluralize_views:('s' unless Message.last.remaining_views == 1)
         )
       )
-
-      #= t('show.destroy_warning_html',
-      #    time_left: time_left_in_words,
-      #    views_left: @message.remaining_views.to_i,
-      #    pluralize_views:('s' unless @message.remaining_views == 1))
-
     end
 
     it 'does not display the successfully created message' do
@@ -73,23 +67,25 @@ describe 'User Messaging' do
   end
 
   context 'when no remaining views' do
-    before(:each) do
+    it "doesn't display destruction warning" do
       fill_in 'message_max_views', with: 1
       find('input[name="commit"]').click
-    end
-
-    it 'displays message' do
-      expect(page).to have_content 'this is a message'
-    end
-
-    it "doesn't display destruction warning" do
       visit message_url(Message.last)
-      expect(page).to have_no_content 'This message will be destroyed'
+      expect(page).not_to have_content 'This message will be destroyed'
     end
 
-    it 'displays flash message' do
-      visit message_url(Message.last)
-      warning = (I18n.t('flash.deleted'))
+    it 'displays flash message and renders message shows template' do
+      fill_in 'message_max_views', with: 1
+      find('input[name="commit"]').click
+      warning = (I18n.t('flash.expired_or'))
+      message = Message.last
+
+      visit message_url(message)
+      visit message_url(message)
+
+      expect(page).to have_content(warning)
+
+      expect(current_path).to eq message_path(message)
     end
   end
 

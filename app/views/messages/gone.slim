@@ -1,4 +1,7 @@
 - title t('gone.message')
 
-article#message
-  p = link_to t('gone.new_message'), root_url
+
+.usa-grid.usa-section
+  article#message
+    = flash_messages
+    p = link_to t('gone.new_message'), root_url

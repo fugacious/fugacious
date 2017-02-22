@@ -88,4 +88,4 @@ en:
       subject: "Someone is sending you a secret.  You have %{hours_left} to view it."
   gone:
     message: 'That message is gone.'
-    new_message: "New Message"
+    new_message: "Send a new message"

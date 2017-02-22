@@ -10,15 +10,16 @@ class MessagesController < ApplicationController
       @message.add_view
       #notice
       #flash[:notice] = I18n.t('flash.deleted') if @message.remaining_views == 0
-      redirect_to @message, notice: I18n.t('flash.expired') if @message.time_left < 0
+      #redirect_to @message, notice: I18n.t('flash.expired') if @message.time_left < 0
 
       if @message.views == 0
-        flash[:notice] = I18n.t('flash.created')
-      else 
-        flash[:notice] = I18n.t('flash.temporary')
+        flash[:success] = I18n.t('flash.created')
+      else
+        flash[:warning] = I18n.t('flash.temporary')
       end
     else
-      redirect_to root_url, notice: I18n.t('flash.expired_or')
+      flash.now[:warning] = I18n.t('flash.expired_or')
+      render '/messages/gone'
     end
   end
 
