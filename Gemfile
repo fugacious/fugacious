@@ -4,20 +4,19 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.2.7.1'
 
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'dotenv-rails'
-gem 'jquery-rails'
+
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'secure_headers'
 gem 'slim-rails', require: ['slim-rails', 'slim/translator']
-gem 'therubyracer'
 gem 'thin'
+gem 'secure_headers'
 gem 'sidekiq'
 gem 'sidekiq-cron'
+gem 'uswds-rails', github: '18F/uswds-rails-gem'
 
 group :development do
   gem 'better_errors'
@@ -26,8 +25,6 @@ group :development do
   gem 'guard-rspec'
   gem 'quiet_assets'
   gem 'rb-fsevent'
-  gem 'spring'
-  gem 'spring-commands-rspec'
   gem 'unf'
   gem 'sinatra'
 end
@@ -54,7 +51,7 @@ end
 group :test do
   gem 'capybara', '~> 2.3.0'
   gem 'capybara-screenshot'
-  gem 'capybara-webkit'
+  gem 'poltergeist'
   gem 'database_cleaner'
   gem 'faker'
   gem 'launchy'
