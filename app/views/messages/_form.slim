@@ -2,15 +2,23 @@
   = flash_messages
   = f.error_messages
 
-  .form-group
-    label Your secret message
-    = f.text_area(:body, class: 'form-control')
-
-  .options
-    .form-group
+  label.no-top-margin for="message_body"
+    strong 
+      'Enter your temporary password, key or token.
+  span.usa-form-hint Don't send PII or any #{link_to 'content that would violate federal rules', '#'}.
+  = f.text_area(:body, class: 'input-margin-top input-margin-bottom')
+  
+  .usa-grid-full.section-expire
+    strong 
       = f.label(:max_views)
-      = f.text_field(:max_views, class: 'form-control')
-      | &nbsp;view(s)&nbsp;or&nbsp;
-      = f.text_field(:hours, class: 'form-control', value: 20)
-      = f.label(:hours)
-      = f.submit
+    .usa-width-one-third
+        = f.label(:Views)
+        = f.number_field(:max_views, class: 'input-small')
+    .usa-width-one-third
+        p OR
+    .usa-width-one-third
+        = f.label(:hours)
+        = f.number_field(:hours, class: 'input-small')
+          
+  = f.submit 
+  p You'll receive a URL that you can copy and paste into a message.
