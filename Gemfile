@@ -11,9 +11,9 @@ gem 'dotenv-rails'
 
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'secure_headers'
 gem 'slim-rails', require: ['slim-rails', 'slim/translator']
 gem 'thin'
+gem 'secure_headers'
 gem 'sidekiq'
 gem 'sidekiq-cron'
 gem 'uswds-rails', github: '18F/uswds-rails-gem'
@@ -25,8 +25,6 @@ group :development do
   gem 'guard-rspec'
   gem 'quiet_assets'
   gem 'rb-fsevent'
-  gem 'spring'
-  gem 'spring-commands-rspec'
   gem 'unf'
   gem 'sinatra'
 end
