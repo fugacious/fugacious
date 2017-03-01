@@ -30,7 +30,7 @@ en:
   site_title: 'Fugacious'
   description: 'Digital disappearing ink.'
   logo_text: 'Fugacious: Digital disappearing ink.'
-  fork_me: 'Fork me on Github'
+  fork_me: 'Fork me on GitHub'
   flash:
     deleted: "Message deleted!"
     expired: 'Sorry, that message has expired. Care to create a new one?'
@@ -41,7 +41,7 @@ en:
       nav:
         about: "How this works"
         privacy: "Privacy Policy"
-        github: "Github"
+        github: "GitHub"
       about:
         p1: "Fugacio.us is a tool designed to assist in sending sensitive information through email or other insecure messaging protocols."
         p2: "One can send a username through email, save the password with us, and feel comfortable sharing user credentials without sacrificing security or usability."
