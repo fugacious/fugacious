@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20140810211646) do
 
   create_table "messages", force: :cascade do |t|
     t.text     "body"
-    t.float    "hours",      default: 20
+    t.float    "hours",      default: 20.0
     t.integer  "views",      default: -1
     t.integer  "max_views",  default: 4
     t.string   "token"
