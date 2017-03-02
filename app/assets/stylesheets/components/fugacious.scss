@@ -9,9 +9,18 @@
 footer {
   background: #D6D7D9;
 
-  a {
+  a, a:visited {
     color: #333;
   }
+  .top-footer {
+    background: $color-gray-lightest;
+
+    .footer-logo {
+      display: block;
+      float: left;
+      margin-right: 1rem;
+    }
+}
 }
 
 .message {
@@ -49,21 +58,9 @@ footer {
   }
 }
 
-footer {
-  .top-footer {
-    background: $color-gray-lightest;
-
-    .footer-logo {
-      display: block;
-      float: left;
-      margin-right: 1rem;
-    }
-  }
-
   .footer-link-list {
     list-style: none;
     margin: 0;
     padding: 0;
     text-align: right;
   }
-}

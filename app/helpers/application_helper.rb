@@ -9,10 +9,19 @@ module ApplicationHelper
     @show_title
   end
 
+  def uswds_class_for flash_type
+    { success: "success", error: "danger", alert: "warning", notice: "info" }[flash_type] || flash_type.to_s
+  end
+
   def flash_messages(opts = {})
     flash.each do |msg_type, message|
-      concat(content_tag(:div, content_tag(:div, :class=>"usa-alert-body" ), :class =>"usa-alert usa-alert-error")  do
-          concat message
+      concat(
+      content_tag(:div, :class=>"usa-alert usa-alert-#{uswds_class_for(msg_type)}") do
+        content_tag(:div, :class=>"usa-alert-body") do
+          content_tag(:h3, :class=>"usa-alert-heading") do
+            concat message
+          end
+        end
       end)
     end
     nil
