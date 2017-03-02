@@ -3,31 +3,29 @@ class MessagesController < ApplicationController
   before_action :handle_bot_requests, except: :new
   before_action :set_message, only: [:show, :destroy]
 
-  # GET /messages/1
-  # GET /messages/1.json
   def show
     if @message
       @message.add_view
-      notice
-      flash[:notice] = I18n.t('flash.deleted') if @message.remaining_views == 0
-      redirect_to @message, notice: I18n.t('flash.expired') if @message.time_left < 0
+      if @message.views == 0
+        flash.now[:success] = I18n.t('flash.created')
+      else
+        flash.now[:warning] = I18n.t('flash.temporary')
+      end
     else
-      redirect_to root_url, notice: I18n.t('flash.expired_or')
+      flash.now[:warning] = I18n.t('flash.expired_or')
+      render '/messages/gone'
     end
   end
 
-  # GET /messages/new
   def new
     @message = Message.new
   end
 
-  # POST /messages
-  # POST /messages.json
   def create
     @message = Message.new(message_params)
     respond_to do |format|
       if @message.save
-        format.html { redirect_to message_url(@message) }
+        format.html { redirect_to message_url(@message.token)}
         format.json { render :show, status: :created, location: @message }
       else
         format.html { render :new }
@@ -36,8 +34,6 @@ class MessagesController < ApplicationController
     end
   end
 
-  # DELETE /messages/1
-  # DELETE /messages/1.json
   def destroy
     @message.destroy
     respond_to do |format|
