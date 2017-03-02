@@ -84,5 +84,4 @@ describe 'User Messaging' do
   def time_left_in_words
     'about 20 hours'
   end
-
 end

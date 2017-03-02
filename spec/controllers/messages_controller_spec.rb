@@ -92,7 +92,7 @@ RSpec.describe MessagesController, :type => :controller do
       it 'accepts an application/json content request' do
         request.headers['HTTP_CONTENT_TYPE'] = 'application/json'
         request.headers['HTTP_ACCEPT'] = 'application/json'
-        
+
         post :create, { message: valid_attributes }
 
         message_url = Rails.application.routes.url_helpers.message_url(

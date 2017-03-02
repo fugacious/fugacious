@@ -1,24 +1,3 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   helpers:
     submit:
@@ -58,7 +37,7 @@ en:
         p11: "Don't use Fugacious for"
         p12: "Personally identifiable information (PII), such as Social Security Numbers, addresses, or other identifiable information. This requires a higher level of security."
         p13: "Information that must be preserved as a government record"
-        p14: 	"Any message that violates the Hatch Act (5 U.S.C. §§ 7321-7326)."
+        p14: "Any message that violates the Hatch Act (5 U.S.C. §§ 7321-7326)."
       privacy:
         p1: "We do not store personal identifiable information (PII) or set cookies containing such info. Your secret is expired when deleted; we keep no archives and no logs that identy the user or message content."
         p2: "We do not guarantee the security of your information, and, when it comes to transmitting secure information, you should never put all of your eggs in one basket. We recommend that you send part of your secure information through another form, such as email, SMS, telephone, smoke signals, or carrier pigeon."
