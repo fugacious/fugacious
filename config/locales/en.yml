@@ -6,6 +6,8 @@ en:
       message:
         days: days
         max_views: Delete this message after
+        message_label_text: Enter your temporary password, key or token.
+        dont_sent_hint: Don't send PII or any
   site_title: 'Fugacious'
   description: 'Digital disappearing ink.'
   logo_text: 'Fugacious: Digital disappearing ink.'
@@ -23,6 +25,12 @@ en:
         about: "How this works"
         privacy: "Privacy Policy"
         github: "Github"
+      disclaimer_header:
+        title: An official website of the United States government
+        expand_link: Here's how you know
+        official_title: The .gov means it’s official.
+        how_you_know: Federal government websites always use a .gov or .mil domain. Before sharing sensitive information online, make sure you’re on a .gov or .mil site by inspecting your browser’s address (or "location") bar.
+        ssl_text_html: This site is also protected by an SSL (Secure Sockets Layer) certificate that’s been signed by the U.S. government. The <strong>https://</strong> means all transmitted data is encrypted  — in other words, any information or browsing history that you provide is transmitted securely.
       about:
         p1: "Fugacious is a way to securely send temporary passwords, keys, or tokens."
         p2: "Why is this secure?"
@@ -54,7 +62,6 @@ en:
         s3a: "You can send it via email, text, or any messaging app. This keeps the password out of their message history (and yours!)"
   show:
     title: 'The Secret Message'
-    # destroy_warning: "This message will <strong>expire after %{views_left} more view%{pluralize_views} or in %{time_left}</strong>, whichever comes first."
     destroy_warning_html: >
       This message will expire after %{views_left} more view%{pluralize_views}
       or in %{time_left}, whichever comes first.
@@ -62,9 +69,13 @@ en:
     share_link_text: "Share this message by copying this text:"
     destroy_link: Delete it now
     new_message_link: Create a new message
+    no_longer_need_text: No longer need this message?
+    your_message_text: Your message
     email:
       body: "You can view it using the following link: %{message_link}. The message is set to be automatically destroyed at %{time_left}"
       subject: "Someone is sending you a secret.  You have %{hours_left} to view it."
   gone:
     message: 'This message does not exist'
     new_message: "Send a new message"
+  new:
+    what_happens: You'll receive a URL that you can copy and paste into a message.
