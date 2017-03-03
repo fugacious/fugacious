@@ -39,25 +39,25 @@ html lang='en'
             h2.usa-logo-text-subtitle
               = (t('description'))
 
-  section#main-content
-    == yield
+    section#main-content
+      == yield
 
-    section#info_panel.usa-grid
+      section#info_panel.usa-grid
 
-  footer
-    .top-footer
-      .usa-grid.usa-grid-no-breakpoints
-        .usa-width-one-half
-          .usa-section
-            = image_tag('18F-logo.svg' , class: 'footer-logo', size: '50')
-            = image_tag('gsa-logo.jpg' , class: 'footer-logo', size: '50')
-        .usa-width-one-half
-          .usa-section
-            nav
-              ul.footer-link-list
-                = content_tag :li, link_to( t('layout.info.nav.about'), ('about'))
-                = content_tag :li, link_to( t('layout.info.nav.privacy'), "privacy" )
-                = content_tag :li, link_to( t('layout.info.nav.github'), "https://github.com/fugacious/fugacious" )
-    .usa-grid
-      .usa-section
-        p Built with #{link_to 'Fugacious', 'https://fugacious.18f.gov/'}. As a work of the United States government, #{link_to 'this project is in the public domain', 'https://github.com/fugacious/fugacious'}.
+    footer
+      .top-footer
+        .usa-grid.usa-grid-no-breakpoints
+          .usa-width-one-half
+            .usa-section
+              = image_tag('18F-logo.svg' , class: 'footer-logo', size: '50')
+              = image_tag('gsa-logo.jpg' , class: 'footer-logo', size: '50')
+          .usa-width-one-half
+            .usa-section
+              nav
+                ul.footer-link-list
+                  = content_tag :li, link_to( t('layout.info.nav.about'), ('about'))
+                  = content_tag :li, link_to( t('layout.info.nav.privacy'), "privacy" )
+                  = content_tag :li, link_to( t('layout.info.nav.github'), "https://github.com/fugacious/fugacious" )
+      .usa-grid
+        .usa-section
+          p Built with #{link_to 'Fugacious', 'https://fugacious.18f.gov/'}. As a work of the United States government, #{link_to 'this project is in the public domain', 'https://github.com/fugacious/fugacious'}.
