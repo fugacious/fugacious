@@ -9,7 +9,7 @@ en:
   site_title: 'Fugacious'
   description: 'Digital disappearing ink.'
   logo_text: 'Fugacious: Digital disappearing ink.'
-  fork_me: 'Fork me on Github'
+  fork_me: 'Fork me on GitHub'
   flash:
     created: "Message created!"
     temporary: "This message is temporary!"
@@ -22,7 +22,7 @@ en:
       nav:
         about: "How this works"
         privacy: "Privacy Policy"
-        github: "Github"
+        github: "GitHub"
       about:
         p1: "Fugacious is a way to securely send temporary passwords, keys, or tokens."
         p2: "Why is this secure?"
