@@ -10,8 +10,6 @@ en:
         dont_sent_hint: Don't send PII or any
   site_title: 'Fugacious'
   description: 'Digital disappearing ink.'
-  logo_text: 'Fugacious: Digital disappearing ink.'
-  fork_me: 'Fork me on Github'
   flash:
     created: "Message created!"
     temporary: "This message is temporary!"
@@ -50,9 +48,6 @@ en:
         p1: "We do not store personal identifiable information (PII) or set cookies containing such info. Your secret is expired when deleted; we keep no archives and no logs that identy the user or message content."
         p2: "We do not guarantee the security of your information, and, when it comes to transmitting secure information, you should never put all of your eggs in one basket. We recommend that you send part of your secure information through another form, such as email, SMS, telephone, smoke signals, or carrier pigeon."
         p3: "You can always %{install_link} your own fugacious server if you're not comfortable with ours."
-      fork_me:
-        p1: "Please feel free to check out the source code at %{github_link}.  We welcome any improvements or bug fixes that you can offer."
-        p2: "The application is bundled with all the required %{chef_link} cookbooks to provision to the host of your choice. View the %{readme_link} for more info."
       steps:
         s1: "Enter your temporary information."
         s1a: "Don’t send PII or any content that would violate federal rules."
