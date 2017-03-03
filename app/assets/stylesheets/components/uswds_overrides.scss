@@ -1,4 +1,4 @@
-$image-path:  '/assets/';
+$image-path: '/assets/';
 $site-max-width: 650px;
 
 .usa-grid {
@@ -34,11 +34,6 @@ $site-max-width: 650px;
   }
 }
 
-.usa-alert-success {
-
-}
-
-
 .usa-alert {
   background-position: 1rem 1.5rem;
   background-size: inherit;
@@ -54,6 +49,8 @@ $site-max-width: 650px;
   }
 
   &.usa-alert-error {
+    background-position: 0 1.5rem;
+    background-size: 6rem;
     border-color: $color-secondary-dark;
   }
 
@@ -117,4 +114,8 @@ $site-max-width: 650px;
 .usa-section {
   padding-bottom: 3rem;
   padding-top: 3rem;
+
+  :last-child {
+    margin-bottom: 0;
+  }
 }
