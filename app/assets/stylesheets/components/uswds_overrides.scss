@@ -63,6 +63,7 @@ $site-max-width: 650px;
 
 .usa-header {
   background: $color-primary-darkest;
+  border-bottom-color: transparent;
 
   .usa-logo {
     float: none;
@@ -84,6 +85,7 @@ $site-max-width: 650px;
   }
 
   .usa-navbar {
+    border-bottom-color: transparent;
     height: auto;
   }
 
