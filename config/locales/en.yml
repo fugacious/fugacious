@@ -8,7 +8,7 @@ en:
         max_views: Delete this message after
         message_label_text: Enter your temporary password, key or token.
         dont_sent_hint: Don't send PII or any
-  site_title: 'Fugacious'
+  site_title: 'Toaster'
   description: 'Digital disappearing ink.'
   flash:
     created: "Message created!"
@@ -30,24 +30,24 @@ en:
         how_you_know: Federal government websites always use a .gov or .mil domain. Before sharing sensitive information online, make sure you’re on a .gov or .mil site by inspecting your browser’s address (or "location") bar.
         ssl_text_html: This site is also protected by an SSL (Secure Sockets Layer) certificate that’s been signed by the U.S. government. The <strong>https://</strong> means all transmitted data is encrypted  — in other words, any information or browsing history that you provide is transmitted securely.
       about:
-        p1: "Fugacious is a way to securely send temporary passwords, keys, or tokens."
+        p1: "Toaster is a way to securely send temporary passwords, keys, or tokens."
         p2: "Why is this secure?"
         p3: "When you send someone a password, installation token, or other account credentials  through email, that information most likely stays in a user’s email archives forever, as well as in your own sent mail folder. If their email account or yours gets hacked at any point in the future, the hackers also have that password."
-        p4: "Fugacious adds an additional layer of security by ensuring that any record of the password gets deleted after a set period of time or a set number of views. That means that anyone who might gain access to someone’s email after the message expires will only find the expired Fugacious link, and will have no way to access the secret credentials!"
-        p5: "What you can and can’t send through Fugacious"
-        p6: "Use fugacious for"
+        p4: "Toaster adds an additional layer of security by ensuring that any record of the password gets deleted after a set period of time or a set number of views. That means that anyone who might gain access to someone’s email after the message expires will only find the expired Toaster link, and will have no way to access the secret credentials!"
+        p5: "What you can and can’t send through Toaster"
+        p6: "Use Toaster for"
         p7: "Creating a new account for someone and sending them the password"
         p8: "Sending a password to a password-protected document"
         p9: "Sending someone a token for installing software on their computer"
         p10: "In software development, sending a colleague information on a new test environment or an API key"
-        p11: "Don't use Fugacious for"
+        p11: "Don't use Toaster for"
         p12: "Personally identifiable information (PII), such as Social Security Numbers, addresses, or other identifiable information. This requires a higher level of security."
         p13: "Information that must be preserved as a government record"
         p14: "Any message that violates the Hatch Act (5 U.S.C. §§ 7321-7326)."
       privacy:
         p1: "We do not store personal identifiable information (PII) or set cookies containing such info. Your secret is expired when deleted; we keep no archives and no logs that identy the user or message content."
         p2: "We do not guarantee the security of your information, and, when it comes to transmitting secure information, you should never put all of your eggs in one basket. We recommend that you send part of your secure information through another form, such as email, SMS, telephone, smoke signals, or carrier pigeon."
-        p3: "You can always %{install_link} your own fugacious server if you're not comfortable with ours."
+        p3: "You can always %{install_link} your own Toaster server if you're not comfortable with ours."
       steps:
         s1: "Enter your temporary information."
         s1a: "Don’t send PII or any content that would violate federal rules."
