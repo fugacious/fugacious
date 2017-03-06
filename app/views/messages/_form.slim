@@ -5,7 +5,8 @@
   label.no-top-margin for="message_body"
     strong = f.label(:message_label_text, class: 'no-top-margin')
   span.usa-form-hint = t('helpers.label.message.dont_sent_hint') + " "
-  = link_to 'content that would violate federal rules', about_path
+  = link_to 'content that could violate federal rules.', about_path
+  
   = f.text_area(:body, class: 'input-margin-top input-margin-bottom')
   .usa-grid.section-expire.usa-section
     strong
