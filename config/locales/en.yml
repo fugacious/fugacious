@@ -40,7 +40,7 @@ en:
         p7: "Creating a new account for someone and sending them the password"
         p8: "Sending the password for a password-protected document"
         p9: "Sending someone a token for installing software on their computer"
-        p10: "In software development, sending a colleague information on a new test environment or an API key"
+        p10: "Sending a colleague information on a new software test environment or an API key"
         p11: "Don't use Toaster for"
         p12: "Sharing personally identifiable information (PII), such as Social Security numbers, addresses, or other identifiable information. This requires a higher level of security."
         p13: "Sending information that must be preserved as a government record."
@@ -125,7 +125,7 @@ en:
       This message will expire after %{views_left} more view%{pluralize_views}
       or in %{time_left}, whichever comes first.
     share_link: "%{link}"
-    share_link_text: "Share this message by copying this text:"
+    share_link_text: "Share this message by copying this link:"
     destroy_link: Delete it now
     new_message_link: Create a new message
     no_longer_need_text: No longer need this message?
