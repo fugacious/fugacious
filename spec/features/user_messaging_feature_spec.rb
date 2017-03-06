@@ -81,6 +81,16 @@ describe 'User Messaging' do
     end
   end
 
+  context 'deleting message', js: true do
+    it 'redirects to root path' do
+      find('input[name="commit"]').click
+      click_on(I18n.t('show.destroy_link'))
+
+      expect(current_path).to eq root_path
+      expect(page).to have_content(I18n.t('flash.destroy_success'))
+    end
+  end
+
   def time_left_in_words
     'about 20 hours'
   end
