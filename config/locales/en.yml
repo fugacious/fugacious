@@ -45,9 +45,71 @@ en:
         p13: "Information that must be preserved as a government record"
         p14: "Any message that violates the Hatch Act (5 U.S.C. §§ 7321-7326)."
       privacy:
-        p1: "We do not store personal identifiable information (PII) or set cookies containing such info. Your secret is expired when deleted; we keep no archives and no logs that identy the user or message content."
-        p2: "We do not guarantee the security of your information, and, when it comes to transmitting secure information, you should never put all of your eggs in one basket. We recommend that you send part of your secure information through another form, such as email, SMS, telephone, smoke signals, or carrier pigeon."
-        p3: "You can always %{install_link} your own fugacious server if you're not comfortable with ours."
+        page_title: Our privacy policy
+        p1: "Protecting the privacy and security of your personal information is very important to us. Please read this notice carefully to understand what we do with the personal information we collect. We’ve tried to make it as clear as possible, but we welcome your feedback to !!!! [email address] !!!! if you have suggestions or questions."
+        p2: "When you use our service, we do not explicitly collect any personal information about you."
+        p3: "When you contact us to help you with a problem, we may collect personal information about you. We collect and use only the information necessary to respond to your concerns. In most instances, we collect minimal personal information, such as name, email address, or telephone number."
+        h1: "Information collected and stored automatically"
+        p4: "If you visit our site to read about or make use of our service, we may automatically collect and store the following information about your visit:"
+        list:
+          - The name of the internet domain (for example, "xcompany.gov" if you are connecting from a federal government network, or "yourschool.edu" if you are connecting from a university's domain)
+          - The IP address (a number that is automatically assigned to your computer when you are using the Internet) from which you access our site
+          - The type of browser and operating system used to access our site
+          - The date and time you access our site
+          - The internet address of the site from which you linked directly to our site
+          - The country and state from which you access our site
+          - The pages you visit and the information you request
+          - Search terms you used to get to our web site from an external search engine and terms you searched on our site
+        p5: "None of this information identifies you personally. We do not store any personal identifiers. We use the information we collect to measure the number of visitors to our site and to help us make our site more useful to visitors."
+        p6: "The information collected is part of a system log file, is only used internally for site-management purposes, and is primarily collected to create summary statistics. We use summary statistics to assess what information is of most and least interest to visitors, determine technical design specifications, and identify and improve system performance."
+        h2: "Information you provide"
+        p7_html: "<strong>You do not have to provide personal information to use our service.</strong> If you choose to provide personal information (for example, when you send an e-mail, submit a form, or fill out a survey), we will use the information you provide <strong>only</strong> to respond to you and address your concerns."
+        p8: "We use personally identifiable information only to verify your identity in order to respond to your inquiries and to provide better service. This may be to correct broken links that you have identified or provide additional information that you have requested."
+        p9: "Any information you share via a survey or questionnaire may be subject to disclosure. We’ll handle all personal information in accordance with the requirements of the Privacy Act and the Freedom of Information Act to ensure the greatest protection of personal privacy."
+        p10_html: "<strong>Please do not send us sensitive information, such as your credit card or Social Security numbers, via e-mail.</strong> Though unlikely, it is possible that a third party may intercept this information during transmission of your e-mail. We cannot guarantee its safety while in transit."
+        p11: "There are a very few cases in which we may transfer your personal information. We may share this information:"
+        list2:
+          - With a company that is contracted to assist us with specific services, and which agrees not to sell or use personal information for other purposes
+          - With legal authorities if we suspect that you are attempting to change or otherwise damage this web site, or you are using it in violation of federal or local laws
+          - With Congress or a court in response to a subpoena.
+        p12: "We do not collect any information for commercial marketing purposes."
+        h3: "Information collected for tracking and customization (cookies)"
+        p13: "A cookie is a small file that a website transfers to your computer to allow it to remember specific information about your session while you are connected. Your computer will only share the information in the cookie with the website that provided it, and no other website can request it. There are two types of cookies: session and persistent. Session cookies last only as long as your browser is open. Once you close your browser, the cookie disappears. Persistent cookies store information on your computer for longer periods of time."
+        p14: "Our service may use session cookies for technical purposes such as enabling better navigation through the site or to allowing you to customize your preferences. We do not use persistent cookies."
+        p15_html: "If you do not wish to have session cookies stored on your machine, <a href='https://www.usa.gov/optout-instructions'>you can turn them off in your browser</a>."
+        h4: "Providing information to third parties"
+        p16: "We may share automatically collected information with some private organizations to provide users with better site functionality. Information provided by these third-party tools improves our Web presence and the end-user experience."
+        p17: "We do not collect personally identifiable information from third-party tools, nor do we provide them with additional PII. We use IP masking in order to share only a portion of the IP address for geolocation."
+        p18_html: "<strong>At present, the only third party service we may use on the site is Google Analytics</strong>. Like many services, Google Analytics uses cookies to track visitor interactions.For more information, see the Google Analytics privacy overview."
+        p19: "Google provides an Opt-out Browser Add-on “to indicate that information about the website visit should not be sent to Google Analytics.” We do not endorse this add-on, nor do we have an official stance on its effectiveness."
+        h5: "Links to other sites"
+        p20: "Our website may link to other federal agencies’ sites. In some cases, we may also link to private organizations’ sites. Once you access another site through a link that we provide, you are subject to the privacy policy of that site. The privacy policies and procedures described here do not apply to any external sites. We encourage you to read the privacy policies of any site you link to from ours, especially if you share any personal information."
+        h6: "Website security"
+        p21: "To promote site security and accessibility to all users, our government computer system employs software programs to monitor network traffic to identify unauthorized attempts to upload or change information or otherwise cause damage."
+        p22: "Except for authorized law enforcement investigations, no other attempts are made to identify individual users or their usage habits. Unauthorized attempts to upload information or change information on this site are strictly prohibited and may be punishable under the Computer Fraud and Abuse Act of 1986 and the National Information Infrastructure Protection Act."
+        h7: "Rules and expectations for site usage"
+        p23: "To ensure the safety of all users, Fugacious has some ground rules. When using the site, you must agree not to do any of the following:"
+        list3:
+          - Threaten other users with violence
+          - Use hateful, abusive, harassing, libelous, or obscene language toward other users
+          - Post any material that infringes upon or violates any third party’s copyright, trademark, trade secret, privacy, or other proprietary or property right
+          - Post any material that promotes illegal activity, could constitute a criminal offense, give rise to civil liability, or otherwise violate any applicable law or regulation
+          - Use the site to send spam, chain letters, junk mail, or any other type of unsolicited mass email
+          - Use the site to distribute viruses or other harmful, disruptive, or destructive files
+          - Disrupt or interfere with the security of, or otherwise abuse, the site, or any servers or networks connected to the site
+          - Attempt to obtain unauthorized access to the site
+          - Impersonate another person
+          - Share with any minor any content or materials inappropriate for children, or allow any minor access to such materials
+          - Systematically harvest data from the site
+        p24: "You further agree that you are responsible for your actions in relation to the site, and for any communications transmitted under your account; that you will comply with all laws relating to the transmission of technical data or software exported from the United States; and that you will comply with all applicable local, state, national and international laws and regulations, including without limitation those related to privacy, data collection, and email creation and delivery."
+        p25: "If it appears you have violated any of these rules, we may, in our sole discretion, remove any offending material or immediately limit or terminate your account."
+        h8: "Disclaimer of warranties"
+        p26: "We will strive to prevent interruptions to the service and be good stewards of your data. However, the site and our services are provided on an as-is and as-available basis. We disclaim all warranties of any kind, whether express or implied, including without limitation any warranty of merchantability, fitness for a particular purpose, or non-infringement. We do not make any warranty that the site or our services will meet your requirements, or that the services will be uninterrupted, timely, secure, or error free, or that defects, if any, will be corrected. You understand that you download from or otherwise obtain content or services through the site at your own discretion and risk."
+        h9: "Right to terminate"
+        p27: "We may at any time decide to alter, amend, modify, or terminate the site, any functionality or portion of it, all in our sole discretion, and you understand that there is no guarantee that the site or any portion or functionality of it will continue to operate or be available for any particular period of time."
+        h10: "Contact"
+        p28: "If you have any questions or comments about this policy, please forward them to:"
+        p29: "!!!! [NAME, EMAIL, ADDRESS CONTACT INFO HERE] !!!!"
       steps:
         s1: "Enter your temporary information."
         s1a: "Don’t send PII or any content that would violate federal rules."
