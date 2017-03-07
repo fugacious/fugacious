@@ -37,19 +37,17 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
     respond_to do |format|
-      format.html { redirect_to root_url, notice: I18n.t('flash.destroy_success') }
+      format.html { redirect_to root_path, notice: I18n.t('flash.destroy_success') }
       format.json { head :no_content }
     end
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_message
     @message = Message.find_by_token(params[:token])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
     params.require(:message).permit(:body, :max_views, :hours)
   end
