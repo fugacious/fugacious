@@ -16,6 +16,7 @@ gem 'thin'
 gem 'secure_headers'
 gem 'sidekiq'
 gem 'sidekiq-cron'
+gem 'simple_form'
 gem 'uswds-rails', github: '18F/uswds-rails-gem'
 
 group :development do
