@@ -18,13 +18,14 @@
   p = t('layout.info.about.p3')
   p = t('layout.info.about.p4')
   h2 = t('layout.info.about.p6')
-  ul
-    li = t('layout.info.about.p7')
-    li = t('layout.info.about.p8')
-    li = t('layout.info.about.p9')
-    li = t('layout.info.about.p10')
+  ul 
+    - t('layout.info.about.do_list').each do |item|
+      li 
+        = item
   h2 = t('layout.info.about.p11')
-  ul
-    li = t('layout.info.about.p12')
-    li = t('layout.info.about.p13')
-    li = t('layout.info.about.p14_html')
+  ul 
+    - t('layout.info.about.dont_list').each do |item|
+      li 
+        = item
+        
+    li = t('layout.info.about.dont_list_html')

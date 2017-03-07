@@ -37,17 +37,18 @@ en:
         p4: "Toaster adds an additional layer of security by ensuring that any record of the password gets deleted after a set period of time or a set number of views. This means that anyone who might gain access to someone’s email after the message expires will only find the expired Toaster link and will have no way to access the secret credentials."
         p5: "What you can and can’t send through Toaster"
         p6: "Use Toaster for"
-        p7: "Creating a new account for someone and sending them the password"
-        p8: "Sending the password for a password-protected document"
-        p9: "Sending someone a token for installing software on their computer"
-        p10: "Sending a colleague information on a new software test environment or an API key"
+        do_list:
+          - "Creating a new account for someone and sending them the password"
+          - "Sending the password for a password-protected document"
+          - "Sending someone a token for installing software on their computer"
+          - "Sending a colleague information on a new software test environment or an API key"
         p11: "Don't use Toaster for"
-        p12: "Sharing personally identifiable information (PII), such as Social Security numbers, addresses, or other identifiable information. This requires a higher level of security."
-        p13: "Sending information that must be preserved as a government record."
-        p14_html: "Sending any message that violates the <a href='https://osc.gov/Pages/HatchAct.aspx'>Hatch Act (5 U.S.C. §§ 7321-7326)</a>."
+        dont_list:
+          - "Sharing personally identifiable information (PII), such as Social Security numbers, addresses, or other identifiable information. This requires a higher level of security."
+          - "Sending information that must be preserved as a government record."
+        dont_list_html: "Sending any message that violates the <a href='https://osc.gov/Pages/HatchAct.aspx'>Hatch Act (5 U.S.C. §§ 7321-7326)</a>."
       privacy:
         title: Our privacy policy
-        short_version_html: "<p>We do not store personal identifiable information (PII) or set cookies containing such information. Your secret expires once it’s deleted; we keep no archives and no logs that identify the user or message content.</p><p>We do not guarantee the security of your information, and, when it comes to transmitting secure information, you should never put all of your eggs in one basket. We recommend that you send part of your secure information using another form, such as email, SMS, or telephone.</p><p>You can always %{install_link} your own Toaster server if you’d prefer not to use ours</p>"
         p1: "Protecting the privacy and security of your personal information is very important to us. Please read this notice carefully to understand what we do with the personal information we collect. We’ve tried to make it as clear as possible, but we welcome your feedback to !!!! [email address] !!!! if you have suggestions or questions."
         p2: "When you use our service, we do not explicitly collect any personal information about you."
         p3: "When you contact us to help you with a problem, we may collect personal information about you. We collect and use only the information necessary to respond to your concerns. In most instances, we collect minimal personal information, such as name, email address, or telephone number."
