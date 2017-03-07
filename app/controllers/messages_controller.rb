@@ -23,11 +23,13 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
+
     respond_to do |format|
       if @message.save
         format.html { redirect_to message_url(@message.token)}
         format.json { render :show, status: :created, location: @message }
       else
+        flash.now[:error] = @message.errors.full_messages.to_sentence
         format.html { render :new }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end

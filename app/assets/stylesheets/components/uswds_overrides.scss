@@ -51,8 +51,8 @@ $site-max-width: 650px;
   margin-top: 0;
 
   &.usa-alert-success {
-    background-image: url('/assets/check-icon.png');
-    background-image: url('/assets/check-icon.svg');
+    background-image: url(image-path('check-icon.png'));
+    background-image: url(image-path('check-icon.svg'));
     border-color: $color-green;
   }
 
@@ -63,8 +63,8 @@ $site-max-width: 650px;
   }
 
   &.usa-alert-warning {
-    background-image: url('/assets/exclamation-icon.png');
-    background-image: url('/assets/exclamation-icon.svg');
+    background-image: url(image-path('exclamation-icon.png'));
+    background-image: url(image-path('exclamation-icon.svg'));
     border-color: $color-gold;
   }
 }
