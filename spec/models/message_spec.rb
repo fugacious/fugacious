@@ -1,32 +1,28 @@
 require 'rails_helper'
 
-RSpec.describe Message, type: 'model' do
+RSpec.describe Message do
+  describe 'Validations' do
+    it { should validate_presence_of(:body) }
+    it { should validate_presence_of(:max_views) }
+    it { should validate_presence_of(:hours) }
 
-  it 'is valid with a message body' do
-    expect(Message.new(body: 'may the force be with you')).to be_valid
-  end
+    it 'is valid with 1 or more max views' do
+      expect(Message.new(body: 'may the force be with you', max_views: 1)).to be_valid
+    end
 
-  it 'is invalid without a message body' do
-    expect(Message.new).to_not be_valid
-    expect(Message.new).to have(1).errors_on(:body)
-  end
+    it 'is invalid with less than 1 max view' do
+      expect(Message.new(body: 'may the force be with you', max_views: 0)).to_not be_valid
+      expect(Message.new(body: 'may the force be with you', max_views: 0)).to have(1).errors_on(:max_views)
+    end
 
-  it 'is valid with 1 or more max views' do
-    expect(Message.new(body: 'may the force be with you', max_views: 1)).to be_valid
-  end
+    it 'humanizes the body attribute with "Message"' do
+      expect(Message.human_attribute_name(:body)).to eq('Message')
+    end
 
-  it 'is invalid with less than 1 max view' do
-    expect(Message.new(body: 'may the force be with you', max_views: 0)).to_not be_valid
-    expect(Message.new(body: 'may the force be with you', max_views: 0)).to have(1).errors_on(:max_views)
-  end
-
-  it 'humanizes the body attribute with "Message"' do
-    expect(Message.human_attribute_name(:body)).to eq('Message')
-  end
-
-  it 'is invalid with less than 1 hour time limit' do
-    expect(Message.new(body: 'merp', max_views: 1, hours: 0)).to_not be_valid
-    expect(Message.new(body: 'merp', max_views: 1, hours: 0)).to have(1).errors_on(:hours)
+    it 'is invalid with less than 1 hour time limit' do
+      expect(Message.new(body: 'merp', max_views: 1, hours: 0)).to_not be_valid
+      expect(Message.new(body: 'merp', max_views: 1, hours: 0)).to have(1).errors_on(:hours)
+    end
   end
 
   describe '@instance_methods' do

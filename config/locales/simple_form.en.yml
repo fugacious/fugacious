@@ -1,0 +1,13 @@
+en:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: ''
+      mark: ''
+    error_notification:
+      default_message: "Please review the problems below:"
+    labels:
+      message:
+        body: Enter your temporary password, key or token.
+        max_views: "Delete this message after"

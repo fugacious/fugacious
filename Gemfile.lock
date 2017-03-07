@@ -552,6 +552,9 @@ GEM
       redis-namespace (>= 1.5.2)
       rufus-scheduler (>= 2.0.24)
       sidekiq (>= 4.0.0)
+    simple_form (3.3.1)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     simplecov (0.11.1)
       docile (~> 1.1.0)
       json (~> 1.8)
@@ -678,6 +681,7 @@ DEPENDENCIES
   shoulda
   sidekiq
   sidekiq-cron
+  simple_form
   sinatra
   slim-rails
   sqlite3
