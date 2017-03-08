@@ -5,8 +5,6 @@ en:
     label:
       message:
         days: days
-        max_views: Delete this message after
-        message_label_text: Enter your temporary password, key or token.
         dont_sent_hint: Don't send PII or any
   site_title: 'Toaster'
   description: 'Digital disappearing messages'

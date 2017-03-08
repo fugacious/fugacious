@@ -23,11 +23,13 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
+
     respond_to do |format|
       if @message.save
         format.html { redirect_to message_url(@message.token)}
         format.json { render :show, status: :created, location: @message }
       else
+        flash.now[:error] = @message.errors.full_messages.to_sentence
         format.html { render :new }
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
@@ -37,19 +39,17 @@ class MessagesController < ApplicationController
   def destroy
     @message.destroy
     respond_to do |format|
-      format.html { redirect_to root_url, notice: I18n.t('flash.destroy_success') }
+      format.html { redirect_to root_path, notice: I18n.t('flash.destroy_success') }
       format.json { head :no_content }
     end
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_message
     @message = Message.find_by_token(params[:token])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def message_params
     params.require(:message).permit(:body, :max_views, :hours)
   end

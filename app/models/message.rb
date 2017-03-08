@@ -1,12 +1,13 @@
 class Message < ActiveRecord::Base
   before_create :make_token
-  validates_presence_of :body, message: "can't be blank"
-  validates :max_views, numericality: {greater_than: 0, message: "Views must be greater than 0"}
-  validates :hours, numericality: {
+  validates :body, presence: true
+  validates :max_views, presence: true, numericality: { greater_than: 0, message: "Views must be greater than 0"}
+  validates :hours, presence: true, numericality: {
     greater_than_or_equal_to: 1,
-    less_than_or_equal_to: Rails.application.secrets.max_retention_hours }
+    less_than_or_equal_to: Rails.application.secrets.max_retention_hours
+  }
 
-  HUMANIZED_ATTRIBUTES = {body: 'Message'}
+  HUMANIZED_ATTRIBUTES = { body: 'Message' }
 
   def self.human_attribute_name(attr, options = {})
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
