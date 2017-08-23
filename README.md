@@ -80,6 +80,20 @@ Ensure you have the [Heroku Toolbelt](https://devcenter.heroku.com/articles/hero
 
 [Getting started with Rails 4 on Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4) for more information.
 
+### Operators
+
+Fugacious URLs should be treated as sensitive information since knowing the URL
+could allow someone to access the stored secret (assuming it was accessed
+within the time-to-live of the secret). This means you should be careful about
+how you configure your HTTP server. Many have a default configuration to log
+all requests, including these sensitive URLs, to file or to stdout. Most PaaS,
+like Heroku or Cloud Foundry are configured this way, too.
+
+Operators of fugacious should take this into consideration when setting up
+their app. Otherwise, they will potentially be disclosing sensitive information
+to their hosting providers.
+
+
 ### License
 
 This project is in the public domain within the United States, and
