@@ -1,0 +1,67 @@
+# Ruby CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-ruby/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.4.2-node-browsers
+        environment:
+          CC_TEST_REPORTER_ID: bdda6bfb05a861848066e0f176ef45254fa411cae0aebdbc55e0c10e3d109efc
+          COVERAGE: true
+          RAILS_ENV: test
+
+      - image: circleci/postgres:latest
+        environment:
+          POSTGRES_USER: circleci
+
+    working_directory: ~/fugacious
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+          - fugacious-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: bundle install
+          command: |
+            gem install bundler --pre
+            bundle install --deployment --jobs=4 --retry=3 --without deploy development doc production --path vendor/bundle
+
+      - run:
+          name: codeclimate test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: fugacious-{{ checksum "Gemfile.lock" }}
+
+      - run: bundle exec rake db:create
+
+      - run: bundle exec rake db:schema:load
+
+      - run:
+          name: run tests
+          command: |
+            mkdir /tmp/test-results
+            ./cc-test-reporter before-build
+            bundle exec rspec --format progress
+
+      - run:
+          name: Upload Test Results to Code Climate
+          command: |
+            ./cc-test-reporter format-coverage -t simplecov $CIRCLE_ARTIFACTS/coverage/.resultset.json
+            ./cc-test-reporter upload-coverage
+
+      - store_test_results:
+          path: /tmp/test-results
+
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results

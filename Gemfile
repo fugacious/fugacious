@@ -19,20 +19,6 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'uswds-rails', github: '18F/uswds-rails-gem'
 
-group :test do
-  gem 'capybara', '~> 2.3.0'
-  gem 'capybara-screenshot'
-  gem 'database_cleaner'
-  gem 'faker'
-  gem 'launchy'
-  gem 'poltergeist'
-  gem 'rspec-collection_matchers'
-  gem 'rspec-html-matchers'
-  gem 'shoulda'
-  gem 'timecop'
-  gem 'webmock'
-end
-
 group :development, :test do
   gem 'brakeman', require: false
   gem 'coveralls', require: false
@@ -54,11 +40,27 @@ group :development do
   gem 'unf'
 end
 
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
+group :doc do
+  gem 'sdoc', '~> 0.4.0'
+end
 
 group :production do
   gem 'pg'
   gem 'puma'
   gem 'rails_12factor'
+end
+
+group :test do
+  gem 'capybara', '~> 2.3.0'
+  gem 'capybara-screenshot'
+  gem 'codeclimate-test-reporter', require: false
+  gem 'database_cleaner'
+  gem 'faker'
+  gem 'launchy'
+  gem 'poltergeist'
+  gem 'rspec-collection_matchers'
+  gem 'rspec-html-matchers'
+  gem 'shoulda'
+  gem 'timecop'
+  gem 'webmock'
 end
