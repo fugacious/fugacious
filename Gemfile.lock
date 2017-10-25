@@ -5,6 +5,14 @@ GIT
     uswds-rails (1.0.0)
       sass
 
+GIT
+  remote: https://github.com/mattheworiordan/capybara-screenshot.git
+  revision: 71ee66e501f60b5ccc95c732c9efd5e63c8a36dc
+  specs:
+    capybara-screenshot (1.0.17)
+      capybara (>= 1.0, < 3)
+      launchy
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -72,9 +80,6 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    capybara-screenshot (1.0.11)
-      capybara (>= 1.0, < 3)
-      launchy
     cliver (0.3.2)
     codeclimate-test-reporter (1.0.8)
       simplecov (<= 0.13)
@@ -379,7 +384,7 @@ DEPENDENCIES
   binding_of_caller
   brakeman
   capybara (~> 2.3.0)
-  capybara-screenshot
+  capybara-screenshot!
   codeclimate-test-reporter
   coffee-rails (~> 4.0.0)
   coveralls

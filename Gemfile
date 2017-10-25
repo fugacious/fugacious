@@ -53,7 +53,7 @@ end
 
 group :test do
   gem 'capybara', '~> 2.3.0'
-  gem 'capybara-screenshot'
+  gem 'capybara-screenshot', github: 'mattheworiordan/capybara-screenshot'
   gem 'codeclimate-test-reporter', require: false
   gem 'database_cleaner'
   gem 'faker'
