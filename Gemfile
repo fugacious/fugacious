@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 
+ruby '~> 2.4.2'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.7.1'
+gem 'rails', '~> 4.2'
 
 gem 'autoprefixer-rails'
 gem 'sass-rails'
