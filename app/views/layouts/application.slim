@@ -55,8 +55,8 @@ html lang='en'
           .usa-section
             nav
               ul.footer-link-list
-                = content_tag :li, link_to( t('layout.info.nav.about'), ('about'))
-                = content_tag :li, link_to( t('layout.info.nav.privacy'), "privacy" )
+                = content_tag :li, link_to( t('layout.info.nav.about'), '/about/')
+                = content_tag :li, link_to( t('layout.info.nav.privacy'), '/privacy/' )
                 = content_tag :li, link_to( t('layout.info.nav.github'), "https://github.com/fugacious/fugacious" )
     .usa-grid
       .usa-section
