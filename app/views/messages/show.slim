@@ -1,0 +1,25 @@
+- title(t('show.title'))
+.usa-grid.usa-section
+
+  article#message
+    = flash_messages
+  p
+    strong = t('show.your_message_text')
+  = content_tag(:pre, @message.body , class: 'message')
+
+  p
+    = t('show.destroy_warning_html',
+        time_left: time_left_in_words,
+        views_left: @message.remaining_views.to_i,
+        pluralize_views:('s' unless @message.remaining_views == 1))
+
+  = content_tag(:p, raw(t('show.share_link_text'))) unless @message.remaining_views == 0
+
+  = text_area_tag(:p, raw(t('show.share_link',
+                             link: "https://#{request.env['HTTP_HOST']}/m/#{@message.token}")), disabled: true) unless @message.remaining_views == 0
+  - unless @message.remaining_views == 0
+    p
+      = t('show.no_longer_need_text') + " "
+    = button_to(t('show.destroy_link'), destroy_message_path(@message.token), method: :delete , class: 'usa-button-unstyled') unless @message.remaining_views == 0
+    p
+      = link_to(t('show.new_message_link'), root_url)

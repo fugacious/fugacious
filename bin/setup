@@ -1,0 +1,65 @@
+#!/usr/bin/env ruby
+require 'pathname'
+
+# path to your application root.
+APP_ROOT = Pathname.new File.expand_path("../../",  __FILE__)
+
+def run(command)
+  abort "command failed (#{$?}): #{command}" unless system command
+end
+
+Dir.chdir APP_ROOT do
+  # This script is a starting point to setup your application.
+  # Add necessary setup steps to this file:
+
+  puts %q[
+                            `..::..`                                                                
+                        ./-``     :.-:/.                                                            
+                      `--  :+:`     .//-`                                                           
+                    `:/ .  +`-:-    +--/.:                                                          
+                 :.../` `  .+dd-    :yh. /                                                          
+                 :`//d`.`    ` `s+/-     o                 -`                                       
+                 --:oyo :       /::-  ` //            ` `-/+/-.-/s+                                 
+                  --/-::   -`         ./-            +y: :.   .-.  `-/o-                            
+                  .`   `:`   .  `-   `:/`          .::/:     :-:.   -:.-`                           
+                        .-.-.:`  ..:/-            sodd+-.   -dy`/.  .`  :y.`:/.                     
+                             `-:-`                :`:+/:`    -:-:  ./-   :+o/`+                     
+                                                 .o     -:--//     ++-:`+`ho+ o                     
+                                                 .y `.  +-shs-     ./-:`  h++ +                     
+                                                  //`.   :/:.     --     -h:--s                     
+                                                  :y/ `.     -:   ``  .+.:.                         
+                                                    -+..         `     /y                           
+                                                     :ho:`  :`   :` ./.                             
+           .++///:::::::::::::::                        `/yo/--/++shy:                              
+         `hs`          .+-                                ``   .+`                                  
+         yh          `ss`                                          `-                               
+         om`        :m:`-                                  `::`    ++    ``              /`         
+          :o+//::: om-:ho`.s`   :d` `/so+/+o   -oo/:++-  /s:`:h  ::  `o++:o.  /+    so  +d          
+       +yso++-  `/dd:oy  oh`   od` /d/   -h` `hs`  `y/  hs   .``y+  +d. s`+..d+   .d+ `o`y/         
+      sh     .` .ms :s  od`  -dd``yN`   :d` /N+   -d/ .yN     -mo `yN`  `ss:N+   +N+ :+  do`+`      
+      -h.     .sh-      ss.:+:N://:h``-sm-//-N:`-//m:/:`d/.-//:m////d``:+- `N-./+oh:++..sN+:        
+        ::::/++.         .-`  ``   `::/m+-   `--`        `.`        `--`     -.   ``  -::`          
+                                  `/+oN:                                                            
+                                .so`.m:                                                             
+                               /y` -d-                                                              
+                               h..oo`                                                               
+                                -.                                                                  
+
+  ]
+
+
+  puts "\n== Installing dependencies =="
+  run "gem install bundler --conservative"
+  run 'gem install foreman --conservative && gem update foreman'
+  run "bundle check || bundle install"
+
+  puts "\n== Preparing database =="
+  run "bin/rake db:reset RAILS_ENV=development"
+  run 'bin/rake db:reset RAILS_ENV=test'
+  run "bin/rake db:migrate RAILS_ENV=development"
+  run 'bin/rake db:migrate RAILS_ENV=test'
+
+  puts "\n== Removing old logs and tempfiles =="
+  run "rm -f log/*"
+  run "rm -rf tmp/cache"
+end

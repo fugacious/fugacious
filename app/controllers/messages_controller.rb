@@ -1,27 +1,19 @@
 class MessagesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :new, :create, :destroy]
-
-
-  def index
-    @messages = Message.all
-  end
+  skip_before_action :verify_authenticity_token, if: -> { request.format.json? }
+  before_action :handle_bot_requests, except: :new
+  before_action :set_message, only: [:show, :destroy]
 
   def show
-    @message = Message.find_by_token(params[:id])
-    
     if @message
-      @message.add_view unless current_user
-    
-      @remaining_views = @message.max_views - @message.views
-      @time_elapsed = ((Time.now - @message.created_at)/3600)
-      @time_left = (@message.hours - @time_elapsed)
-      
-      @link = 'https://' + APP_CONFIG[:domain] + message_path(@message.token)
-      
-      @message.destroy if (@remaining_views == 0 || @time_left < 0)
-      redirect_to new_message_path, :notice => "Sorry, that message has expired. Care to create a new one?" if @time_left < 0
+      @message.add_view
+      if @message.views == 0
+        flash.now[:success] = I18n.t('flash.created')
+      else
+        flash.now[:warning] = I18n.t('flash.temporary')
+      end
     else
-      redirect_to new_message_path, :notice => "Sorry, that message has expired. Care to create a new one?" 
+      flash.now[:warning] = I18n.t('flash.expired_or')
+      render '/messages/gone'
     end
   end
 
@@ -30,30 +22,43 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(params[:message])
-    if @message.save
-      redirect_to message_path(@message.token), :notice => "Successfully created message."
-    else
-      render :action => 'new'
-    end
-  end
+    @message = Message.new(message_params)
 
-  def edit
-    @message = Message.find_by_token(params[:id])
-  end
-
-  def update
-    @message = Message.find_by_token(params[:id])
-    if @message.update_attributes(params[:message])
-      redirect_to @message.token, :notice  => "Successfully updated message."
-    else
-      render :action => 'edit'
+    respond_to do |format|
+      if @message.save
+        format.html { redirect_to message_url(@message.token)}
+        format.json { render :show, status: :created, location: @message }
+      else
+        flash.now[:error] = @message.errors.full_messages.to_sentence
+        format.html { render :new }
+        format.json { render json: @message.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
-    @message = Message.find_by_token(params[:id])
     @message.destroy
-    redirect_to new_message_path, :notice => "Successfully destroyed message."
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: I18n.t('flash.destroy_success') }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def set_message
+    @message = Message.find_by_token(params[:token])
+  end
+
+  def message_params
+    params.require(:message).permit(:body, :max_views, :hours)
+  end
+
+  def handle_bot_requests
+    disallowed_bots = ['Googlebot', 'Yahoo!', 'bingbot', 'AhrefsBot', 'Baiduspider', 'Ezooms',
+                       'MJ12bot', 'YandexBot', 'Slackbot']
+    bot_regexp = /#{disallowed_bots.join('|')}/
+    render template: 'messages/gone', status: 404, layout: nil if
+      bot_regexp === request.user_agent
   end
 end
