@@ -2,7 +2,7 @@ doctype html
 html lang='en'
   head
     title
-      = content_for(:title) ? t('site_title') + " - " + yield(:title) : t('title')
+      = content_for(:title) ? I18n.config.globals[:app_name] + " - " + yield(:title) : t('title')
 
     meta charset='utf-8'
     meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'
@@ -35,7 +35,7 @@ html lang='en'
       .usa-navbar
         .usa-logo#logo
           h1.usa-logo-text
-            = link_to t("site_title"), root_url
+            = link_to I18n.config.globals[:app_name], root_url
             h2.usa-logo-text-subtitle
               = (t('description'))
 
