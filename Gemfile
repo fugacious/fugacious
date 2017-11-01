@@ -54,15 +54,6 @@ group :development do
   gem 'unf'
 end
 
-group :devops do
-  gem 'berkshelf'
-  gem 'capistrano-rails'
-  gem 'knife-ec2'
-  gem 'knife-solo', github: 'matschaffer/knife-solo', submodules: true
-  gem 'knife-solo_data_bag'
-  gem 'rvm-capistrano'
-end
-
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
