@@ -1,0 +1,19 @@
+= simple_form_for @message, html: { role: 'form' } do |f|
+  = flash_messages
+
+  label.no-top-margin for="message_body"
+    strong = f.label(:body, class: 'no-top-margin')
+  span.usa-form-hint = t('helpers.label.message.dont_sent_hint') + " "
+  = link_to 'content that would violate federal rules', about_path
+  = f.input(:body, label: false, class: 'input-margin-top input-margin-bottom')
+  .usa-grid.section-expire.usa-section
+    strong
+      = f.label(:max_views, class: 'no-top-margin')
+    .usa-width-one-half
+      = f.label :views, class: 'no-top-margin'
+      = f.input :max_views, label: false, input_html: { min: 1, value: 1, class: 'input-small' }
+    .usa-width-one-half
+      = f.label :hours, class: 'no-top-margin'
+      = f.input :hours, label: false, input_html: { min: 1, value: @message.hours.to_i, class: 'input-small' }
+  = f.submit
+  p = t('new.what_happens')

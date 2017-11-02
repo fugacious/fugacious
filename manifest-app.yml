@@ -1,0 +1,14 @@
+applications:
+- name: fugacious
+  buildpack: ruby_buildpack
+  command: bin/cf-start
+  services:
+  - postgres
+  - redis
+env:
+  BUNDLE_WITHOUT: development:devops:test
+  RAILS_SERVE_STATIC_FILES: true
+  SECRET_KEY_BASE: CHANGEME
+  MAX_RETENTION_HOURS: 2
+  RAILS_ENV: production
+  RACK_ENV: production

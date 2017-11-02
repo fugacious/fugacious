@@ -1,0 +1,131 @@
+$image-path: '/assets/';
+$site-max-width: 650px;
+
+.usa-button-unstyled[type='submit'] {
+  padding: 0;
+  margin: 0;
+  color: #0071bc;
+  text-decoration: underline;
+
+}
+
+.usa-grid {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $site-max-width;
+}
+
+.usa-banner-header {
+  .usa-grid {
+    max-width: $site-max-width;
+  }
+}
+
+.usa-header-extended {
+  .usa-navbar {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $site-max-width;
+  }
+}
+
+.usa-grid-no-breakpoints {
+  .usa-width-one-half {
+    display: block;
+    float: left;
+    margin-right: 0;
+    width: 47.5854205965%;
+
+    &:nth-of-type(2) {
+      float: right;
+    }
+  }
+}
+
+.usa-alert {
+  background-position: 1rem 1.5rem;
+  background-size: inherit;
+  border-style: solid;
+  border-width: 1px 1px 1px 16px;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+
+  &.usa-alert-success {
+    background-image: url(image-path('check-icon.png'));
+    background-image: url(image-path('check-icon.svg'));
+    border-color: $color-green;
+  }
+
+  &.usa-alert-error {
+    background-position: 0 1.5rem;
+    background-size: 6rem;
+    border-color: $color-secondary-dark;
+  }
+
+  &.usa-alert-warning {
+    background-image: url(image-path('exclamation-icon.png'));
+    background-image: url(image-path('exclamation-icon.svg'));
+    border-color: $color-gold;
+  }
+}
+
+.usa-header {
+  background: $color-primary-darkest;
+  border-bottom-color: transparent;
+
+  .usa-logo {
+    float: none;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  @media screen and (min-width: $medium-screen) {
+    .usa-logo {
+      float: none;
+      margin-bottom: 3rem;
+      margin-left: 3rem;
+      margin-top: 3rem;
+    }
+  }
+  @media screen and (min-width: $nav-width) {
+    .usa-logo {
+      margin-left: 0;
+    }
+  }
+
+  .usa-navbar {
+    border-bottom-color: transparent;
+    height: auto;
+  }
+
+  .usa-logo-text {
+    font-family: $font-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+
+    a {
+      color: $color-white;
+    }
+  }
+
+  .usa-logo-text-subtitle {
+    color: $color-white;
+    font-family: $font-sans;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 0;
+  }
+}
+
+.usa-font-lead {
+  margin-top: 0;
+}
+
+.usa-section {
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
