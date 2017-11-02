@@ -61,7 +61,7 @@ $ foreman start
 
 We have an automated tool for generating user flows using real views generated from the application. These specs are excluded from our typical spec run because of the overhead of generating screenshots for each view.
 
-The local instance of the application must be running in order to serve up the assets (eg. `make run`). Then, you can specify where the assets are hosted from and generate the views with:
+The local instance of the application must be running in order to serve up the assets (eg. `foreman start`). Then, you can specify where the assets are hosted from and generate the views with:
 
 ```
 $ RAILS_ASSET_HOST=localhost:3000 rake spec:user_flows
@@ -71,7 +71,7 @@ Then, visit http://localhost:3000/user_flows in your browser!
 
 ##### Exporting
 
-The user flows tool also has an export feature which allows you to export everything for the web. You may host these assets with someting like [`simplehttpserver`](https://www.npmjs.com/package/simplehttpserver) or publish to [Federalist](https://federalist.18f.gov/). To publish user flows for Federalist, first make sure the application is running locally (eg. localhost:3000) and run:
+The user flows tool also has an export feature which allows you to export everything for the web. You may host these assets with someting like [`simplehttpserver`](https://www.npmjs.com/package/simplehttpserver) or publish to [Federalist](https://federalist.18f.gov/). To publish user flows for Federalist, first make sure the application is running locally (eg. http://localhost:3000) and run:
 
 ```
 $ RAILS_ASSET_HOST=localhost:3000 FEDERALIST_PATH=/site/user/repository rake spec:user_flows:web
