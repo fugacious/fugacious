@@ -6,7 +6,6 @@ en:
       message:
         days: days
         dont_sent_hint: Don't send PII or any
-  site_title: 'Toaster'
   description: 'Digital disappearing messages'
   flash:
     created: "Message created!"
@@ -29,18 +28,18 @@ en:
         ssl_text_html: This site is also protected by an SSL (Secure Sockets Layer) certificate that’s been signed by the U.S. government. The <strong>https://</strong> means all transmitted data is encrypted  — in other words, any information or browsing history that you provide is transmitted securely.
       about:
         title: About
-        p1: "Toaster is a way to securely send temporary passwords, keys, or tokens."
+        p1: "%{app_name} is a way to securely send temporary passwords, keys, or tokens."
         p2: "Why is this secure?"
         p3: "When you send someone a password, installation token, or other account credentials  through email, that information most likely stays in a user’s email archives forever, as well as in your own sent mail folder. If their email account or yours gets hacked at any point, the hackers also have access to that password."
-        p4: "Toaster adds an additional layer of security by ensuring that any record of the password gets deleted after a set period of time or a set number of views. This means that anyone who might gain access to someone’s email after the message expires will only find the expired Toaster link and will have no way to access the secret credentials."
-        p5: "What you can and can’t send through Toaster"
-        p6: "Use Toaster for"
+        p4: "%{app_name} adds an additional layer of security by ensuring that any record of the password gets deleted after a set period of time or a set number of views. This means that anyone who might gain access to someone’s email after the message expires will only find the expired %{app_name} link and will have no way to access the secret credentials."
+        p5: "What you can and can’t send through %{app_name}"
+        p6: "Use %{app_name} for"
         do_list:
           - "Creating a new account for someone and sending them the password"
           - "Sending the password for a password-protected document"
           - "Sending someone a token for installing software on their computer"
           - "Sending a colleague information on a new software test environment or an API key"
-        p11: "Don't use Toaster for"
+        p11: "Don't use %{app_name} for"
         dont_list:
           - "Sharing personally identifiable information (PII), such as Social Security numbers, addresses, or other identifiable information. This requires a higher level of security."
           - "Sending information that must be preserved as a government record."
@@ -89,7 +88,7 @@ en:
         p21: "To promote site security and accessibility to all users, our government computer system employs software programs to monitor network traffic to identify unauthorized attempts to upload or change information or otherwise cause damage."
         p22: "Except for authorized law enforcement investigations, no other attempts are made to identify individual users or their usage habits. Unauthorized attempts to upload information or change information on this site are strictly prohibited and may be punishable under the Computer Fraud and Abuse Act of 1986 and the National Information Infrastructure Protection Act."
         h7: "Rules and expectations for site usage"
-        p23: "To ensure the safety of all users, Fugacious has some ground rules. When using the site, you must agree not to do any of the following:"
+        p23: "To ensure the safety of all users, %{app_name} has some ground rules. When using the site, you must agree not to do any of the following:"
         list3:
           - Threaten other users with violence
           - Use hateful, abusive, harassing, libelous, or obscene language toward other users
@@ -114,7 +113,7 @@ en:
       steps:
         s1: "Enter your temporary information."
         s1a: "Don’t send PII or any content that would violate federal rules."
-        s2: "Toaster creates a unique link"
+        s2: "%{app_name} creates a unique link"
         s2a: "This link will only work for a short period of time, based on number of views. If the message doesn’t reach the view limit within a certain period of time, it will go ahead and expire as an added level of security."
         s3: "Copy the link and share it."
         s3a: "You can send it via email, text, or any messaging app. This keeps the password out of their message history (and yours!)"
