@@ -14,7 +14,15 @@ Rails.application.configure do
 
   # Configure static asset server for tests with Cache-Control for performance.
   config.serve_static_files  = true
+  config.assets.debug = true
   config.static_cache_control = 'public, max-age=3600'
+  config.assets.digest = ENV.key?('RAILS_DISABLE_ASSET_DIGEST') ? false : true
+
+  if ENV.key?('RAILS_ASSET_HOST')
+    config.action_controller.asset_host = ENV['RAILS_ASSET_HOST']
+  else
+    config.action_controller.asset_host = '//'
+  end
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true

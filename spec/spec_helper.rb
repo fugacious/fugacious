@@ -11,6 +11,7 @@ end
 
 RSpec.configure do |config|
   config.order = :random
+  config.color = true
   WebMock.disable_net_connect!(allow: [/localhost/, /127\.0\.0\.1/, /codeclimate.com/])
 
   # Skip user_flow specs in default tasks
