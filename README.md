@@ -2,7 +2,7 @@
 [![Dependency Status](https://gemnasium.com/fugacious/fugacious.svg)](https://gemnasium.com/fugacious/fugacious)
 [![Security](https://hakiri.io/github/fugacious/fugacious/dev.svg)](https://hakiri.io/github/fugacious/fugacious/dev)
 [![Build Status](https://travis-ci.org/fugacious/fugacious.svg?branch=dev)](https://travis-ci.org/fugacious/fugacious)
-[![Coverage Status](https://coveralls.io/repos/github/fugacious/fugacious/badge.svg?branch=dev)](https://coveralls.io/github/fugacious/fugacious?branch=dev)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/897245dd5fe511fd5333/test_coverage)](https://codeclimate.com/github/fugacious/fugacious/test_coverage)
 
 ![Fugacious](https://raw.githubusercontent.com/fugacious/fugacious/dev/app/assets/images/logo-small.png)
 ##### open source short-term secure messaging solution
