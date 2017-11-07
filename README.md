@@ -1,6 +1,6 @@
 ![SemVer](https://img.shields.io/badge/version-v0.1.0-green.svg)
 [![Dependency Status](https://gemnasium.com/fugacious/fugacious.svg)](https://gemnasium.com/fugacious/fugacious)
-[![Security](https://hakiri.io/github/fugacious/fugacious/dev.svg)](https://hakiri.io/github/fugacious/fugacious/dev)
+[![security](https://hakiri.io/github/fugacious/fugacious/master.svg)](https://hakiri.io/github/fugacious/fugacious/master)
 [![Build Status](https://travis-ci.org/fugacious/fugacious.svg?branch=dev)](https://travis-ci.org/fugacious/fugacious)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/897245dd5fe511fd5333/test_coverage)](https://codeclimate.com/github/fugacious/fugacious/test_coverage)
 
