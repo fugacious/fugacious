@@ -22,4 +22,10 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.infer_spec_type_from_file_location!
   config.use_transactional_fixtures = true
+
+  config.around(:each, user_flow: true) do |example|
+    Capybara.current_driver = :rack_test
+    example.run
+    Capybara.use_default_driver
+  end
 end

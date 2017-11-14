@@ -26,7 +26,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'inch', require: false
   gem 'pry-nav'
-  gem 'rspec-rails', '~> 3.1.0'
+  gem 'rspec-rails'
   gem 'sqlite3'
 end
 
@@ -52,8 +52,8 @@ group :production do
 end
 
 group :test do
-  gem 'capybara', '~> 2.3.0'
-  gem 'capybara-screenshot'
+  gem 'capybara'
+  gem 'capybara-screenshot', github: 'mattheworiordan/capybara-screenshot'
   gem 'codeclimate-test-reporter', require: false
   gem 'database_cleaner'
   gem 'faker'
