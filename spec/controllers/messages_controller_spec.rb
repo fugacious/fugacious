@@ -25,6 +25,8 @@ RSpec.describe MessagesController, :type => :controller do
   let(:valid_session) { {} }
 
   describe "GET show" do
+    render_views
+
     it "assigns the requested message as @message" do
       message = create(:message)
       get :show, { token: message.to_param}, valid_session
@@ -42,6 +44,19 @@ RSpec.describe MessagesController, :type => :controller do
       get :show, { token: message.to_param }, valid_session
       expect(message.views).to eq(0)
       expect(response.code.to_i).to eq(404)
+    end
+
+    it "does not expose expired messages" do
+      message = create(:message, { hours: 1, body: '!this message is expired!' })
+      get :show, { token: message.to_param}, valid_session
+      expect(response.status).to eq(200)
+
+      Timecop.freeze(Time.now + 2.hours)
+      expect(message.expired?).to eq(true)
+
+      get :show, { token: message.to_param}, valid_session
+      expect(response.body).to_not have_content('!this message is expired!')
+      expect(response.body).to have_content(I18n.t('flash.expired_or'))
     end
   end
 

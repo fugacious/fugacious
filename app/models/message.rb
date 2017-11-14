@@ -13,6 +13,11 @@ class Message < ActiveRecord::Base
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
   end
 
+  def self.find_active_by_token(token)
+    message = Message.find_by(token: token)
+    message unless message && message.expired?
+  end
+
   def add_view
     self.update_attribute :views, (self.views.to_i + 1)
     self.destroy if self.expired?

@@ -47,7 +47,7 @@ class MessagesController < ApplicationController
   private
 
   def set_message
-    @message = Message.find_by_token(params[:token])
+    @message = Message.find_active_by_token(params[:token])
   end
 
   def message_params
