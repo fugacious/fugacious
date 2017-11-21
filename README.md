@@ -52,7 +52,7 @@ $ bin/setup
 
 2. Start the app
 ```
-$ foreman start
+$ foreman start -p 3000
 ```
 
 3. Open your browser to http://localhost:3000

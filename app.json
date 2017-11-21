@@ -1,18 +1,20 @@
 
 {
   "name": "Fugacious",
-  "description": "open source short-term secure messaging solution",
+  "description": "open source short-term secure messaging solution (OSSSM)",
   "website": "https://fugacio.us",
   "repository": "https://github.com/fugacious/fugacious",
-  "logo": "https://raw.githubusercontent.com/fugacious/fugacious/dev/app/assets/images/logo-small.png",
+  "logo": "https://raw.githubusercontent.com/fugacious/fugacious/master/app/assets/images/logo-small.png",
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate"
   },
   "env": {
-    "RAILS_ENV": "production",
+    "APP_NAME": "Fugacious",
+    "MAX_RETENTION_HOURS": "480",
     "RACK_ENV": "production",
+    "RAILS_ENV": "production",
     "RAILS_SERVE_STATIC_FILES": "true",
-    "MAX_RETENTION_HOURS": "480"
+    "SECRET_KEY_BASE": ""
   },
   "addons": ["heroku-postgresql"]
 }
