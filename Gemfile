@@ -24,7 +24,6 @@ group :development, :test do
   gem 'brakeman', require: false
   gem 'coveralls', require: false
   gem 'factory_girl_rails'
-  gem 'inch', require: false
   gem 'pry-nav'
   gem 'rspec-rails', '~> 3.1.0'
   gem 'sqlite3'
