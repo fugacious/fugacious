@@ -15,6 +15,8 @@ Bundler.require(*Rails.groups)
 
 module Fugacious
   class Application < Rails::Application
+    # Global application name string
+    I18n.config.globals[:app_name] = Rails.application.secrets.app_name || 'Fugacious'
 
     # Overridden due to extraneous div being added to elements with errors
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
@@ -31,6 +33,5 @@ module Fugacious
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    I18n.config.globals[:app_name] = Rails.application.secrets.app_name || 'Fugacious'
   end
 end
