@@ -37,7 +37,6 @@ group :development do
   gem 'guard-rspec'
   gem 'quiet_assets'
   gem 'rb-fsevent'
-  gem 'sinatra'
   gem 'unf'
 end
 
