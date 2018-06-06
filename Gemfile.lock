@@ -312,10 +312,6 @@ GEM
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
-    sinatra (1.4.7)
-      rack (~> 1.5)
-      rack-protection (~> 1.4)
-      tilt (>= 1.3, < 3)
     slim (3.0.6)
       temple (~> 0.7.3)
       tilt (>= 1.3.3, < 2.1)
@@ -411,7 +407,6 @@ DEPENDENCIES
   sidekiq
   sidekiq-cron
   simple_form
-  sinatra
   slim-rails
   sqlite3
   thin
