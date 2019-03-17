@@ -21,6 +21,14 @@ jobs:
 
     steps:
       - checkout
+           
+      - run:
+          name: Install phantomjs
+          command: |
+            if ! [ $(which phantomjs) ]; then                
+              sudo curl --output /usr/local/bin/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
+              sudo chmod ugo+x /usr/local/bin/phantomjs
+            fi
 
       - restore_cache:
           keys:
