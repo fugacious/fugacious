@@ -8,7 +8,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'dotenv-rails'
 gem 'i18n-globals'
 gem 'jbuilder', '~> 2.0'
-gem 'rails', '~> 4.2'
+gem 'rails', '~> 4.2.11'
 gem 'sass-rails'
 gem 'secure_headers'
 gem 'sidekiq'
@@ -23,11 +23,11 @@ gem 'uswds-rails', github: '18F/uswds-rails-gem'
 group :development, :test do
   gem 'brakeman', require: false
   gem 'coveralls', require: false
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails', "~> 4.10.0"
   gem 'inch', require: false
   gem 'pry-nav'
-  gem 'rspec-rails', '~> 3.1.0'
-  gem 'sqlite3'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'sqlite3', '~> 1.3.13'
 end
 
 group :development do
@@ -51,7 +51,7 @@ group :production do
 end
 
 group :test do
-  gem 'capybara', '~> 2.3.0'
+  gem 'capybara', '~> 3.14.0'
   gem 'capybara-screenshot'
   gem 'codeclimate-test-reporter', require: false
   gem 'database_cleaner'
@@ -60,7 +60,7 @@ group :test do
   gem 'poltergeist'
   gem 'rspec-collection_matchers'
   gem 'rspec-html-matchers'
-  gem 'shoulda'
+  gem 'shoulda-matchers'
   gem 'timecop'
   gem 'webmock'
 end
