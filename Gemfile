@@ -27,7 +27,7 @@ group :development, :test do
   gem 'factory_bot_rails', "~> 4.10.0"
   gem 'inch', require: false
   gem 'pry-nav'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails', '~> 3.8.2'
   gem 'sqlite3', '~> 1.3.13'
 end
 
