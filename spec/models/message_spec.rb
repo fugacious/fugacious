@@ -26,7 +26,7 @@ RSpec.describe Message do
   end
 
   describe '@instance_methods' do
-    let(:message) { FactoryGirl.create(:message) }
+    let(:message) { FactoryBot.create(:message) }
 
     it 'adds to the view count when the #add_view method is called' do
       views = message.views
