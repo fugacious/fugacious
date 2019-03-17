@@ -4,7 +4,7 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
 ruby '~> 2.5.3'
 
 gem 'autoprefixer-rails'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.2.2'
 gem 'dotenv-rails'
 gem 'i18n-globals'
 gem 'jbuilder', '~> 2.0'
