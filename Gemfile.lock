@@ -373,7 +373,7 @@ DEPENDENCIES
   rb-fsevent
   rspec-collection_matchers
   rspec-html-matchers
-  rspec-rails (~> 3.5)
+  rspec-rails (~> 3.8.2)
   sass-rails
   sdoc (~> 0.4.0)
   secure_headers
