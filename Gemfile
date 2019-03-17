@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'dotenv-rails'
 gem 'i18n-globals'
 gem 'jbuilder', '~> 2.0'
+gem 'puma'
 gem 'rails', '~> 4.2.11'
 gem 'sass-rails'
 gem 'secure_headers'
@@ -46,7 +47,6 @@ end
 
 group :production do
   gem 'pg'
-  gem 'puma'
   gem 'rails_12factor'
 end
 
