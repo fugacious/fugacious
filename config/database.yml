@@ -27,15 +27,18 @@ production:
   adapter: postgresql
   encoding: unicode
   host: <%= credentials['hostname'] || 'localhost' %>
-  port: <%= credentials['port'] || '3306' %>
-  database: <%= credentials['name'] || '' %>
-  username: <%= credentials['username'] || '' %>
+  port: <%= credentials['port'] || '5432' %>
+  database: <%= credentials['name'] || 'fugacious_production' %>
+  username: <%= credentials['username'] || 'postgres' %>
   password: <%= credentials['password'] || '' %>
 <% else %>
 production:
   <<: *default
   adapter: postgresql
-  database: fugacious_production
-  username: fugacious
+  encoding: unicode
+  host: <%= ENV['FUGACIOUS_DATABASE_HOST'] %>
+  port: <%= ENV['FUGACIOUS_DATABASE_PORT'] %>
+  database: <%= ENV['FUGACIOUS_DATABASE_NAME'] %>
+  username: <%= ENV['FUGACIOUS_DATABASE_USER'] %>
   password: <%= ENV['FUGACIOUS_DATABASE_PASSWORD'] %>
 <% end %>
