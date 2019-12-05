@@ -183,7 +183,7 @@ GEM
     pry-nav (0.2.4)
       pry (>= 0.9.10, < 0.11.0)
     public_suffix (3.0.3)
-    puma (3.12.0)
+    puma (3.12.2)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     raabro (1.1.6)
