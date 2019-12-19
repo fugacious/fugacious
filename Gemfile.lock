@@ -187,7 +187,7 @@ GEM
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     raabro (1.1.6)
-    rack (1.6.11)
+    rack (1.6.12)
     rack-protection (2.0.5)
       rack
     rack-test (0.6.3)
