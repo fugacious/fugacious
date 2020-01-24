@@ -6,7 +6,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.5.3-node-browsers
+      - image: circleci/ruby:2.5.7-node-browsers
         environment:
           BUNDLER_VERSION: 1.16.6
           CC_TEST_REPORTER_ID: bdda6bfb05a861848066e0f176ef45254fa411cae0aebdbc55e0c10e3d109efc
