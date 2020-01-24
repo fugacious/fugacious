@@ -12,6 +12,7 @@ jobs:
           CC_TEST_REPORTER_ID: bdda6bfb05a861848066e0f176ef45254fa411cae0aebdbc55e0c10e3d109efc
           COVERAGE: true
           RAILS_ENV: test
+          OPENSSL_CONF: /etc/ssl/
 
       - image: circleci/postgres:latest
         environment:
@@ -26,8 +27,9 @@ jobs:
           name: Install phantomjs
           command: |
             if ! [ $(which phantomjs) ]; then                
-              curl --output /usr/local/bin/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
+              sudo curl --output /usr/local/bin/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
               sudo chmod ugo+x /usr/local/bin/phantomjs
+              phantomjs --version
             fi
 
       - restore_cache:
