@@ -1,0 +1,96 @@
+#!/usr/bin/env ruby
+require 'pathname'
+require 'yaml'
+
+APP_NAME = 'fugacious'.freeze
+WORKER_NAME = APP_NAME + '-worker'
+
+# path to your application root.
+APP_ROOT = Pathname.new File.expand_path('../../', __FILE__)
+
+def run(command)
+  abort "command failed (#{$CHILD_STATUS}): #{command}" unless system command
+end
+
+def config_error(exception = nil)
+  puts exception.message if exception
+  raise "\n\nERROR!\n   Configuration for cloud.gov missing!\n" \
+        "   Make sure config/secrets.yml has a 'cloud.gov'\n" \
+        "   entry.\n\n"
+end
+
+puts '
+  Deploying to cloud.gov...
+
+
+                  `:-
+               `-+ssss/.
+            `-+ssssssssso/.
+         `./ssssssssssssssso:`
+       ./osssssssssossssssssss+-`
+     -ossssssssssss`/ssssssssssss+
+     +dhyyssssssss: `osssssssyyhdd`
+     +ddddhs+++++/   .+++++oyhdddd`
+     +ddddddy/.         `-ohdddddd`
+     +ddddddddhs`      :yddddddddd`
+     +ddddddddds   .`  -dddddddddd`
+     +ddddddddh.`:shy+- +ddddddddd`
+     +ddddddddsohddddddy+ddddddddd`
+     :ydddddddddddddddddddddddddds
+      `-ohdddddddddddddddddddds/.
+         `:ohddddddddddddddy+.
+            `:sdddddddddh+.`
+               `/ydddho-`
+                  ./:`
+
+
+'
+
+Dir.chdir APP_ROOT do
+  puts 'Checking for CF CLI...'
+  cf_ver_string = `cf --version`
+  cf_ver_num = cf_ver_string.split(' ')[2][0..3].to_f
+  raise "\n\nERROR!\n.  Incompatible CF CLI version!\n" \
+        "   Please update to >= 6.32\n\n" if cf_ver_num < 6.32
+
+  puts 'Checking for configuration in secrets.yml...'
+  begin
+    app_config = YAML.load_file('config/secrets.yml')['cloud.gov']
+  rescue StandardError => e
+    config_error(e)
+  end
+  # one more check to see if hash is populated...
+  config_error if app_config.nil? || app_config.empty?
+
+  puts 'Vendoring dependencies...'
+  run 'bundle package --all'
+
+  puts 'Creating Redis service...'
+  run 'cf create-service redis32 standard-ha redis'
+
+  puts 'Creating PostgreSQL service...'
+  run 'cf create-service aws-rds shared-psql postgres'
+
+  puts 'Pushing app with --no-start...'
+  run "cf push #{APP_NAME} --no-start -f manifest-app.yml"
+
+  puts 'Pushing worker with --no-start...'
+  run "cf push #{WORKER_NAME} --no-start -f manifest-worker.yml"
+
+  # TODO: re-examine. this approach is slow.
+  # WHY:  the app and worker(s) need the exact same configuration,
+  #       and it makes sense to pull/assign from a single location
+  unless ENV['SKIP_ENV']
+    puts 'Setting application environment variables...'
+    app_config.each_key do |key|
+      run "cf set-env #{APP_NAME} #{key} '#{app_config[key]}'"
+      run "cf set-env #{WORKER_NAME} #{key} '#{app_config[key]}'"
+    end
+  end
+
+  puts 'Starting app...'
+  run "cf start #{APP_NAME}"
+
+  puts 'Starting worker...'
+  run "cf start #{WORKER_NAME}"
+end
