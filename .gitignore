@@ -45,3 +45,4 @@ tags
 /spec/tmp
 /tmp
 /vendor/bundle
+/vendor/cache

@@ -1,6 +1,6 @@
 if ENV['VCAP_SERVICES']
   services = JSON.parse(ENV['VCAP_SERVICES'])
-  credentials = services['redis28'].first['credentials']
+  credentials = services['redis32'].first['credentials']
   redis = "redis://:#{credentials['password']}@#{credentials['host']}:#{credentials['port']}"
 
   Sidekiq.configure_server do |config|
