@@ -80,6 +80,11 @@ Ensure you have the [Heroku Toolbelt](https://devcenter.heroku.com/articles/hero
 
 [Getting started with Rails 4 on Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4) for more information.
 
+### Deploying to cloud.gov
+
+1. Configure cloud.gov specific settings in `config/secrets.yml`
+1. Run `bin/push_cloud_dot_gov`
+
 ### Operators
 
 Fugacious URLs should be treated as sensitive information since knowing the URL
