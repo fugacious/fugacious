@@ -17,6 +17,7 @@ jobs:
       - image: circleci/postgres:latest
         environment:
           POSTGRES_USER: circleci
+          POSTGRES_PASSWORD: circlecipassword
 
     working_directory: ~/fugacious
 
